@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>FSC_FF_FutureSecurity</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>How sure are you that you can meet your current and future income needs from your salary, retirement funds, pensions, or other investments?</questionText>
+        <responseValues>Not sure
+Somewhat sure
+Fairly sure
+Very sure</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Radio</dataType>
+    <developerName>FSC_FF_v1_FutureSecurity</developerName>
+    <name>FSC_FF_FutureSecurity</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

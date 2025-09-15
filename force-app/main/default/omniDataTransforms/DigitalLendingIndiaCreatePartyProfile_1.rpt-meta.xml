@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ApplicantsStep&quot; : {
+    &quot;PrimaryApplicantBlock&quot; : {
+      &quot;FSC_ILI_v1_Primary_Applicant_First_Name&quot; : &quot;&quot;,
+      &quot;FSC_ILI_v1_Primary_Applicant_Email&quot; : &quot;&quot;,
+      &quot;FSC_ILI_v1_Primary_Applicant_Last_Name&quot; : &quot;&quot;,
+      &quot;FSC_ILI_v1_Primary_Applicant_Phone&quot; : &quot;&quot;,
+      &quot;FSC_ILI_Primary_Applicant_Role&quot; : &quot;&quot;
+    }
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaCreatePartyProfile</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePartyProfile9778842309496727</globalKey>
+        <inputFieldName>PartyProfileStage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Stage</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePartyProfile2828628715782613</globalKey>
+        <inputFieldName>Phone</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PrimaryPhone</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:PartyProfileId ISNOTBLANK | | | &quot;SELECT/\/\/Stage/\/\/FROM/\/\/PartyProfile/\/\/WHERE/\/\/Id/\/\/=/\/\/&apos;{0}&apos;&quot; var:PartyProfileId QUERY ISNOTBLANK | &quot;SELECT/\/\/Stage/\/\/FROM/\/\/PartyProfile/\/\/WHERE/\/\/Id/\/\/=/\/\/&apos;{0}&apos;&quot; var:PartyProfileId QUERY &quot;Initiated&quot; IF &quot;Initiated&quot; IF</formulaConverted>
+        <formulaExpression>IF(ISNOTBLANK(%PartyProfileId%),IF(ISNOTBLANK(QUERY( &quot;SELECT Stage FROM PartyProfile WHERE Id = &apos;{0}&apos;&quot;,%PartyProfileId% )),QUERY( &quot;SELECT Stage FROM PartyProfile WHERE Id = &apos;{0}&apos;&quot;,%PartyProfileId% ),&quot;Initiated&quot;),&quot;Initiated&quot;)</formulaExpression>
+        <formulaResultPath>PartyProfileStage</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaCreatePartyProfileCustom9370</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePartyProfile</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePartyProfile20927865257182465</globalKey>
+        <inputFieldName>FullName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePartyProfile7527430648942515</globalKey>
+        <inputFieldName>PartyProfileId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaCreatePartyProfile5395764437928301</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaCreatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:FirstName &apos;/\/\/&apos; var:LastName CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(%FirstName%,&apos; &apos;,%LastName%)</formulaExpression>
+        <formulaResultPath>FullName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaCreatePartyProfile35747569140284274</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePartyProfile</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePartyProfileCustom8663</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePartyProfileCustom608</globalKey>
+        <inputFieldName>PAN</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TaxpayerIdentificationNumber</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePartyProfile08410780090043835</globalKey>
+        <inputFieldName>LastName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LastName</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePartyProfile7444699866296407</globalKey>
+        <inputFieldName>FirstName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FirstName</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePartyProfile2877717747193307</globalKey>
+        <inputFieldName>Email</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PrimaryEmail</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;Email&quot; : null,
+  &quot;Phone&quot; : null,
+  &quot;Role&quot; : &quot;&quot;,
+  &quot;LastName&quot; : &quot;&quot;,
+  &quot;FirstName&quot; : &quot;&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DigitalLendingIndiaCreatePartyProfile_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

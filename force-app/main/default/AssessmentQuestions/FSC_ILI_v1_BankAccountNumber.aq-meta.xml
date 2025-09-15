@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <description>Bank Account Number</description>
+        <isActive>true</isActive>
+        <name>Bank Account Number</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Account Number</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Text</dataType>
+    <developerName>FSC_ILI_v1_BankAccountNumber</developerName>
+    <name>Bank Account Number</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

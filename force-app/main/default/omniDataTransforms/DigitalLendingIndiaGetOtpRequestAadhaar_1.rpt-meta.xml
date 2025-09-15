@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;InputRecordId&quot; : null,
+  &quot;Payload&quot; : {
+    &quot;aadhaarNo&quot; : null,
+    &quot;consent&quot; : null
+  }
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;body&quot; : {
+    &quot;aadhaarNo&quot; : null,
+    &quot;consent&quot; : null
+  }
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaGetOtpRequestAadhaar</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetOtpRequestAadhaar40414597209551606</globalKey>
+        <inputFieldName>Payload:consent</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetOtpRequestAadhaar</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>body:consent</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetOtpRequestAadhaar5945881306153982</globalKey>
+        <inputFieldName>Payload:aadhaarNo</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetOtpRequestAadhaar</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>body:aadhaarNo</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;InputRecordId&quot; : null,
+  &quot;Payload&quot; : {
+    &quot;aadhaarNo&quot; : null,
+    &quot;consent&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>DigitalLendingIndiaGetOtpRequestAadhaar_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

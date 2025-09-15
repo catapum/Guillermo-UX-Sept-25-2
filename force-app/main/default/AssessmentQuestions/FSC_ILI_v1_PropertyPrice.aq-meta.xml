@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <description>Property Price</description>
+        <isActive>true</isActive>
+        <name>Property Price</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Price</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Currency</dataType>
+    <developerName>FSC_ILI_v1_PropertyPrice</developerName>
+    <name>Property Price</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

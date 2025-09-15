@@ -1,0 +1,1728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Request to set up transaction controls and lock or unlock the selected card</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>true</isWebCompEnabled>
+    <language>Multi-Language</language>
+    <name>FSCRtlManageCardUsageMultiLanguage</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CreateCase</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;remoteClass&quot; : &quot;fscserviceprocess.FSCRtlMngCardUseHelper&quot;,
+  &quot;remoteMethod&quot; : &quot;callCreateCaseApi&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;extraPayload&quot; : {
+    &quot;accountId&quot; : &quot;%ContextId%&quot;,
+    &quot;svcCatalogItemDefApiName&quot; : &quot;FSCRtl_ManageCardUsage&quot;,
+    &quot;caseSubject&quot; : &quot;%accounts:name% - Manage Card Usage Service Request&quot;,
+    &quot;isCommunitySite&quot; : &quot;%isCommunitySite%&quot;,
+    &quot;cardName&quot; : &quot;%SelectedCardName%&quot;,
+    &quot;cardNumber&quot; : &quot;%SelectedCardNumberLast4%&quot;,
+    &quot;cardType&quot; : &quot;%SelectedCardType%&quot;,
+    &quot;accountType&quot; : &quot;%SelectedCardPrimaryOwnerType%&quot;,
+    &quot;tapPayDomestic&quot; : &quot;%Summary:TapPayDomestic%&quot;,
+    &quot;tapPayInternational&quot; : &quot;%Summary:TapPayInternational%&quot;,
+    &quot;merchantPOSDomestic&quot; : &quot;%Summary:MerchantDomestic%&quot;,
+    &quot;merchantPOSInternational&quot; : &quot;%Summary:MerchantInternational%&quot;,
+    &quot;atmWithdrawalDomestic&quot; : &quot;%Summary:AtmDomestic%&quot;,
+    &quot;atmWithdrawalInternational&quot; : &quot;%Summary:AtmInternational%&quot;,
+    &quot;onlineTransactionDomestic&quot; : &quot;%Summary:OnlineDomestic%&quot;,
+    &quot;onlineTransactionInternational&quot; : &quot;%Summary:OnlineInternational%&quot;
+  },
+  &quot;inProgressMessage&quot; : &quot;OmniinProgressMessage&quot;,
+  &quot;postMessage&quot; : &quot;OmniDone&quot;,
+  &quot;failureNextLabel&quot; : &quot;OmniContinue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;OmniAbort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;OmnifailureGoBackLabel&quot;,
+  &quot;failureAbortMessage&quot; : &quot;OmnifailureAbortMessage&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;NoCardsFound&quot;
+      } ]
+    }
+  },
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;useContinuation&quot; : false,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;,
+  &quot;sendOnlyExtraPayload&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>16.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FetchCardLimits</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;sendOnlyExtraPayload&quot; : true,
+  &quot;businessEvent&quot; : &quot;&quot;,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;default&quot; : null,
+    &quot;custom&quot; : [ ]
+  },
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;ssm&quot; : false,
+  &quot;wpm&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;rules&quot; : [ {
+        &quot;field&quot; : &quot;NoCardsFound&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;data&quot; : &quot;true&quot;
+      } ],
+      &quot;operator&quot; : &quot;AND&quot;
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;failureAbortMessage&quot; : &quot;OmnifailureAbortMessage&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;OmnifailureGoBackLabel&quot;,
+  &quot;failureAbortLabel&quot; : &quot;OmniAbort&quot;,
+  &quot;failureNextLabel&quot; : &quot;OmniContinue&quot;,
+  &quot;postMessage&quot; : &quot;OmniDone&quot;,
+  &quot;inProgressMessage&quot; : &quot;OmniinProgressMessage&quot;,
+  &quot;extraPayload&quot; : {
+    &quot;CardPrimaryOwnerType&quot; : &quot;%SelectedCardPrimaryOwnerType%&quot;,
+    &quot;CardType&quot; : &quot;%SelectedCardType%&quot;,
+    &quot;CardPrimaryOwnerSourceSystemId&quot; : &quot;%SelectedCardPrimaryOwnerSourceSysId%&quot;
+  },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : {
+    &quot;chainable&quot; : false,
+    &quot;useFuture&quot; : false,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;useContinuation&quot; : true,
+  &quot;integrationProcedureKey&quot; : &quot;FSCRtlServiceProcess_FetchCardLimits&quot;,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12
+}</propertySetConfig>
+        <sequenceNumber>8.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FetchUsageControls</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;integrationProcedureKey&quot; : &quot;FSCRtlServiceProcess_FetchCardControls&quot;,
+  &quot;useContinuation&quot; : true,
+  &quot;remoteOptions&quot; : {
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;useFuture&quot; : false,
+    &quot;chainable&quot; : false
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;extraPayload&quot; : {
+    &quot;CardsourceSystemId&quot; : &quot;%SelectedCardSourceSystemId%&quot;,
+    &quot;CardPrimaryOwnerSourceSystemId&quot; : &quot;%SelectedCardPrimaryOwnerSourceSysId%&quot;,
+    &quot;CardType&quot; : &quot;%SelectedCardType%&quot;,
+    &quot;CardPrimaryOwnerType&quot; : &quot;%SelectedCardPrimaryOwnerType%&quot;
+  },
+  &quot;inProgressMessage&quot; : &quot;OmniinProgressMessage&quot;,
+  &quot;postMessage&quot; : &quot;OmniDone&quot;,
+  &quot;failureNextLabel&quot; : &quot;OmniContinue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;OmniAbort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;OmnifailureGoBackLabel&quot;,
+  &quot;failureAbortMessage&quot; : &quot;OmnifailureAbortMessage&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;NoCardsFound&quot;
+      } ]
+    }
+  },
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;,
+  &quot;sendOnlyExtraPayload&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>9.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FSCRtl_ServiceProcessGetAccountDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;businessEvent&quot; : &quot;&quot;,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;default&quot; : &quot;&quot;,
+    &quot;custom&quot; : [ ]
+  },
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;ssm&quot; : false,
+  &quot;wpm&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectNextLabel&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;failureAbortMessage&quot; : &quot;OmnifailureAbortMessage&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;OmnifailureGoBackLabel&quot;,
+  &quot;failureAbortLabel&quot; : &quot;OmniAbort&quot;,
+  &quot;failureNextLabel&quot; : &quot;OmniContinue&quot;,
+  &quot;postMessage&quot; : &quot;OmniDone&quot;,
+  &quot;inProgressMessage&quot; : &quot;OmniinProgressMessage&quot;,
+  &quot;extraPayload&quot; : {
+    &quot;AccountId&quot; : &quot;%ContextId%&quot;
+  },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : {
+    &quot;chainable&quot; : false,
+    &quot;useFuture&quot; : false,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;useContinuation&quot; : false,
+  &quot;integrationProcedureKey&quot; : &quot;FSCRtlServiceProcess_GetAccountDetails&quot;,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;sendOnlyExtraPayload&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetCardDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;sendOnlyExtraPayload&quot; : true,
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;integrationProcedureKey&quot; : &quot;FSCRtlMngCardUse_GetCardDetails&quot;,
+  &quot;useContinuation&quot; : false,
+  &quot;remoteOptions&quot; : {
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;useFuture&quot; : false,
+    &quot;chainable&quot; : false
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;extraPayload&quot; : {
+    &quot;AccountId&quot; : &quot;%ContextId%&quot;,
+    &quot;StdPref&quot; : &quot;%FSCStdPref%&quot;
+  },
+  &quot;inProgressMessage&quot; : &quot;OmniinProgressMessage&quot;,
+  &quot;postMessage&quot; : &quot;OmniDone&quot;,
+  &quot;failureNextLabel&quot; : &quot;OmniContinue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;OmniAbort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;OmnifailureGoBackLabel&quot;,
+  &quot;failureAbortMessage&quot; : &quot;OmnifailureAbortMessage&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : &quot;&quot;
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CaseConfirmationIcon</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;hide&quot; : false,
+  &quot;lwcName&quot; : &quot;cfFSCDisplayNewCaseConfirmationIcon&quot;,
+  &quot;bStandalone&quot; : true,
+  &quot;customAttributes&quot; : [ ]
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Custom Lightning Web Component</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ConfirmationMessage</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;text&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;dataJSON&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;textKey&quot; : &quot;$standardLabel.FSCRtlMngCardUse.FSCRtlMngCardUseConfirmationMessage&quot;,
+  &quot;sanitize&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ConfirmationMessageSummary</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;sanitize&quot; : false,
+  &quot;textKey&quot; : &quot;$standardLabel.FSCServiceProcessSharedLabels.FSCServiceProcessViewConfirmationMessageSummary&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;dataJSON&quot; : false,
+  &quot;show&quot; : null,
+  &quot;text&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>LineBreak11</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;padding&quot; : 70,
+  &quot;label&quot; : &quot;LineBreak2&quot;
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Line Break</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>MngCardUseConfirmationShowAccountDetails</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;customAttributes&quot; : [ {
+    &quot;source&quot; : &quot;true&quot;,
+    &quot;name&quot; : &quot;parent-data&quot;
+  }, {
+    &quot;source&quot; : &quot;%accounts%&quot;,
+    &quot;name&quot; : &quot;records&quot;
+  } ],
+  &quot;bStandalone&quot; : false,
+  &quot;lwcName&quot; : &quot;cfFSCServiceProcessShowAccountDetails&quot;,
+  &quot;hide&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;rules&quot; : [ {
+        &quot;field&quot; : &quot;isCommunitySite&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;data&quot; : &quot;true&quot;
+      } ],
+      &quot;operator&quot; : &quot;AND&quot;
+    }
+  },
+  &quot;label&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12
+}</propertySetConfig>
+            <sequenceNumber>0.0</sequenceNumber>
+            <type>Custom Lightning Web Component</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ManageCardUsageConfirmation</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;businessEvent&quot; : &quot;&quot;,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;ssm&quot; : false,
+  &quot;wpm&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;default&quot; : &quot;&quot;,
+    &quot;custom&quot; : [ ]
+  },
+  &quot;allowSaveForLater&quot; : false,
+  &quot;chartLabel&quot; : null,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;rules&quot; : [ {
+        &quot;field&quot; : &quot;NoCardsFound&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;data&quot; : &quot;true&quot;
+      } ],
+      &quot;operator&quot; : &quot;AND&quot;
+    }
+  },
+  &quot;knowledgeOptions&quot; : {
+    &quot;typeFilter&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;language&quot; : &quot;English&quot;
+  },
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;completeMessage&quot; : &quot;&quot;,
+  &quot;completeLabel&quot; : &quot;&quot;,
+  &quot;saveMessage&quot; : &quot;&quot;,
+  &quot;saveLabel&quot; : &quot;&quot;,
+  &quot;cancelMessage&quot; : &quot;&quot;,
+  &quot;cancelLabel&quot; : &quot;&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;nextLabel&quot; : &quot;OmninextLabel&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;previousLabel&quot; : &quot;OmnipreviousLabel&quot;,
+  &quot;validationRequired&quot; : true,
+  &quot;label&quot; : &quot;$standardLabel.FSCServiceProcessSharedLabels.FSCServiceProcessViewConfirmationStep&quot;
+}</propertySetConfig>
+        <sequenceNumber>20.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>LineBreak1</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;LineBreak1&quot;,
+  &quot;padding&quot; : 10,
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Line Break</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ManageUsageControlsDisplayLimits</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;hide&quot; : false,
+  &quot;lwcName&quot; : &quot;cfFSCRtlMngCardUseDisplayCardLimit&quot;,
+  &quot;bStandalone&quot; : true,
+  &quot;customAttributes&quot; : [ {
+    &quot;name&quot; : &quot;parent-data&quot;,
+    &quot;source&quot; : &quot;true&quot;
+  }, {
+    &quot;name&quot; : &quot;records&quot;,
+    &quot;source&quot; : &quot;%CardLimits%&quot;
+  } ]
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Custom Lightning Web Component</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ManageUsageControlsDisplayUsageControls</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;customAttributes&quot; : [ {
+    &quot;name&quot; : &quot;parent-data&quot;,
+    &quot;source&quot; : &quot;true&quot;
+  }, {
+    &quot;name&quot; : &quot;records&quot;,
+    &quot;source&quot; : &quot;%CardUsageControls%&quot;
+  } ],
+  &quot;bStandalone&quot; : false,
+  &quot;lwcName&quot; : &quot;cfFSCRtlMngCardUseManageCardUsage&quot;,
+  &quot;hide&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12
+}</propertySetConfig>
+            <sequenceNumber>5.0</sequenceNumber>
+            <type>Custom Lightning Web Component</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ManageUsageControlsSelectedCardTextBlock</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;text&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;dataJSON&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;textKey&quot; : &quot;$standardLabel.FSCRtlMngCardUse.FSCRtlMngCardUseSelectedCard&quot;,
+  &quot;sanitize&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ManageUsageControlsShowAccountDetails</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;isCommunitySite&quot;
+      } ]
+    }
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;hide&quot; : false,
+  &quot;lwcName&quot; : &quot;cfFSCServiceProcessShowAccountDetails&quot;,
+  &quot;bStandalone&quot; : false,
+  &quot;customAttributes&quot; : [ {
+    &quot;name&quot; : &quot;parent-data&quot;,
+    &quot;source&quot; : &quot;true&quot;
+  }, {
+    &quot;name&quot; : &quot;records&quot;,
+    &quot;source&quot; : &quot;%accounts%&quot;
+  } ]
+}</propertySetConfig>
+            <sequenceNumber>0.0</sequenceNumber>
+            <type>Custom Lightning Web Component</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ValidateUsageControlChanges</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;hideLabel&quot; : true,
+  &quot;messages&quot; : [ {
+    &quot;value&quot; : true,
+    &quot;type&quot; : &quot;Warning&quot;,
+    &quot;text&quot; : &quot;$standardLabel.FSCRtlMngCardUse.FSCRtlMngCardUseNoChangeDetected&quot;,
+    &quot;active&quot; : true
+  }, {
+    &quot;value&quot; : false,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;active&quot; : false
+  } ],
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;field&quot; : &quot;NoChangesDetected&quot;,
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;
+      } ]
+    }
+  },
+  &quot;label&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Validation</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ManageUsageControls</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;label&quot; : &quot;$standardLabel.FSCRtlMngCardUse.FSCRtlMngCardUseManageUsageControls&quot;,
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;OmnipreviousLabel&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;nextLabel&quot; : &quot;OmninextLabel&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;cancelLabel&quot; : &quot;&quot;,
+  &quot;cancelMessage&quot; : &quot;&quot;,
+  &quot;saveLabel&quot; : &quot;&quot;,
+  &quot;saveMessage&quot; : &quot;&quot;,
+  &quot;completeLabel&quot; : &quot;&quot;,
+  &quot;completeMessage&quot; : &quot;&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;NoCardsFound&quot;
+      }, {
+        &quot;field&quot; : &quot;ConnectAPIResponse&quot;,
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : null
+      } ]
+    }
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;chartLabel&quot; : null,
+  &quot;allowSaveForLater&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : &quot;&quot;
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>11.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>APIErrorMessage</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;Error&quot;,
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;ConnectAPIResponse&quot;
+      } ]
+    }
+  },
+  &quot;messages&quot; : [ {
+    &quot;value&quot; : true,
+    &quot;type&quot; : &quot;Warning&quot;,
+    &quot;text&quot; : &quot;$standardLabel.FSCServiceProcessSharedLabels.FSCServiceProcessAPIErrorMessage&quot;,
+    &quot;active&quot; : true
+  }, {
+    &quot;value&quot; : false,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;active&quot; : false
+  } ],
+  &quot;hideLabel&quot; : true,
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Validation</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>FSCRtlMngCardUseCallScript</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;customAttributes&quot; : [ {
+    &quot;name&quot; : &quot;parent-data&quot;,
+    &quot;source&quot; : &quot;true&quot;
+  }, {
+    &quot;name&quot; : &quot;records&quot;,
+    &quot;source&quot; : &quot;%Summary%&quot;
+  } ],
+  &quot;bStandalone&quot; : true,
+  &quot;lwcName&quot; : &quot;cfFSCRtlMngCardUseCallScript&quot;,
+  &quot;hide&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;isCommunitySite&quot;
+      } ]
+    }
+  },
+  &quot;label&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Custom Lightning Web Component</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>LineBreak10</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;LineBreak10&quot;,
+  &quot;padding&quot; : 10,
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Line Break</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>LineBreak9</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;LineBreak2&quot;,
+  &quot;padding&quot; : 70,
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>6.0</sequenceNumber>
+            <type>Line Break</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ReviewSummaryAccountDetails</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;isCommunitySite&quot;
+      } ]
+    }
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;hide&quot; : false,
+  &quot;lwcName&quot; : &quot;cfFSCServiceProcessShowAccountDetails&quot;,
+  &quot;bStandalone&quot; : false,
+  &quot;customAttributes&quot; : [ {
+    &quot;name&quot; : &quot;parent-data&quot;,
+    &quot;source&quot; : &quot;true&quot;
+  }, {
+    &quot;name&quot; : &quot;records&quot;,
+    &quot;source&quot; : &quot;%accounts%&quot;
+  } ]
+}</propertySetConfig>
+            <sequenceNumber>0.0</sequenceNumber>
+            <type>Custom Lightning Web Component</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ReviewSummaryDisplaySummary</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;hide&quot; : false,
+  &quot;lwcName&quot; : &quot;cfFSCRtlMngCardUseSummary&quot;,
+  &quot;bStandalone&quot; : true,
+  &quot;customAttributes&quot; : [ {
+    &quot;name&quot; : &quot;parent-data&quot;,
+    &quot;source&quot; : &quot;true&quot;
+  }, {
+    &quot;name&quot; : &quot;records&quot;,
+    &quot;source&quot; : &quot;%Summary%&quot;
+  } ]
+}</propertySetConfig>
+            <sequenceNumber>5.0</sequenceNumber>
+            <type>Custom Lightning Web Component</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ReviewSummarySelectedCard</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;text&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;dataJSON&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;textKey&quot; : &quot;$standardLabel.FSCRtlMngCardUse.FSCRtlMngCardUseSelectedCard&quot;,
+  &quot;sanitize&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ReviewSummary</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;label&quot; : &quot;$standardLabel.FSCServiceProcessSharedLabels.FSCServiceProcessReviewSummaryStep&quot;,
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;OmnipreviousLabel&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;nextLabel&quot; : &quot;OmnisubmitLabel&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;cancelLabel&quot; : &quot;&quot;,
+  &quot;cancelMessage&quot; : &quot;&quot;,
+  &quot;saveLabel&quot; : &quot;&quot;,
+  &quot;saveMessage&quot; : &quot;&quot;,
+  &quot;completeLabel&quot; : &quot;&quot;,
+  &quot;completeMessage&quot; : &quot;&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;NoCardsFound&quot;
+      }, {
+        &quot;field&quot; : &quot;ConnectAPIResponse&quot;,
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : null
+      } ]
+    }
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;chartLabel&quot; : null,
+  &quot;allowSaveForLater&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : &quot;&quot;
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>15.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>LineBreak8</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;LineBreak8&quot;,
+  &quot;padding&quot; : 70,
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Line Break</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>MngCardUse_ShowCards</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;hide&quot; : false,
+  &quot;lwcName&quot; : &quot;cfFSCRtlMngCardUseShowCards&quot;,
+  &quot;bStandalone&quot; : false,
+  &quot;customAttributes&quot; : [ {
+    &quot;name&quot; : &quot;parent-data&quot;,
+    &quot;source&quot; : &quot;true&quot;
+  }, {
+    &quot;name&quot; : &quot;records&quot;,
+    &quot;source&quot; : &quot;%Cards%&quot;
+  } ]
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Custom Lightning Web Component</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>SelectCardShowAccountDetails</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;isCommunitySite&quot;
+      } ]
+    }
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;hide&quot; : false,
+  &quot;lwcName&quot; : &quot;cfFSCServiceProcessShowAccountDetails&quot;,
+  &quot;bStandalone&quot; : false,
+  &quot;customAttributes&quot; : [ {
+    &quot;name&quot; : &quot;parent-data&quot;,
+    &quot;source&quot; : &quot;true&quot;
+  }, {
+    &quot;name&quot; : &quot;records&quot;,
+    &quot;source&quot; : &quot;%accounts%&quot;
+  } ]
+}</propertySetConfig>
+            <sequenceNumber>0.0</sequenceNumber>
+            <type>Custom Lightning Web Component</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ValidateCardSelection</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;false&quot;,
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;IsCardSelected&quot;
+      } ]
+    }
+  },
+  &quot;messages&quot; : [ {
+    &quot;value&quot; : true,
+    &quot;type&quot; : &quot;Warning&quot;,
+    &quot;text&quot; : &quot;$standardLabel.FSCRtlMngCardUse.FSCRtlMngCardUseSelectionValidationMessage&quot;,
+    &quot;active&quot; : true
+  }, {
+    &quot;value&quot; : false,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;active&quot; : false
+  } ],
+  &quot;hideLabel&quot; : true,
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Validation</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SelectCard</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;validationRequired&quot; : true,
+  &quot;previousWidth&quot; : 3,
+  &quot;nextWidth&quot; : 3,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;ConnectAPIResponse&quot;
+      } ]
+    }
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;allowSaveForLater&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;$standardLabel.FSCRtlMngCardUse.FSCRtlMngCardUseSelectCard&quot;,
+  &quot;chartLabel&quot; : &quot;&quot;,
+  &quot;previousLabel&quot; : &quot;OmnipreviousLabel&quot;,
+  &quot;nextLabel&quot; : &quot;OmninextLabel&quot;
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetCardDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;NoCardsFound&quot; : &quot;%Cards:IsCardsNull%&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetCaseConfirmationDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;CaseURL&quot; : &quot;=IF(%isCommunitySite% = true, IF(%CommunityBasePath% = &apos;/s&apos;, &apos;s/detail/&apos; + %apiResponse:caseId%, SPLIT(%CommunityBasePath%, &apos;/&apos;, 2)[1] + &apos;/s/detail/&apos; + %apiResponse:caseId%), %apiResponse:caseId%)&quot;,
+    &quot;CaseNumber&quot; : &quot;=%apiResponse:caseNumber%&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;NoCardsFound&quot;
+      }, {
+        &quot;field&quot; : &quot;ConnectAPIResponse&quot;,
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Success&quot;
+      } ]
+    }
+  },
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>19.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetChangeDetectIndicator</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;ssm&quot; : false,
+  &quot;wpm&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;rules&quot; : [ {
+        &quot;field&quot; : &quot;NoCardsFound&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;data&quot; : &quot;true&quot;
+      } ],
+      &quot;operator&quot; : &quot;AND&quot;
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;elementValueMap&quot; : {
+    &quot;NoChangesDetected&quot; : &quot;=IF(%SelectedCardType% != &apos;ATM Card&apos;, IF(AND(%CardUsageControls:OnlineInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:OnlineInternational%, %CardUsageControls:OnlineDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:OnlineDomestic%, %CardUsageControls:AtmInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:AtmInternational%, %CardUsageControls:AtmDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:AtmDomestic%, %CardUsageControls:MerchantInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:MerchantInternational%, %CardUsageControls:MerchantDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:MerchantDomestic%, %CardUsageControls:TapPayInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:TapPayInternational%, %CardUsageControls:TapPayDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:TapPayDomestic%)\n, true, false), IF(AND(%CardUsageControls:AtmInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:AtmInternational%, %CardUsageControls:AtmDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:AtmDomestic%)\n, true, false))&quot;
+  },
+  &quot;label&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12
+}</propertySetConfig>
+        <sequenceNumber>12.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetCreateCaseConfirmation</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;ConnectAPIResponse&quot; : &quot;=IF(%apiResponse%=NULL, &apos;Error&apos;, &apos;Success&apos;)&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;NoCardsFound&quot;
+      } ]
+    }
+  },
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>17.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetCreateCaseConfirmationError</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;elementErrorMap&quot; : {
+    &quot;APIErrorMessage&quot; : &quot;$standardLabel.FSCServiceProcessSharedLabels.FSCServiceProcessAPIErrorMessage&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;Error&quot;,
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;ConnectAPIResponse&quot;
+      }, {
+        &quot;field&quot; : &quot;NoCardsFound&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;data&quot; : &quot;true&quot;
+      } ]
+    }
+  },
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>18.0</sequenceNumber>
+        <type>Set Errors</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetNoCardSelected</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;IsCardSelected&quot; : &quot;=%SelectCard:MngCardUse_ShowCards:selectedcard:selectedcard|1:CardId% != NULL || COUNT(%Cards%) == 1&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;NoCardsFound&quot;
+      } ]
+    }
+  },
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetNoCardSelectedError</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;elementErrorMap&quot; : {
+    &quot;ValidateCardSelection&quot; : &quot;$standardLabel.FSCRtlMngCardUse.FSCRtlMngCardUseSelectionValidationMessage&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;NoCardsFound&quot;
+      }, {
+        &quot;field&quot; : &quot;IsCardSelected&quot;,
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;false&quot;
+      } ]
+    }
+  },
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>Set Errors</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetNoChangesDetectedError</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;ssm&quot; : false,
+  &quot;wpm&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;field&quot; : &quot;NoCardsFound&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;data&quot; : &quot;true&quot;
+      }, {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;NoChangesDetected&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;elementErrorMap&quot; : {
+    &quot;ValidateUsageControlChanges&quot; : &quot;$standardLabel.FSCRtlMngCardUse.FSCRtlMngCardUseNoChangeDetected&quot;
+  },
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12
+}</propertySetConfig>
+        <sequenceNumber>13.0</sequenceNumber>
+        <type>Set Errors</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetSelectedCardDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;SelectedCardId&quot; : &quot;=IF(COUNT(%Cards%)==1, %Cards:CardId%, %SelectCard:MngCardUse_ShowCards:selectedcard:selectedcard|1:CardId%)&quot;,
+    &quot;SelectedCardSourceSystemId&quot; : &quot;=IF(COUNT(%Cards%)==1, %Cards:CardSourceSystemId%, %SelectCard:MngCardUse_ShowCards:selectedcard:selectedcard|1:CardSourceSystemId%)&quot;,
+    &quot;SelectedCardNumberLast4&quot; : &quot;=IF(COUNT(%Cards%)==1, %Cards:CardNumberLast4%, %SelectCard:MngCardUse_ShowCards:selectedcard:selectedcard|1:CardNumberLast4%)&quot;,
+    &quot;SelectedCardType&quot; : &quot;=IF(COUNT(%Cards%)==1, %Cards:CardType%, %SelectCard:MngCardUse_ShowCards:selectedcard:selectedcard|1:CardType%)&quot;,
+    &quot;SelectedCardLabel&quot; : &quot;=IF(COUNT(%Cards%)==1, %Cards:CardNameLabel%, %SelectCard:MngCardUse_ShowCards:selectedcard:selectedcard|1:CardNameLabel%)&quot;,
+    &quot;SelectedCardName&quot; : &quot;=IF(COUNT(%Cards%)==1, %Cards:CardName%, %SelectCard:MngCardUse_ShowCards:selectedcard:selectedcard|1:CardName%)&quot;,
+    &quot;SelectedCardPrimaryOwnerId&quot; : &quot;=IF(COUNT(%Cards%)==1, %Cards:CardPrimaryOwnerId%, %SelectCard:MngCardUse_ShowCards:selectedcard:selectedcard|1:CardPrimaryOwnerId%)&quot;,
+    &quot;SelectedCardPrimaryOwnerType&quot; : &quot;=IF(COUNT(%Cards%)==1, %Cards:CardPrimaryOwnerType%, %SelectCard:MngCardUse_ShowCards:selectedcard:selectedcard|1:CardPrimaryOwnerType%)&quot;,
+    &quot;SelectedCardPrimaryOwnerSourceSysId&quot; : &quot;=IF(COUNT(%Cards%)==1, %Cards:CardPrimaryOwnerSourceSysId%, %SelectCard:MngCardUse_ShowCards:selectedcard:selectedcard|1:CardPrimaryOwnerSourceSysId%)&quot;,
+    &quot;SelectedCardNumber&quot; : &quot;=IF(COUNT(%Cards%)==1, %Cards:CardNumber%, %SelectCard:MngCardUse_ShowCards:selectedcard:selectedcard|1:CardNumber%)&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;NoCardsFound&quot;
+      } ]
+    }
+  },
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>7.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetSelectedCardLimits</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;pubsub&quot; : true,
+  &quot;message&quot; : {
+    &quot;UpdatedControldata&quot; : &quot;%CardUsageControls%&quot;
+  },
+  &quot;ssm&quot; : false,
+  &quot;wpm&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;rules&quot; : [ {
+        &quot;field&quot; : &quot;NoCardsFound&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;data&quot; : &quot;true&quot;
+      } ],
+      &quot;operator&quot; : &quot;AND&quot;
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;elementValueMap&quot; : {
+    &quot;ManageUsageControls&quot; : {
+      &quot;ManageUsageControlsDisplayUsageControls&quot; : {
+        &quot;controldata&quot; : {
+          &quot;data&quot; : &quot;%CardUsageControls%&quot;
+        }
+      }
+    },
+    &quot;NoChangesDetected&quot; : &quot;=false&quot;
+  },
+  &quot;label&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12
+}</propertySetConfig>
+        <sequenceNumber>10.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetServiceProcessAccountContext</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;integrationProcedureKey&quot; : &quot;SelfService_SetAccountContext&quot;,
+  &quot;useContinuation&quot; : false,
+  &quot;remoteOptions&quot; : {
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;useFuture&quot; : false,
+    &quot;chainable&quot; : false
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;extraPayload&quot; : { },
+  &quot;inProgressMessage&quot; : &quot;OmniinProgressMessage&quot;,
+  &quot;postMessage&quot; : &quot;OmniDone&quot;,
+  &quot;failureNextLabel&quot; : &quot;OmniContinue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;OmniAbort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;OmnifailureGoBackLabel&quot;,
+  &quot;failureAbortMessage&quot; : &quot;OmnifailureAbortMessage&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : &quot;&quot;
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>0.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetSummaryScreenValues</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;Summary&quot; : {
+      &quot;Cardtype&quot; : &quot;%SelectedCardType%&quot;,
+      &quot;SelectedCardName&quot; : &quot;%SelectedCardName%&quot;,
+      &quot;SelectedCardNumber&quot; : &quot;%SelectedCardNumberLast4%&quot;,
+      &quot;TapPayDomestic&quot; : &quot;=IF(%CardUsageControls:TapPayDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:TapPayDomestic%, IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:TapPayDomestic% == false, &apos;Disabled&apos;, &apos;Enabled&apos;), IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:TapPayDomestic% == false, &apos;Requested to be Disabled&apos;, &apos;Requested to be Enabled&apos;))&quot;,
+      &quot;TapPayInternational&quot; : &quot;=IF(%CardUsageControls:TapPayInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:TapPayInternational%, IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:TapPayInternational% == false, &apos;Disabled&apos;, &apos;Enabled&apos;), IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:TapPayInternational% == false, &apos;Requested to be Disabled&apos;, &apos;Requested to be Enabled&apos;))&quot;,
+      &quot;MerchantDomestic&quot; : &quot;=IF(%CardUsageControls:MerchantDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:MerchantDomestic%, IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:MerchantDomestic% == false, &apos;Disabled&apos;, &apos;Enabled&apos;), IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:MerchantDomestic% == false, &apos;Requested to be Disabled&apos;, &apos;Requested to be Enabled&apos;))&quot;,
+      &quot;MerchantInternational&quot; : &quot;=IF(%CardUsageControls:MerchantInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:MerchantInternational%, IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:MerchantInternational% == false, &apos;Disabled&apos;, &apos;Enabled&apos;), IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:MerchantInternational% == false, &apos;Requested to be Disabled&apos;, &apos;Requested to be Enabled&apos;))&quot;,
+      &quot;AtmDomestic&quot; : &quot;=IF(%CardUsageControls:AtmDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:AtmDomestic%, IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:AtmDomestic% == false, &apos;Disabled&apos;, &apos;Enabled&apos;), IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:AtmDomestic% == false, &apos;Requested to be Disabled&apos;, &apos;Requested to be Enabled&apos;))&quot;,
+      &quot;AtmInternational&quot; : &quot;=IF(%CardUsageControls:AtmInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:AtmInternational%, IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:AtmInternational% == false, &apos;Disabled&apos;, &apos;Enabled&apos;), IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:AtmInternational% == false, &apos;Requested to be Disabled&apos;, &apos;Requested to be Enabled&apos;))&quot;,
+      &quot;OnlineDomestic&quot; : &quot;=IF(%CardUsageControls:OnlineDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:OnlineDomestic%, IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:OnlineDomestic% == false, &apos;Disabled&apos;, &apos;Enabled&apos;), IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:OnlineDomestic% == false, &apos;Requested to be Disabled&apos;, &apos;Requested to be Enabled&apos;))&quot;,
+      &quot;OnlineInternational&quot; : &quot;=IF(%CardUsageControls:OnlineInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:OnlineInternational%, IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:OnlineInternational% == false, &apos;Disabled&apos;, &apos;Enabled&apos;), IF(%ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:OnlineInternational% == false, &apos;Requested to be Disabled&apos;, &apos;Requested to be Enabled&apos;))&quot;,
+      &quot;AtmUpdated&quot; : &quot;=IF(AND(%CardUsageControls:AtmInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:AtmInternational%, %CardUsageControls:AtmDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:AtmDomestic%),&apos;Disabled&apos;, &apos;Enabled&apos;)&quot;,
+      &quot;TapPayUpdated&quot; : &quot;=IF(AND(%CardUsageControls:TapPayInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:TapPayInternational%, %CardUsageControls:TapPayDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:TapPayDomestic%), &apos;Disabled&apos;, &apos;Enabled&apos;)&quot;,
+      &quot;OnlineUpdated&quot; : &quot;=IF(AND(%CardUsageControls:OnlineInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:OnlineInternational%, %CardUsageControls:OnlineDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:OnlineDomestic%), &apos;Disabled&apos;, &apos;Enabled&apos;)&quot;,
+      &quot;MerchantUpdated&quot; : &quot;=IF(AND(%CardUsageControls:MerchantInternational% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:MerchantInternational%, %CardUsageControls:MerchantDomestic% == %ManageUsageControls:ManageUsageControlsDisplayUsageControls:controldata:data:MerchantDomestic%), &apos;Disabled&apos;, &apos;Enabled&apos;)&quot;
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;NoCardsFound&quot;
+      } ]
+    }
+  },
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>14.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <overrideKey>fscserviceprocess__FSCRtl_ManageCardUsage_multiLanguage_1</overrideKey>
+    <propertySetConfig>{
+      &quot;persistentComponent&quot;: [
+        {
+          &quot;render&quot;: false,
+          &quot;remoteClass&quot;: &quot;&quot;,
+          &quot;remoteMethod&quot;: &quot;&quot;,
+          &quot;remoteTimeout&quot;: 30000,
+          &quot;remoteOptions&quot;: {
+            &quot;preTransformBundle&quot;: &quot;&quot;,
+            &quot;postTransformBundle&quot;: &quot;&quot;
+          },
+          &quot;preTransformBundle&quot;: &quot;&quot;,
+          &quot;postTransformBundle&quot;: &quot;&quot;,
+          &quot;sendJSONPath&quot;: &quot;&quot;,
+          &quot;sendJSONNode&quot;: &quot;&quot;,
+          &quot;responseJSONPath&quot;: &quot;&quot;,
+          &quot;responseJSONNode&quot;: &quot;&quot;,
+          &quot;id&quot;: &quot;vlcCart&quot;,
+          &quot;itemsKey&quot;: &quot;cartItems&quot;,
+          &quot;modalConfigurationSetting&quot;: {
+            &quot;modalHTMLTemplateId&quot;: &quot;vlcProductConfig.html&quot;,
+            &quot;modalController&quot;: &quot;ModalProductCtrl&quot;,
+            &quot;modalSize&quot;: &quot;lg&quot;
+          }
+        },
+        {
+          &quot;render&quot;: false,
+          &quot;dispOutsideOmni&quot;: false,
+          &quot;remoteClass&quot;: &quot;&quot;,
+          &quot;remoteMethod&quot;: &quot;&quot;,
+          &quot;remoteTimeout&quot;: 30000,
+          &quot;remoteOptions&quot;: {
+            &quot;preTransformBundle&quot;: &quot;&quot;,
+            &quot;postTransformBundle&quot;: &quot;&quot;
+          },
+          &quot;preTransformBundle&quot;: &quot;&quot;,
+          &quot;postTransformBundle&quot;: &quot;&quot;,
+          &quot;id&quot;: &quot;vlcKnowledge&quot;,
+          &quot;itemsKey&quot;: &quot;knowledgeItems&quot;,
+          &quot;modalConfigurationSetting&quot;: {
+            &quot;modalHTMLTemplateId&quot;: &quot;&quot;,
+            &quot;modalController&quot;: &quot;&quot;,
+            &quot;modalSize&quot;: &quot;lg&quot;
+          }
+        }
+      ],
+      &quot;allowSaveForLater&quot;: false,
+      &quot;saveNameTemplate&quot;: null,
+      &quot;saveExpireInDays&quot;: null,
+      &quot;saveForLaterRedirectPageName&quot;: &quot;sflRedirect&quot;,
+      &quot;saveForLaterRedirectTemplateUrl&quot;: &quot;vlcSaveForLaterAcknowledge.html&quot;,
+      &quot;saveContentEncoded&quot;: false,
+      &quot;saveObjectId&quot;: &quot;%ContextId%&quot;,
+      &quot;saveURLPatterns&quot;: {},
+      &quot;autoSaveOnStepNext&quot;: false,
+      &quot;elementTypeToHTMLTemplateMapping&quot;: {},
+      &quot;seedDataJSON&quot;: {},
+      &quot;trackingCustomData&quot;: {},
+      &quot;enableKnowledge&quot;: false,
+      &quot;bLK&quot;: false,
+      &quot;lkObjName&quot;: null,
+      &quot;knowledgeArticleTypeQueryFieldsMap&quot;: {},
+      &quot;timeTracking&quot;: false,
+      &quot;hideStepChart&quot;: false,
+      &quot;mergeSavedData&quot;: false,
+      &quot;visualforcePagesAvailableInPreview&quot;: {},
+      &quot;cancelType&quot;: &quot;SObject&quot;,
+      &quot;allowCancel&quot;: true,
+      &quot;cancelSource&quot;: &quot;%ContextId%&quot;,
+      &quot;cancelRedirectPageName&quot;: &quot;OmniScriptCancelled&quot;,
+      &quot;cancelRedirectTemplateUrl&quot;: &quot;vlcCancelled.html&quot;,
+      &quot;wpm&quot;: false,
+      &quot;ssm&quot;: false,
+      &quot;message&quot;: {},
+      &quot;pubsub&quot;: false,
+      &quot;autoFocus&quot;: false,
+      &quot;currencyCode&quot;: &quot;&quot;,
+      &quot;showInputWidth&quot;: false,
+      &quot;rtpSeed&quot;: false,
+      &quot;consoleTabTitle&quot;: &quot;$standardLabel.FSCRtlMngCardUse.FSCRtlMngCardUse&quot;,
+      &quot;consoleTabIcon&quot;: &quot;custom:custom18&quot;,
+      &quot;errorMessage&quot;: {
+        &quot;custom&quot;: []
+      },
+      &quot;stylesheet&quot;: {
+        &quot;newport&quot;: &quot;&quot;,
+        &quot;lightning&quot;: &quot;&quot;,
+        &quot;newportRtl&quot;: &quot;&quot;,
+        &quot;lightningRtl&quot;: &quot;&quot;
+      },
+      &quot;stepChartPlacement&quot;: &quot;right&quot;,
+      &quot;disableUnloadWarn&quot;: true,
+      &quot;scrollBehavior&quot;: &quot;auto&quot;,
+      &quot;currentLanguage&quot;: &quot;en_US&quot;
+    }</propertySetConfig>
+    <subType>ManageCardUsage</subType>
+    <type>FSCRtl</type>
+    <uniqueName>FSCRtl_ManageCardUsage_multiLanguage_2</uniqueName>
+    <versionNumber>2.0</versionNumber>
+    <webComponentKey>80ca3cc3-e6b1-e2a3-6750-50e373de0b46</webComponentKey>
+</OmniScript>

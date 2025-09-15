@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;200&quot; : {
+    &quot;statusCode&quot; : &quot;&quot;,
+    &quot;requestId&quot; : &quot;&quot;,
+    &quot;result&quot; : {
+      &quot;matches&quot; : [ {
+        &quot;name&quot; : &quot;&quot;,
+        &quot;score&quot; : &quot;&quot;,
+        &quot;result&quot; : &quot;&quot;
+      } ],
+      &quot;combinedScore&quot; : &quot;&quot;
+    }
+  }
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;200&quot; : {
+    &quot;statusCode&quot; : &quot;&quot;,
+    &quot;requestId&quot; : &quot;&quot;,
+    &quot;result&quot; : {
+      &quot;matches&quot; : [ {
+        &quot;name&quot; : &quot;&quot;,
+        &quot;score&quot; : &quot;&quot;,
+        &quot;result&quot; : &quot;&quot;
+      } ],
+      &quot;combinedScore&quot; : &quot;&quot;
+    }
+  }
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaTransformNameMatchResponse</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformNameMatchResponseCustom9585</globalKey>
+        <inputFieldName>200:result:matches:score</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformNameMatchResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:result:matches:score</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformNameMatchResponseCustom6563</globalKey>
+        <inputFieldName>200:result:matches:result</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformNameMatchResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:result:matches:result</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformNameMatchResponseCustom3027</globalKey>
+        <inputFieldName>200:statusCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformNameMatchResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:statusCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformNameMatchResponseCustom2751</globalKey>
+        <inputFieldName>200:result:combinedScore</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformNameMatchResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:result:combinedScore</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformNameMatchResponseCustom7684</globalKey>
+        <inputFieldName>200:result:matches:name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformNameMatchResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:result:matches:name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformNameMatchResponseCustom8269</globalKey>
+        <inputFieldName>200:requestId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformNameMatchResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:requestId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;200&quot; : {
+    &quot;statusCode&quot; : &quot;&quot;,
+    &quot;requestId&quot; : &quot;&quot;,
+    &quot;result&quot; : {
+      &quot;matches&quot; : [ {
+        &quot;name&quot; : &quot;&quot;,
+        &quot;score&quot; : &quot;&quot;,
+        &quot;result&quot; : &quot;&quot;
+      } ],
+      &quot;combinedScore&quot; : &quot;&quot;
+    }
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>DigitalLendingIndiaTransformNameMatchResponse_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

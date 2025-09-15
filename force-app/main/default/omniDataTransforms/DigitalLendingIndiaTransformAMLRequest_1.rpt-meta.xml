@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;Gender&quot; : &quot;&quot;,
+  &quot;FirstName&quot; : &quot;&quot;,
+  &quot;PartyProfileName&quot; : &quot;&quot;,
+  &quot;DateOfBirth&quot; : &quot;&quot;,
+  &quot;LastName&quot; : &quot;&quot;,
+  &quot;Mobile&quot; : &quot;&quot;,
+  &quot;Nationality&quot; : &quot;&quot;,
+  &quot;ResidentType&quot; : &quot;&quot;
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;name&quot; : &quot;&quot;,
+  &quot;dateOfBirth&quot; : &quot;&quot;,
+  &quot;gender&quot; : &quot;&quot;,
+  &quot;agency&quot; : &quot;&quot;,
+  &quot;pdfReport&quot; : false,
+  &quot;nameMatch&quot; : false,
+  &quot;nameMatchThreshold&quot; : false,
+  &quot;clientData&quot; : {
+    &quot;caseId&quot; : &quot;&quot;
+  }
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaTransformAMLRequest</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:gender &apos;Male&apos; = &apos;MALE&apos; | var:gender &apos;Female&apos; = &apos;FEMALE&apos; &apos;&apos; IF IF</formulaConverted>
+        <formulaExpression>IF(%gender%=&apos;Male&apos;, &apos;MALE&apos;, IF(%gender%=&apos;Female&apos;, &apos;FEMALE&apos;, &apos;&apos;))</formulaExpression>
+        <formulaResultPath>CapGender</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaTransformAMLRequestCustom7433</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformAMLRequest</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformAMLRequestCustom7868</globalKey>
+        <inputFieldName>CapGender</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformAMLRequest</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>gender</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:dateOfBirth var:NULL != | | | var:dateOfBirth DAY 10 &lt; | &apos;0&apos; | | var:dateOfBirth DAY TOSTRING CONCAT | | var:dateOfBirth DAY TOSTRING IF &apos;/&apos; | | var:dateOfBirth MONTH 10 &lt; | &apos;0&apos; | | var:dateOfBirth MONTH TOSTRING CONCAT | | var:dateOfBirth MONTH TOSTRING IF &apos;/&apos; | | var:dateOfBirth YEAR TOSTRING CONCAT &apos;&apos; IF</formulaConverted>
+        <formulaExpression>IF(%dateOfBirth%!=NULL,CONCAT(
+    IF(
+        DAY(%dateOfBirth%) &lt; 10,
+        CONCAT(&apos;0&apos; ,TOSTRING(DAY(%dateOfBirth%))),
+        TOSTRING(DAY(%dateOfBirth%))
+    ),
+    &apos;/&apos;,
+    IF(
+        MONTH(%dateOfBirth%) &lt; 10,
+        CONCAT(&apos;0&apos;,TOSTRING(MONTH(%dateOfBirth%))),
+        TOSTRING(MONTH(%dateOfBirth%))
+    ),
+    &apos;/&apos;,
+    TOSTRING(YEAR(%dateOfBirth%))
+),&apos;&apos;)</formulaExpression>
+        <formulaResultPath>DOB</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaTransformAMLRequestCustom4538</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformAMLRequest</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:FirstName ISNOTBLANK | var:FirstName &quot;/\/\/&quot; var:LastName CONCAT var:LastName IF</formulaConverted>
+        <formulaExpression>IF(ISNOTBLANK(FirstName),CONCAT(FirstName,&quot; &quot;,LastName),LastName)</formulaExpression>
+        <formulaResultPath>FullName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaTransformAMLRequestCustom1035</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformAMLRequest</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformAMLRequestCustom3011</globalKey>
+        <inputFieldName>DOB</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformAMLRequest</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>dateOfBirth</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformAMLRequestCustom5230</globalKey>
+        <inputFieldName>FullName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformAMLRequest</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformAMLRequestCustom8755</globalKey>
+        <inputFieldName>InputRecordId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformAMLRequest</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>clientData:caseId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;Gender&quot; : &quot;&quot;,
+  &quot;PartyProfileName&quot; : &quot;&quot;,
+  &quot;DateOfBirth&quot; : &quot;&quot;,
+  &quot;LastName&quot; : &quot;&quot;,
+  &quot;FirstName&quot; : &quot;&quot;,
+  &quot;Mobile&quot; : &quot;&quot;,
+  &quot;Nationality&quot; : &quot;&quot;,
+  &quot;ResidentType&quot; : &quot;&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>DigitalLendingIndiaTransformAMLRequest_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

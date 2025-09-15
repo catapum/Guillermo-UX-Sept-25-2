@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalServiceRegistration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>DigitalLendingIndiaAMLScreening</label>
+    <namedCredentialReference>DigitalLendingIndiaAMLScreening</namedCredentialReference>
+    <operations>
+        <active>true</active>
+        <name>postv3x2e2searchaml</name>
+    </operations>
+    <registrationProviderType>Custom</registrationProviderType>
+    <schema>{
+  &quot;openapi&quot;: &quot;3.0.0&quot;,
+  &quot;info&quot;: {
+    &quot;title&quot;: &quot;AML Search API&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;
+  },
+  &quot;servers&quot;: [{
+    &quot;url&quot;: &quot;https://testapi.kscan.in/&quot;,
+    &quot;description&quot;: &quot;Test API server&quot;
+  }],
+  &quot;paths&quot;: {
+    &quot;/v3.2/search/aml&quot;: {
+      &quot;post&quot;: {
+        &quot;tags&quot;: [
+          &quot;Miscellaneous &gt; AML Sanctions Screening&quot;
+        ],
+        &quot;summary&quot;: &quot;/search/aml&quot;,
+        &quot;requestBody&quot;: {
+          &quot;required&quot;: true,
+          &quot;content&quot;: {
+            &quot;application/json&quot;: {
+              &quot;schema&quot;: {
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;properties&quot;: {
+                  &quot;name&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                  },
+                  &quot;dateOfBirth&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                  },
+                  &quot;gender&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                  },
+                  &quot;agency&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                  },
+                  &quot;pdfReport&quot;: {
+                    &quot;type&quot;: &quot;boolean&quot;
+                  },
+                  &quot;nameMatch&quot;: {
+                    &quot;type&quot;: &quot;boolean&quot;
+                  },
+                  &quot;nameMatchThreshold&quot;: {
+                    &quot;type&quot;: &quot;boolean&quot;
+                  },
+                  &quot;clientData&quot;: {
+                    &quot;type&quot;: &quot;object&quot;,
+                    &quot;properties&quot;: {
+                      &quot;caseId&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        &quot;responses&quot;: {
+          &quot;200&quot;: {
+            &quot;description&quot;: &quot;Successful response&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;schema&quot;: {
+                  &quot;type&quot;: &quot;object&quot;,
+                  &quot;properties&quot;: {
+                    &quot;requestId&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;statusCode&quot;: {
+                      &quot;type&quot;: &quot;integer&quot;
+                    },
+                    &quot;result&quot;: {
+                      &quot;oneOf&quot;: [{
+                          &quot;type&quot;: &quot;array&quot;,
+                          &quot;items&quot;: {
+                            &quot;type&quot;: &quot;object&quot;,
+                            &quot;properties&quot;: {
+                              &quot;dataSource&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                              },
+                              &quot;name&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                              },
+                              &quot;dateOfBirth&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                              },
+                              &quot;gender&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                              },
+                              &quot;placeOfBirth&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                              },
+                              &quot;nationality&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                              },
+                              &quot;characteristics&quot;: {
+                                &quot;type&quot;: &quot;object&quot;,
+                                &quot;properties&quot;: {
+                                  &quot;colourOfEyes&quot;: {
+                                    &quot;type&quot;: &quot;string&quot;
+                                  },
+                                  &quot;colourOfHair&quot;: {
+                                    &quot;type&quot;: &quot;string&quot;
+                                  },
+                                  &quot;distinguishingMarksAndCharacteristics&quot;: {
+                                    &quot;type&quot;: &quot;string&quot;
+                                  },
+                                  &quot;height&quot;: {
+                                    &quot;type&quot;: &quot;string&quot;
+                                  },
+                                  &quot;weight&quot;: {
+                                    &quot;type&quot;: &quot;string&quot;
+                                  }
+                                }
+                              },
+                              &quot;charges&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                              },
+                              &quot;languagesKnown&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                              },
+                              &quot;relativeDetails&quot;: {
+                                &quot;type&quot;: &quot;object&quot;,
+                                &quot;properties&quot;: {
+                                  &quot;fatherName&quot;: {
+                                    &quot;type&quot;: &quot;string&quot;
+                                  },
+                                  &quot;motherName&quot;: {
+                                    &quot;type&quot;: &quot;string&quot;
+                                  },
+                                  &quot;husbandName&quot;: {
+                                    &quot;type&quot;: &quot;string&quot;
+                                  }
+                                }
+                              },
+                              &quot;details&quot;: {
+                                &quot;type&quot;: &quot;object&quot;,
+                                &quot;properties&quot;: {
+                                  &quot;program&quot;: {
+                                    &quot;type&quot;: &quot;string&quot;
+                                  },
+                                  &quot;remark&quot;: {
+                                    &quot;type&quot;: &quot;string&quot;
+                                  }
+                                }
+                              },
+                              &quot;aliases&quot;: {
+                                &quot;type&quot;: &quot;array&quot;,
+                                &quot;items&quot;: {
+                                  &quot;type&quot;: &quot;string&quot;
+                                }
+                              },
+                              &quot;agency&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                              },
+                              &quot;agencyList&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                              },
+                              &quot;score&quot;: {
+                                &quot;type&quot;: &quot;number&quot;
+                              }
+                            }
+                          }
+                        },
+                        {
+                          &quot;type&quot;: &quot;object&quot;,
+                          &quot;properties&quot;: {
+                            &quot;dataSource&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;name&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;dateOfBirth&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;gender&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;placeOfBirth&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;nationality&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;characteristics&quot;: {
+                              &quot;type&quot;: &quot;object&quot;,
+                              &quot;properties&quot;: {
+                                &quot;colourOfEyes&quot;: {
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                &quot;colourOfHair&quot;: {
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                &quot;distinguishingMarksAndCharacteristics&quot;: {
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                &quot;height&quot;: {
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                &quot;weight&quot;: {
+                                  &quot;type&quot;: &quot;string&quot;
+                                }
+                              }
+                            },
+                            &quot;charges&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;languagesKnown&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;relativeDetails&quot;: {
+                              &quot;type&quot;: &quot;object&quot;,
+                              &quot;properties&quot;: {
+                                &quot;fatherName&quot;: {
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                &quot;motherName&quot;: {
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                &quot;husbandName&quot;: {
+                                  &quot;type&quot;: &quot;string&quot;
+                                }
+                              }
+                            },
+                            &quot;details&quot;: {
+                              &quot;type&quot;: &quot;object&quot;,
+                              &quot;properties&quot;: {
+                                &quot;program&quot;: {
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                &quot;remark&quot;: {
+                                  &quot;type&quot;: &quot;string&quot;
+                                }
+                              }
+                            },
+                            &quot;aliases&quot;: {
+                              &quot;type&quot;: &quot;array&quot;,
+                              &quot;items&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                              }
+                            },
+                            &quot;agency&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;agencyList&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;score&quot;: {
+                              &quot;type&quot;: &quot;number&quot;
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    &quot;clientData&quot;: {
+                      &quot;type&quot;: &quot;object&quot;,
+                      &quot;properties&quot;: {
+                        &quot;caseId&quot;: {
+                          &quot;type&quot;: &quot;string&quot;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}</schema>
+    <schemaType>OpenApi3</schemaType>
+    <serviceBinding>{&quot;host&quot;:&quot;testapi.kscan.in&quot;,&quot;basePath&quot;:&quot;/&quot;,&quot;allowedSchemes&quot;:[&quot;HTTPS&quot;],&quot;requestMediaTypes&quot;:[],&quot;responseMediaTypes&quot;:[],&quot;compatibleMediaTypes&quot;:{},&quot;extensions&quot;:{}}</serviceBinding>
+    <status>Complete</status>
+    <systemVersion>5</systemVersion>
+</ExternalServiceRegistration>

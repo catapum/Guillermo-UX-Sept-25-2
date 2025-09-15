@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Are Physical and Registered Address the same?</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Are Physical and Registered Address the same?</questionText>
+        <responseValues>Yes
+No</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Select</dataType>
+    <developerName>Are_Physical_and_Registered_Address_the_same</developerName>
+    <name>Are Physical and Registered Address the same?</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

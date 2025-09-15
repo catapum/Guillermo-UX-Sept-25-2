@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Products/Services Requested</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Products/Services Requested</questionText>
+        <responseValues>Business Checking Account
+Business Savings Account
+Treasury and Cash Management Services
+Business Credit Cards</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Multiselect</dataType>
+    <developerName>Products_Services_Requested</developerName>
+    <name>Products/Services Requested</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

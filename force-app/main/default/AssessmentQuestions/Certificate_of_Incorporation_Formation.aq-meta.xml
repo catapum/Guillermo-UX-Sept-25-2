@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Certificate of Incorporation/Formation</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Certificate of Incorporation/Formation</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>File</dataType>
+    <developerName>Certificate_of_Incorporation_Formation</developerName>
+    <name>Certificate of Incorporation/Formation</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

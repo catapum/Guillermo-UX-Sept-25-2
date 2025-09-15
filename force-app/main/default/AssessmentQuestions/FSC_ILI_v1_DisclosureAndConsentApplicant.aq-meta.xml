@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <description>Providing consent for a data use purpose</description>
+        <isActive>true</isActive>
+        <name>Disclosure and Consent</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>I acknowledge that I understand and consent to the terms included in the disclosure.</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Checkbox</dataType>
+    <developerName>FSC_ILI_v1_DisclosureAndConsentApplicant</developerName>
+    <name>Disclosure and Consent</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

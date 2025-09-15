@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Country of Incorporation/Formation</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Country of Incorporation/Formation</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Text</dataType>
+    <developerName>Country_of_Incorporation_Formation</developerName>
+    <name>Country of Incorporation/Formation</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

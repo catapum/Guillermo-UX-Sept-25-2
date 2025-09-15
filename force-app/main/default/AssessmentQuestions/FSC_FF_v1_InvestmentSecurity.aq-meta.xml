@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>FSC_FF_InvestmentSecurity</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>How comfortable are you with investment risk?</questionText>
+        <responseValues>Not comfortable. My primary goal is to protect my current investment.
+Somewhat comfortable. I can accept a reasonable level of volatility.
+Comfortable with volatility.
+Very comfortable. I can accept some volatility for a portion of my portfolio.</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Radio</dataType>
+    <developerName>FSC_FF_v1_InvestmentSecurity</developerName>
+    <name>FSC_FF_InvestmentSecurity</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

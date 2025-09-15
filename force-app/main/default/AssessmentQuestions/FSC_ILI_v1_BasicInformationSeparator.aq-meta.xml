@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>BasicInformationSeparator</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>&lt;hr style=&quot;border: 0; height: 1px; background-color: #ccc; margin: 10px 0;&quot; /&gt;</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextBlock</dataType>
+    <developerName>FSC_ILI_v1_BasicInformationSeparator</developerName>
+    <name>BasicInformationSeparator</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

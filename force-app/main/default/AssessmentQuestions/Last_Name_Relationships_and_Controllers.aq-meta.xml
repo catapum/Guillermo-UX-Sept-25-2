@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Last Name Relationships and Controllers</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Last Name</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Text</dataType>
+    <developerName>Last_Name_Relationships_and_Controllers</developerName>
+    <name>Last Name Relationships and Controllers</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

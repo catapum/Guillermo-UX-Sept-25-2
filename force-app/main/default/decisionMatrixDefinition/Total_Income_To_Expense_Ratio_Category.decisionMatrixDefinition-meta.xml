@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionMatrixDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Total Income To Expense Ratio Category</label>
+    <processType>Bre</processType>
+    <type>Standard</type>
+    <versions>
+        <fullName>Total_Income_To_Expense_Ratio_Category_V1</fullName>
+        <columns>
+            <columnType>Input</columnType>
+            <dataType>NumberRange</dataType>
+            <displaySequence>1</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>TotalIncomeToExpenseRatio</name>
+            <rangeValue>0,1.5,2</rangeValue>
+        </columns>
+        <columns>
+            <columnType>Output</columnType>
+            <dataType>Text</dataType>
+            <displaySequence>2</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>TotalIncomeToExpenseRatioCategory</name>
+        </columns>
+        <decisionMatrixDefinition>Total_Income_To_Expense_Ratio_Category</decisionMatrixDefinition>
+        <label>Total Income To Expense Ratio Category V1</label>
+        <startDate>2024-07-07T13:35:56.000Z</startDate>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </versions>
+</DecisionMatrixDefinition>

@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalServiceRegistration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>DigitalLendingIndiaVideoKYCGenerateWebLink</label>
+    <namedCredentialReference>VKYC2</namedCredentialReference>
+    <operations>
+        <active>true</active>
+        <name>gettestvideokycapiv2generatex2dusertokenbycustomerx2dtransactionid</name>
+    </operations>
+    <operations>
+        <active>true</active>
+        <name>gettestvideokycapiv2link</name>
+    </operations>
+    <operations>
+        <active>true</active>
+        <name>gettestvideokycapiv2linkx2dpd</name>
+    </operations>
+    <operations>
+        <active>true</active>
+        <name>posttestvideokycapiv2customersx2dpd</name>
+    </operations>
+    <operations>
+        <active>true</active>
+        <name>posttestvideokycapiv3customers</name>
+    </operations>
+    <registrationProviderType>Custom</registrationProviderType>
+    <schema>{
+  &quot;openapi&quot;: &quot;3.0.0&quot;,
+  &quot;info&quot;: {
+    &quot;title&quot;: &quot;Karza API&quot;,
+    &quot;description&quot;: &quot;APIs provided by Karza for various services&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;
+  },
+  &quot;servers&quot;: [{
+    &quot;url&quot;: &quot;https://app.karza.in&quot;,
+    &quot;description&quot;: &quot;Test API server&quot;
+  }],
+  &quot;paths&quot;: {
+    &quot;/test/videokyc/api/v3/customers&quot;: {
+      &quot;post&quot;: {
+        &quot;tags&quot;: [
+          &quot;Video KYC&quot;
+        ],
+        &quot;summary&quot;: &quot;Submit customer information for Video KYC&quot;,
+        &quot;requestBody&quot;: {
+          &quot;content&quot;: {
+            &quot;application/json&quot;: {
+              &quot;schema&quot;: {
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;properties&quot;: {
+                  &quot;customerId&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                  },
+                  &quot;applicationFormData&quot;: {
+                    &quot;type&quot;: &quot;object&quot;,
+                    &quot;properties&quot;: {
+                      &quot;applicationId&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;applicationType&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;firstName&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;currentAddress&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;permanentAddress&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      }
+                    },
+                    &quot;required&quot;: [
+                      &quot;applicationId&quot;,
+                      &quot;applicationType&quot;,
+                      &quot;firstName&quot;,
+                      &quot;currentAddress&quot;,
+                      &quot;permanentAddress&quot;
+                    ]
+                  }
+                },
+                &quot;required&quot;: [
+                  &quot;customerId&quot;,
+                  &quot;applicationFormData&quot;
+                ]
+              }
+            }
+          }
+        },
+        &quot;parameters&quot;: [{
+          &quot;name&quot;: &quot;karzatoken&quot;,
+          &quot;in&quot;: &quot;header&quot;,
+          &quot;required&quot;: true,
+          &quot;schema&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;description&quot;: &quot;The session token obtained from the /v3/get-jwt endpoint&quot;
+        }],
+        &quot;responses&quot;: {
+          &quot;200&quot;: {
+            &quot;description&quot;: &quot;Successful response with transaction ID&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;schema&quot;: {
+                  &quot;type&quot;: &quot;object&quot;,
+                  &quot;properties&quot;: {
+                    &quot;statusCode&quot;: {
+                      &quot;type&quot;: &quot;integer&quot;
+                    },
+                    &quot;result&quot;: {
+                      &quot;type&quot;: &quot;object&quot;,
+                      &quot;properties&quot;: {
+                        &quot;data&quot;: {
+                          &quot;type&quot;: &quot;object&quot;,
+                          &quot;properties&quot;: {
+                            &quot;transactionId&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            }
+                          },
+                          &quot;required&quot;: [
+                            &quot;transactionId&quot;
+                          ]
+                        },
+                        &quot;success&quot;: {
+                          &quot;type&quot;: &quot;boolean&quot;
+                        }
+                      },
+                      &quot;required&quot;: [
+                        &quot;data&quot;,
+                        &quot;success&quot;
+                      ]
+                    },
+                    &quot;requestId&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    }
+                  },
+                  &quot;required&quot;: [
+                    &quot;statusCode&quot;,
+                    &quot;result&quot;,
+                    &quot;requestId&quot;
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    &quot;/test/videokyc/api/v2/customers-pd&quot;: {
+      &quot;post&quot;: {
+        &quot;tags&quot;: [
+          &quot;Video PD&quot;
+        ],
+        &quot;summary&quot;: &quot;API to create a transaction ID for customer using the karzatoken&quot;,
+        &quot;requestBody&quot;: {
+          &quot;content&quot;: {
+            &quot;application/json&quot;: {
+              &quot;schema&quot;: {
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;properties&quot;: {
+                  &quot;customerId&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                  },
+                  &quot;applicantFormData&quot;: {
+                    &quot;type&quot;: &quot;object&quot;,
+                    &quot;properties&quot;: {
+                      &quot;firstName&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;phone&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;email&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      }
+                    },
+                    &quot;required&quot;: [
+                      &quot;firstName&quot;,
+                      &quot;phone&quot;,
+                      &quot;email&quot;
+                    ]
+                  }
+                },
+                &quot;required&quot;: [
+                  &quot;customerId&quot;,
+                  &quot;applicantFormData&quot;
+                ]
+              }
+            }
+          }
+        },
+        &quot;responses&quot;: {
+          &quot;200&quot;: {
+            &quot;description&quot;: &quot;Successful response&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;schema&quot;: {
+                  &quot;type&quot;: &quot;object&quot;,
+                  &quot;properties&quot;: {
+                    &quot;statusCode&quot;: {
+                      &quot;type&quot;: &quot;integer&quot;,
+                      &quot;description&quot;: &quot;Status code indicating the result of the operation&quot;,
+                      &quot;example&quot;: 101
+                    },
+                    &quot;requestId&quot;: {
+                      &quot;type&quot;: &quot;string&quot;,
+                      &quot;description&quot;: &quot;Unique identifier for the request&quot;,
+                      &quot;example&quot;: &quot;e9dbf1ed-89b1-4b9a-9fe8-1bdef5abab4d&quot;
+                    },
+                    &quot;result&quot;: {
+                      &quot;type&quot;: &quot;object&quot;,
+                      &quot;properties&quot;: {
+                        &quot;data&quot;: {
+                          &quot;type&quot;: &quot;object&quot;,
+                          &quot;properties&quot;: {
+                            &quot;customerId&quot;: {
+                              &quot;type&quot;: &quot;string&quot;,
+                              &quot;description&quot;: &quot;Customer ID associated with the transaction&quot;
+                            },
+                            &quot;transactionId&quot;: {
+                              &quot;type&quot;: &quot;string&quot;,
+                              &quot;description&quot;: &quot;Unique identifier for the transaction&quot;
+                            }
+                          }
+                        },
+                        &quot;success&quot;: {
+                          &quot;type&quot;: &quot;boolean&quot;,
+                          &quot;description&quot;: &quot;Indicates whether the operation was successful&quot;
+                        },
+                        &quot;reason&quot;: {
+                          &quot;type&quot;: &quot;string&quot;,
+                          &quot;description&quot;: &quot;Additional information or reason for the result&quot;,
+                          &quot;nullable&quot;: true
+                        }
+                      },
+                      &quot;required&quot;: [
+                        &quot;statusCode&quot;,
+                        &quot;requestId&quot;,
+                        &quot;result&quot;
+                      ]
+                    }
+                  },
+                  &quot;required&quot;: [
+                    &quot;statusCode&quot;,
+                    &quot;requestId&quot;,
+                    &quot;result&quot;
+                  ]
+                }
+              }
+            }
+          }
+        },
+        &quot;parameters&quot;: [{
+            &quot;name&quot;: &quot;Content-Type&quot;,
+            &quot;in&quot;: &quot;header&quot;,
+            &quot;required&quot;: false,
+            &quot;schema&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;enum&quot;: [
+                &quot;application/json&quot;
+              ],
+              &quot;default&quot;: &quot;application/json&quot;
+            }
+          },
+          {
+            &quot;name&quot;: &quot;karzatoken&quot;,
+            &quot;in&quot;: &quot;header&quot;,
+            &quot;required&quot;: true,
+            &quot;schema&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+            },
+            &quot;description&quot;: &quot;The session token obtained from the /v3/get-jwt endpoint&quot;
+          }
+        ]
+      }
+    },
+    &quot;/test/videokyc/api/v2/generate-usertoken/{customer-transactionid}&quot;: {
+      &quot;get&quot;: {
+        &quot;tags&quot;: [
+          &quot;Video KYC&quot;
+        ],
+        &quot;summary&quot;: &quot;Generate User Token&quot;,
+        &quot;parameters&quot;: [{
+            &quot;name&quot;: &quot;customer-transactionid&quot;,
+            &quot;in&quot;: &quot;path&quot;,
+            &quot;required&quot;: true,
+            &quot;schema&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+            },
+            &quot;description&quot;: &quot;The customer transaction ID&quot;
+          },
+          {
+            &quot;name&quot;: &quot;karzatoken&quot;,
+            &quot;in&quot;: &quot;header&quot;,
+            &quot;required&quot;: true,
+            &quot;schema&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+            },
+            &quot;description&quot;: &quot;The session token obtained from the /v3/get-jwt endpoint&quot;
+          }
+        ],
+        &quot;responses&quot;: {
+          &quot;200&quot;: {
+            &quot;description&quot;: &quot;Successful response with user token&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;schema&quot;: {
+                  &quot;type&quot;: &quot;object&quot;,
+                  &quot;properties&quot;: {
+                    &quot;statusCode&quot;: {
+                      &quot;type&quot;: &quot;integer&quot;
+                    },
+                    &quot;result&quot;: {
+                      &quot;type&quot;: &quot;object&quot;,
+                      &quot;properties&quot;: {
+                        &quot;data&quot;: {
+                          &quot;type&quot;: &quot;object&quot;,
+                          &quot;properties&quot;: {
+                            &quot;userToken&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            }
+                          },
+                          &quot;required&quot;: [
+                            &quot;userToken&quot;
+                          ]
+                        },
+                        &quot;success&quot;: {
+                          &quot;type&quot;: &quot;boolean&quot;
+                        }
+                      },
+                      &quot;required&quot;: [
+                        &quot;data&quot;,
+                        &quot;success&quot;
+                      ]
+                    },
+                    &quot;requestId&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    }
+                  },
+                  &quot;required&quot;: [
+                    &quot;statusCode&quot;,
+                    &quot;result&quot;,
+                    &quot;requestId&quot;
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    &quot;/test/videokyc/api/v2/link&quot;: {
+      &quot;get&quot;: {
+        &quot;tags&quot;: [
+          &quot;Video KYC&quot;
+        ],
+        &quot;summary&quot;: &quot;Get Video KYC Link&quot;,
+        &quot;parameters&quot;: [{
+          &quot;name&quot;: &quot;karzatoken&quot;,
+          &quot;in&quot;: &quot;header&quot;,
+          &quot;required&quot;: true,
+          &quot;schema&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;description&quot;: &quot;The user token obtained from the /v2/generate-usertoken/{customer-transactionid} endpoint&quot;
+        }],
+        &quot;responses&quot;: {
+          &quot;200&quot;: {
+            &quot;description&quot;: &quot;Successful response with Video KYC link&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;schema&quot;: {
+                  &quot;type&quot;: &quot;object&quot;,
+                  &quot;properties&quot;: {
+                    &quot;statusCode&quot;: {
+                      &quot;type&quot;: &quot;integer&quot;
+                    },
+                    &quot;result&quot;: {
+                      &quot;type&quot;: &quot;object&quot;,
+                      &quot;properties&quot;: {
+                        &quot;data&quot;: {
+                          &quot;type&quot;: &quot;object&quot;,
+                          &quot;properties&quot;: {
+                            &quot;webLink&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;transactionId&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;linkExpiryTimestamp&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            }
+                          },
+                          &quot;required&quot;: [
+                            &quot;webLink&quot;,
+                            &quot;transactionId&quot;,
+                            &quot;linkExpiryTimestamp&quot;
+                          ]
+                        },
+                        &quot;success&quot;: {
+                          &quot;type&quot;: &quot;boolean&quot;
+                        },
+                        &quot;reason&quot;: {
+                          &quot;type&quot;: &quot;string&quot;,
+                          &quot;nullable&quot;: true
+                        }
+                      },
+                      &quot;required&quot;: [
+                        &quot;data&quot;,
+                        &quot;success&quot;
+                      ]
+                    },
+                    &quot;requestId&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    }
+                  },
+                  &quot;required&quot;: [
+                    &quot;statusCode&quot;,
+                    &quot;result&quot;,
+                    &quot;requestId&quot;
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    &quot;/test/videokyc/api/v2/link-pd&quot;: {
+      &quot;get&quot;: {
+        &quot;tags&quot;: [
+          &quot;Video PD&quot;
+        ],
+        &quot;summary&quot;: &quot;Get Video PD Link&quot;,
+        &quot;parameters&quot;: [{
+          &quot;name&quot;: &quot;karzatoken&quot;,
+          &quot;in&quot;: &quot;header&quot;,
+          &quot;required&quot;: true,
+          &quot;schema&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;description&quot;: &quot;The user token obtained from the /v2/generate-usertoken/{customer-transactionid} endpoint&quot;
+        }],
+        &quot;responses&quot;: {
+          &quot;200&quot;: {
+            &quot;description&quot;: &quot;Successful response with Video PD link&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;schema&quot;: {
+                  &quot;type&quot;: &quot;object&quot;,
+                  &quot;properties&quot;: {
+                    &quot;result&quot;: {
+                      &quot;type&quot;: &quot;object&quot;,
+                      &quot;properties&quot;: {
+                        &quot;reason&quot;: {
+                          &quot;type&quot;: &quot;string&quot;,
+                          &quot;nullable&quot;: true
+                        },
+                        &quot;data&quot;: {
+                          &quot;type&quot;: &quot;object&quot;,
+                          &quot;properties&quot;: {
+                            &quot;transactionId&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;webLink&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            }
+                          }
+                        },
+                        &quot;success&quot;: {
+                          &quot;type&quot;: &quot;boolean&quot;
+                        }
+                      }
+                    },
+                    &quot;requestId&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;statusCode&quot;: {
+                      &quot;type&quot;: &quot;integer&quot;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}</schema>
+    <schemaType>OpenApi3</schemaType>
+    <serviceBinding>{&quot;host&quot;:&quot;app.karza.in&quot;,&quot;basePath&quot;:&quot;&quot;,&quot;allowedSchemes&quot;:[&quot;HTTPS&quot;],&quot;requestMediaTypes&quot;:[],&quot;responseMediaTypes&quot;:[],&quot;compatibleMediaTypes&quot;:{},&quot;extensions&quot;:{}}</serviceBinding>
+    <status>Complete</status>
+    <systemVersion>5</systemVersion>
+</ExternalServiceRegistration>

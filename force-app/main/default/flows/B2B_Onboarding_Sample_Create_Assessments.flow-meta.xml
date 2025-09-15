@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Assigns values to the Assessment record fields and adds the Assessment record to the AssessmentsCollection variable.</description>
+        <name>AddAssessmentRecords</name>
+        <label>Add Assessment Records</label>
+        <locationX>440</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>AssessmentRecord.AssessmentStatus</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AssessmentRecord.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>{!IterateThroughApplicants.FirstName} {!IterateThroughApplicants.LastName}</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AssessmentRecord.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>B2B Account Sample</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AssessmentRecord.PartyProfileId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>IterateThroughApplicants.PartyProfileId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AssessmentRecord.ResponseContextId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>applicationFormId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AssessmentRecord.ApplicantId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>IterateThroughApplicants.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>assessmentsCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>AssessmentRecord</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IterateThroughApplicants</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>When an error occurs during the flow execution, sets the isFlowFailed variable to True and stores the error message in the errorMessage variable.</description>
+        <name>SetIsFlowFailedToTrue</name>
+        <label>Set isFlowFailed to True</label>
+        <locationX>440</locationX>
+        <locationY>734</locationY>
+        <assignmentItems>
+            <assignToReference>isFlowFailed</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>errorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <description>Determines whether the stage of the Applicant records in the ApplicantsCollection variable is set to Approved.</description>
+        <name>IsApplicantStageApproved</name>
+        <label>Is Applicant Stage Approved?</label>
+        <locationX>352</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>AddAssessmentRecords</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>ApplicantStageApproved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IterateThroughApplicants.Stage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IterateThroughApplicants</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Onboarding: Create Assessments {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>B2B Onboarding Sample: Create Assessments</label>
+    <loops>
+        <description>Repeat actions in a loop for each record in the ApplicantsCollection variable.</description>
+        <name>IterateThroughApplicants</name>
+        <label>Iterate Through Applicants</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <collectionReference>applicantsCollection</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>IsApplicantStageApproved</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>CreateAssessments</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Creates Assessment records for each record in the AssessmentsCollection variable.</description>
+        <name>CreateAssessments</name>
+        <label>Create Assessments</label>
+        <locationX>176</locationX>
+        <locationY>626</locationY>
+        <faultConnector>
+            <targetReference>SetIsFlowFailedToTrue</targetReference>
+        </faultConnector>
+        <inputReference>assessmentsCollection</inputReference>
+    </recordCreates>
+    <sourceTemplate>fsc_onboarding__CreateAssessments</sourceTemplate>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>IterateThroughApplicants</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Stores a collection of applicant records.</description>
+        <name>applicantsCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Applicant</objectType>
+    </variables>
+    <variables>
+        <description>Stores the ID of the Application Form record that was passed into the flow.</description>
+        <name>applicationFormId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the name of the product to retrieve the assessment type.</description>
+        <name>applicationFormProductName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the assessment record details.</description>
+        <name>AssessmentRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Assessment</objectType>
+    </variables>
+    <variables>
+        <description>Stores a collection of assessment records.</description>
+        <name>assessmentsCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Assessment</objectType>
+    </variables>
+    <variables>
+        <description>Stores the error message if an exception occurs during flow execution.</description>
+        <name>errorMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Stores a boolean value that indicates whether the flow execution failed.</description>
+        <name>isFlowFailed</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>test123</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

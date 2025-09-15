@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Physical Zip/Postal Code</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Zip/Postal Code</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Text</dataType>
+    <developerName>Physical_Zip_Postal_Code</developerName>
+    <name>Physical Zip/Postal Code</name>
+    <questionCategory>Demographic</questionCategory>
+    <relatedQuestion>Are_Physical_and_Registered_Address_the_same</relatedQuestion>
+</AssessmentQuestion>

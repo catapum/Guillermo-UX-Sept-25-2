@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Photo Proof</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Photo Proof</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>File</dataType>
+    <developerName>FSC_ILI_v1_PhotoProof</developerName>
+    <name>Photo Proof</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

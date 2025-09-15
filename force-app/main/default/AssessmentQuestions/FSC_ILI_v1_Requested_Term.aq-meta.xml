@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Requested Term</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Term</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Integer</dataType>
+    <developerName>FSC_ILI_v1_Requested_Term</developerName>
+    <name>Requested Term</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

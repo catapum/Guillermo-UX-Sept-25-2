@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Upload Document Help Text</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>&lt;p style=&quot;font-size:12pt&quot;&gt;Upload the documents in JPEG or PNG or PDF formats.&lt;/p&gt;</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextBlock</dataType>
+    <developerName>FSC_ILI_v1_UploadDocumentsHelpText</developerName>
+    <name>Upload Document Help Text</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

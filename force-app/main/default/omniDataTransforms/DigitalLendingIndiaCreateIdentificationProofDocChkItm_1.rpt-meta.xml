@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;flexInputvalues&quot; : null,
+  &quot;ContextId&quot; : null,
+  &quot;omniscriptId&quot; : null,
+  &quot;language&quot; : null,
+  &quot;type&quot; : null,
+  &quot;runMode&quot; : null,
+  &quot;sId&quot; : null,
+  &quot;theme&quot; : null,
+  &quot;subType&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZoneName&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;userCurrencyCode&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;omniProcessId&quot; : null,
+  &quot;localTimeZoneName&quot; : null,
+  &quot;DisclosureAndConsent&quot; : {
+    &quot;FSC_ILI_v1_Disclosure&quot; : null,
+    &quot;FSC_ILI_v1_PAN&quot; : null,
+    &quot;FSC_ILI_v1_Aadhar&quot; : null
+  },
+  &quot;BasicInformation&quot; : {
+    &quot;FSC_ILI_v1_DateOfBirth&quot; : null,
+    &quot;FSC_ILI_v1_Gender&quot; : null,
+    &quot;FSC_ILI_v1_Nationality&quot; : null,
+    &quot;FSC_ILI_v1_Email&quot; : null,
+    &quot;FSC_ILI_v1_LastName&quot; : null,
+    &quot;FSC_ILI_v1_Mobile&quot; : null,
+    &quot;FSC_ILI_v1_MiddleName&quot; : null,
+    &quot;FSC_ILI_v1_FirstName&quot; : null,
+    &quot;FSC_ILI_v1_ResidentType&quot; : null,
+    &quot;FSC_ILI_v1_Address&quot; : {
+      &quot;FSC_ILI_v1_IsPermanentAddress&quot; : null,
+      &quot;FSC_ILI_v1_IsCurrentAddress&quot; : null,
+      &quot;FSC_ILI_v1_Street&quot; : null,
+      &quot;FSC_ILI_v1_PostalCode&quot; : null,
+      &quot;FSC_ILI_v1_State&quot; : null,
+      &quot;FSC_ILI_v1_City&quot; : null,
+      &quot;FSC_ILI_v1_Country&quot; : null
+    }
+  },
+  &quot;IncomeInformation&quot; : {
+    &quot;FSC_ILI_v1_OtherIncome&quot; : {
+      &quot;FSC_ILI_v1_IncomeType&quot; : null,
+      &quot;FSC_ILI_v1_MonthlyAmount&quot; : null,
+      &quot;FSC_ILI_v1_IncomeAsOfDate&quot; : null
+    },
+    &quot;FSC_ILI_v1_Employment&quot; : {
+      &quot;FSC_ILI_v1_IsWorkAddress&quot; : null,
+      &quot;FSC_ILI_v1_EmploymentType&quot; : null,
+      &quot;FSC_ILI_v1_EmploymentIndustry&quot; : null,
+      &quot;FSC_ILI_v1_EmployerName&quot; : null,
+      &quot;FSC_ILI_v1_AnnualIncome&quot; : null,
+      &quot;FSC_ILI_v1_StartDate&quot; : null,
+      &quot;FSC_ILI_v1_EndDate&quot; : null
+    },
+    &quot;FSC_ILI_IsOtherIncome&quot; : null
+  },
+  &quot;UploadDocuments&quot; : {
+    &quot;FSC_ILI_v1_IDProof&quot; : [ {
+      &quot;data&quot; : null
+    } ],
+    &quot;FSC_ILI_v1_AddressProof&quot; : [ {
+      &quot;data&quot; : null
+    } ],
+    &quot;FSC_ILI_v1_BankStatement&quot; : [ {
+      &quot;data&quot; : null
+    } ],
+    &quot;FSC_ILI_v1_PhotoProof&quot; : [ {
+      &quot;data&quot; : null
+    } ]
+  },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;OmniScriptSessionToken&quot; : null,
+    &quot;FSC_FetchPartyProfile&quot; : null,
+    &quot;FSC_PrefillPartyProfileInfo&quot; : null,
+    &quot;DisclosureAndConsent&quot; : null,
+    &quot;BasicInformation&quot; : null,
+    &quot;IncomeInformation&quot; : null,
+    &quot;UploadDocuments&quot; : null
+  },
+  &quot;ApplicationFormId&quot; : null,
+  &quot;AssessmentStatus&quot; : null,
+  &quot;ApplicantId&quot; : null,
+  &quot;ApplicantType&quot; : null,
+  &quot;PartyProfileId&quot; : null,
+  &quot;PartyProfileName&quot; : null
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaCreateIdentificationProofDocChkItm</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateIdentificationProofDocChkItmCustom8917</globalKey>
+        <inputFieldName>UploadDocuments:FSC_ILI_v1_IdentityProof:PANValidationtime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateIdentificationProofDocChkItm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ValidationDateTime</outputFieldName>
+        <outputObjectName>DocumentChecklistItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateIdentificationProofDocChkItmCustom6809</globalKey>
+        <inputFieldName>UploadDocuments:FSC_ILI_v1_IdentityProof:PANStatus</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateIdentificationProofDocChkItm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>DocumentChecklistItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateIdentificationProofDocChkItm10069266877327565</globalKey>
+        <inputFieldName>UploadDocuments:FSC_ILI_v1_IdentityProof:FSC_ILI_v1_IdentityProofUploadDocument:data</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateIdentificationProofDocChkItm</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>ContentDocumentId</outputFieldName>
+        <outputObjectName>ContentDocumentLink</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateIdentificationProofDocChkItmCustom2679</globalKey>
+        <inputFieldName>UploadDocuments:FSC_ILI_v1_IdentityProof:IdentityProofDocumentType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>DocumentType.DeveloperName</lookupByFieldName>
+        <lookupObjectName>DocumentCategoryDocumentType</lookupObjectName>
+        <lookupReturnedFieldName>DocumentCategoryId</lookupReturnedFieldName>
+        <name>DigitalLendingIndiaCreateIdentificationProofDocChkItm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>DocumentCategoryId</outputFieldName>
+        <outputObjectName>DocumentChecklistItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateIdentificationProofDocChkItm49830770309132166</globalKey>
+        <inputFieldName>UploadDocuments:FSC_ILI_v1_IdentityProof:IdentityProofDocumentType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateIdentificationProofDocChkItm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>DocumentChecklistItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaCreateIdentificationProofDocChkItm9476271151209819</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaCreateIdentificationProofDocChkItm</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>LinkedEntityId</outputFieldName>
+        <outputObjectName>ContentDocumentLink</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateIdentificationProofDocChkItmCustom5334</globalKey>
+        <inputFieldName>UploadDocuments:FSC_ILI_v1_IdentityProof:IdentityProofDocumentType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>DeveloperName</lookupByFieldName>
+        <lookupObjectName>DocumentType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>DigitalLendingIndiaCreateIdentificationProofDocChkItm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>DocumentTypeId</outputFieldName>
+        <outputObjectName>DocumentChecklistItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateIdentificationProofDocChkItm9364675479270939</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateIdentificationProofDocChkItm</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>ContentDocumentLink</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateIdentificationProofDocChkItm6892526740578535</globalKey>
+        <inputFieldName>PartyProfileId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateIdentificationProofDocChkItm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ParentRecordId</outputFieldName>
+        <outputObjectName>DocumentChecklistItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaCreateIdentificationProofDocChkItm20282243352024976</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaCreateIdentificationProofDocChkItm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>DocumentChecklistItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaCreateIdentificationProofDocChkItm21542166008456043</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaCreateIdentificationProofDocChkItm</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>ContentDocumentLink</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;flexInputvalues&quot; : null,
+  &quot;ContextId&quot; : null,
+  &quot;omniscriptId&quot; : null,
+  &quot;language&quot; : null,
+  &quot;type&quot; : null,
+  &quot;runMode&quot; : null,
+  &quot;sId&quot; : null,
+  &quot;theme&quot; : null,
+  &quot;subType&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZoneName&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;userCurrencyCode&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;omniProcessId&quot; : null,
+  &quot;localTimeZoneName&quot; : null,
+  &quot;DisclosureAndConsent&quot; : {
+    &quot;FSC_ILI_v1_Disclosure&quot; : null,
+    &quot;FSC_ILI_v1_PAN&quot; : null,
+    &quot;FSC_ILI_v1_Aadhar&quot; : null
+  },
+  &quot;BasicInformation&quot; : {
+    &quot;FSC_ILI_v1_DateOfBirth&quot; : null,
+    &quot;FSC_ILI_v1_Gender&quot; : null,
+    &quot;FSC_ILI_v1_Nationality&quot; : null,
+    &quot;FSC_ILI_v1_Email&quot; : null,
+    &quot;FSC_ILI_v1_LastName&quot; : null,
+    &quot;FSC_ILI_v1_Mobile&quot; : null,
+    &quot;FSC_ILI_v1_MiddleName&quot; : null,
+    &quot;FSC_ILI_v1_FirstName&quot; : null,
+    &quot;FSC_ILI_v1_ResidentType&quot; : null,
+    &quot;FSC_ILI_v1_Address&quot; : {
+      &quot;FSC_ILI_v1_IsPermanentAddress&quot; : null,
+      &quot;FSC_ILI_v1_IsCurrentAddress&quot; : null,
+      &quot;FSC_ILI_v1_Street&quot; : null,
+      &quot;FSC_ILI_v1_PostalCode&quot; : null,
+      &quot;FSC_ILI_v1_State&quot; : null,
+      &quot;FSC_ILI_v1_City&quot; : null,
+      &quot;FSC_ILI_v1_Country&quot; : null
+    }
+  },
+  &quot;IncomeInformation&quot; : {
+    &quot;FSC_ILI_v1_OtherIncome&quot; : {
+      &quot;FSC_ILI_v1_IncomeType&quot; : null,
+      &quot;FSC_ILI_v1_MonthlyAmount&quot; : null,
+      &quot;FSC_ILI_v1_IncomeAsOfDate&quot; : null
+    },
+    &quot;FSC_ILI_v1_Employment&quot; : {
+      &quot;FSC_ILI_v1_IsWorkAddress&quot; : null,
+      &quot;FSC_ILI_v1_EmploymentType&quot; : null,
+      &quot;FSC_ILI_v1_EmploymentIndustry&quot; : null,
+      &quot;FSC_ILI_v1_EmployerName&quot; : null,
+      &quot;FSC_ILI_v1_AnnualIncome&quot; : null,
+      &quot;FSC_ILI_v1_StartDate&quot; : null,
+      &quot;FSC_ILI_v1_EndDate&quot; : null
+    },
+    &quot;FSC_ILI_IsOtherIncome&quot; : null
+  },
+  &quot;UploadDocuments&quot; : {
+    &quot;FSC_ILI_v1_IDProof&quot; : [ {
+      &quot;data&quot; : null
+    } ],
+    &quot;FSC_ILI_v1_AddressProof&quot; : [ {
+      &quot;data&quot; : null
+    } ],
+    &quot;FSC_ILI_v1_BankStatement&quot; : [ {
+      &quot;data&quot; : null
+    } ],
+    &quot;FSC_ILI_v1_PhotoProof&quot; : [ {
+      &quot;data&quot; : null
+    } ]
+  },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;OmniScriptSessionToken&quot; : null,
+    &quot;FSC_FetchPartyProfile&quot; : null,
+    &quot;FSC_PrefillPartyProfileInfo&quot; : null,
+    &quot;DisclosureAndConsent&quot; : null,
+    &quot;BasicInformation&quot; : null,
+    &quot;IncomeInformation&quot; : null,
+    &quot;UploadDocuments&quot; : null
+  },
+  &quot;ApplicationFormId&quot; : null,
+  &quot;AssessmentStatus&quot; : null,
+  &quot;ApplicantId&quot; : null,
+  &quot;ApplicantType&quot; : null,
+  &quot;PartyProfileId&quot; : null,
+  &quot;PartyProfileName&quot; : null
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DigitalLendingIndiaCreateIdentificationProofDocChkItm_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

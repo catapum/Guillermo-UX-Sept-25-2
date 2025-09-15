@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>[ {
+  &quot;FSC_ILI_v1_IdentityProof&quot; : [ {
+    &quot;IdentityProofDocumentType&quot; : &quot;PAN Card&quot;,
+    &quot;FSC_ILI_v1_IdentityProofUploadDocument&quot; : {
+      &quot;data&quot; : &quot;&quot;
+    }
+  } ],
+  &quot;PANStatus&quot; : &quot;Accepted&quot;,
+  &quot;PANValidationtime&quot; : &quot;cvg&quot;
+} ]</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaGetPhotographContentDocumentId</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetPhotographContentDocumentIdCustom0jITC0000000I092AEItem7</globalKey>
+        <inputFieldName>PhotographList</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetPhotographContentDocumentId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PhotographList</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetPhotographContentDocumentIdCustom0jITC0000000I092AEItem5</globalKey>
+        <inputFieldName>PhotographList:FSC_ILI_v1_UploadPhotograph:data</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetPhotographContentDocumentId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PhotographContentDocumentId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:IsAdditionalApplicant true == | | var:FSC_ILI_v1_PhotoApplicant LIST &apos;PhotoProofDocumentTypeApplicant/\/\/==/\/\/&quot;Photograph&quot;&apos; FILTER | | var:FSC_ILI_v1_Photo LIST &apos;PhotoProofDocumentType/\/\/==/\/\/&quot;Photograph&quot;&apos; FILTER IF</formulaConverted>
+        <formulaExpression>IF(IsAdditionalApplicant==true,FILTER(LIST(FSC_ILI_v1_PhotoApplicant),&apos;PhotoProofDocumentTypeApplicant == &quot;Photograph&quot;&apos;),FILTER(LIST(FSC_ILI_v1_Photo),&apos;PhotoProofDocumentType == &quot;Photograph&quot;&apos;))</formulaExpression>
+        <formulaResultPath>PhotographList</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaGetPhotographContentDocumentIdCustom0jITC0000000I092AEItem0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetPhotographContentDocumentId</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetPhotographContentDocumentIdCustom0jITC0000000I092AEItem3</globalKey>
+        <inputFieldName>PhotographValidationtime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetPhotographContentDocumentId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PhotographList:PhotographValidationtime</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetPhotographContentDocumentIdCustom0jITC0000000I092AEItem4</globalKey>
+        <inputFieldName>PhotographListWithoutPhotoDT</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetPhotographContentDocumentId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PhotographListWithoutPhotoDocumentType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetPhotographContentDocumentIdCustom1974</globalKey>
+        <inputFieldName>PhotographList:FSC_ILI_v1_UploadPhotographApplicant:data</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetPhotographContentDocumentId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PhotographContentDocumentId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetPhotographContentDocumentIdCustom0jITC0000000I092AEItem2</globalKey>
+        <inputFieldName>PhotographStatus</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetPhotographContentDocumentId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PhotographList:PhotographStatus</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:IsAdditionalApplicant true == | | var:FSC_ILI_v1_PhotoApplicant LIST &apos;PhotoProofDocumentTypeApplicant/\/\/!=/\/\/&quot;Photograph&quot;&apos; FILTER | | var:FSC_ILI_v1_Photo LIST &apos;PhotoProofDocumentType/\/\/!=/\/\/&quot;Photograph&quot;&apos; FILTER IF</formulaConverted>
+        <formulaExpression>IF(IsAdditionalApplicant==true,FILTER(LIST(FSC_ILI_v1_PhotoApplicant),&apos;PhotoProofDocumentTypeApplicant != &quot;Photograph&quot;&apos;),FILTER(LIST(FSC_ILI_v1_Photo),&apos;PhotoProofDocumentType != &quot;Photograph&quot;&apos;))</formulaExpression>
+        <formulaResultPath>PhotographListWithoutPhotoDT</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaGetPhotographContentDocumentIdCustom0jITC0000000I092AEItem1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetPhotographContentDocumentId</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;FSC_ILI_v1_PhotoApplicant&quot; : [ {
+    &quot;FSC_ILI_v1_UploadPhotographApplicant&quot; : {
+      &quot;data&quot; : &quot;&quot;
+    },
+    &quot;PhotoProofDocumentTypeApplicant&quot; : &quot;Photograph&quot;
+  } ],
+  &quot;IsAdditionalApplicant&quot; : true
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>DigitalLendingIndiaGetPhotographContentDocumentId_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

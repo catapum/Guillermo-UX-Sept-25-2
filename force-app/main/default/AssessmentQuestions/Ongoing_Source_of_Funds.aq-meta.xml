@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Ongoing Source of Funds</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Ongoing Source of Funds</questionText>
+        <responseValues>Retained Earnings
+Debt Capital
+Equity Capital
+Private Equity
+Venture Capital
+Donations
+Grants</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Multiselect</dataType>
+    <developerName>Ongoing_Source_of_Funds</developerName>
+    <name>Ongoing Source of Funds</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionLauncherItemDef xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identifier>_wxjzhix80a5z1r3pn1gsltyo9</identifier>
+    <itemActionType>Omniscript</itemActionType>
+    <itemCategory>fileBased</itemCategory>
+    <itemLanguage>Multi-Language</itemLanguage>
+    <masterLabel>FSC/StopCheckPayment/Multi-Language</masterLabel>
+    <subType>StopCheckPayment</subType>
+    <type>FSC</type>
+</ActionLauncherItemDef>

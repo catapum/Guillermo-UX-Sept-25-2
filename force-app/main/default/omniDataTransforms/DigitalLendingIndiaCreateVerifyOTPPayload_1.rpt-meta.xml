@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;aadhaarNo&quot; : &quot;&quot;,
+  &quot;consent&quot; : &quot;&quot;,
+  &quot;InputRecordId&quot; : &quot;&quot;,
+  &quot;OutputRecordId&quot; : &quot;&quot;,
+  &quot;IntegrationDefinition&quot; : &quot;&quot;,
+  &quot;otp&quot; : &quot;&quot;,
+  &quot;accessKey&quot; : &quot;&quot;
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;Payload&quot; : {
+    &quot;aadhaarNo&quot; : &quot;&quot;,
+    &quot;consent&quot; : &quot;&quot;,
+    &quot;otp&quot; : &quot;&quot;,
+    &quot;accessKey&quot; : &quot;&quot;
+  }
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaCreateVerifyOTPPayload</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateVerifyOTPPayload1537290780241931</globalKey>
+        <inputFieldName>consent</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateVerifyOTPPayload</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Payload:consent</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateVerifyOTPPayload5941327603029596</globalKey>
+        <inputFieldName>aadhaarNo</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateVerifyOTPPayload</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Payload:aadhaarNo</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateVerifyOTPPayload7043421319909253</globalKey>
+        <inputFieldName>accessKey</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateVerifyOTPPayload</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Payload:accessKey</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateVerifyOTPPayload8133233768807193</globalKey>
+        <inputFieldName>otp</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateVerifyOTPPayload</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Payload:otp</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;aadhaarNo&quot; : null,
+  &quot;consent&quot; : null,
+  &quot;InputRecordId&quot; : null,
+  &quot;OutputRecordId&quot; : null,
+  &quot;IntegrationDefinition&quot; : null,
+  &quot;otp&quot; : null,
+  &quot;accessKey&quot; : null
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>DigitalLendingIndiaCreateVerifyOTPPayload_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

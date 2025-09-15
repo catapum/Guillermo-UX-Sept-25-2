@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{}</customJavaScript>
+    <description>Score Fact Finding</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegProcdSignatureAvl>false</isIntegProcdSignatureAvl>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>ScoreQuestionnaire</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ResponseAction</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalOutput&quot; : {
+    &quot;investmentObjective&quot; : &quot;%investmentObjective%&quot;,
+    &quot;totalScore&quot; : &quot;%totalScore%&quot;,
+    &quot;lifeStageScore&quot; : &quot;%lifeStageScore%&quot;,
+    &quot;netWorthScore&quot; : &quot;%netWorthScore%&quot;,
+    &quot;futureSecurityScore&quot; : &quot;%futureSecurityScore%&quot;,
+    &quot;investmentDependenceScore&quot; : &quot;%investmentDependenceScore%&quot;,
+    &quot;investmentHorizonScore&quot; : &quot;%investmentHorizonScore%&quot;,
+    &quot;investmentMotiveScore&quot; : &quot;%investmentMotiveScore%&quot;,
+    &quot;investmentSecurityScore&quot; : &quot;%investmentSecurityScore%&quot;,
+    &quot;investmentSelectionScore&quot; : &quot;%investmentSelectionScore%&quot;,
+    &quot;investmentPreferenceScore&quot; : &quot;%investmentPreferenceScore%&quot;,
+    &quot;investmentFamiliarityScore&quot; : &quot;%investmentFamiliarityScore%&quot;,
+    &quot;investmentConcernScore&quot; : &quot;%investmentConcernScore%&quot;,
+    &quot;investmentRiskScore&quot; : &quot;%investmentRiskScore%&quot;
+  },
+  &quot;returnOnlyAdditionalOutput&quot; : true,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;vlcResponseHeaders&quot; : { },
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>15.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetFutureSecurityScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;futureSecurityScore&quot; : &quot;= IF(%Step1:GoalsBlock:FSC_FF_v1_FutureSecurity% = &apos;Not sure&apos;, 1, \n IF(%Step1:GoalsBlock:FSC_FF_v1_FutureSecurity% = &apos;Somewhat sure&apos;, 3, \n IF(%Step1:GoalsBlock:FSC_FF_v1_FutureSecurity% = &apos;Fairly sure&apos;, 5,  7)))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;futureSecurityScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;futureSecurityScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues2&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetInvestmentConcernScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;investmentConcernScore&quot; : &quot;= IF(%Step1:FamiliarityBlock:FSC_FF_v1_InvestmentConcern% = &apos;I constantly think about potential losses.&apos;, 1, \n IF(%Step1:FamiliarityBlock:FSC_FF_v1_InvestmentConcern% = &apos;I have a moderate level of concern about potential losses.&apos;, 3, \n IF(%Step1:FamiliarityBlock:FSC_FF_v1_InvestmentConcern% = &apos;I typically consider potential gains.&apos;, 5, 7)))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;investmentConcernScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;investmentConcernScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues12&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>11.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetInvestmentDependenceScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;investmentDependenceScore&quot; : &quot;= IF(%Step1:GoalsBlock:FSC_FF_v1_InvestmentDependence% = &apos;Not dependent. I have other income sources.&apos;, 7, \n IF(%Step1:GoalsBlock:FSC_FF_v1_InvestmentDependence% = &apos;Minimally dependent.  I have other income sources but income generated from the portfolio is helpful.&apos;, 5, \n IF(%Step1:GoalsBlock:FSC_FF_v1_InvestmentDependence% = &apos;Moderately dependent. I rely somewhat on the income generated from the portfolio.&apos;, 3, 1)))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;investmentDependenceScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;investmentDependenceScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues6&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetInvestmentFamiliarityScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;investmentFamiliarityScore&quot; : &quot;= IF(%Step1:FamiliarityBlock:FSC_FF_v1_InvestmentFamiliarity% = &apos;Completely unfamiliar with investments and uneasy about their complexity&apos;, 1, \n IF(%Step1:FamiliarityBlock:FSC_FF_v1_InvestmentFamiliarity% = &apos;Not familiar with investments and the market&apos;, 2, \n IF(%Step1:FamiliarityBlock:FSC_FF_v1_InvestmentFamiliarity% = &apos;Modest level of familiarity but lack full comprehension of investments and the market&apos;, 3, \n IF(%Step1:FamiliarityBlock:FSC_FF_v1_InvestmentFamiliarity% = &apos;Reasonable understanding about the diverse factors that impact investment performance&apos;, 5, 7))))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;investmentFamiliarityScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;investmentFamiliarityScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues11&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>10.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetInvestmentHorizonScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;investmentHorizonScore&quot; : &quot;= IF(%Step1:GoalsBlock:FSC_FF_v1_InvestmentHorizon% = &apos;2 years or less&apos;, 1, \n IF(%Step1:GoalsBlock:FSC_FF_v1_InvestmentHorizon% = &apos;3–5 years&apos;, 3, \n IF(%Step1:GoalsBlock:FSC_FF_v1_InvestmentHorizon% = &apos;6–10 years&apos;, 5, 7)))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;investmentHorizonScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;investmentHorizonScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues7&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetInvestmentMotiveScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;investmentMotiveScore&quot; : &quot;= IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentMotive% = &apos;Long-term capital growth&apos;, 7, \n IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentMotive% = &apos;Long-term capital growth and income&apos;, 5, \n IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentMotive% = &apos;Meet income needs&apos;, 3,  1)))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;investmentMotiveScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;investmentMotiveScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetInvestmentObjective</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;investmentObjective&quot; : &quot;= IF(%totalScore% &lt;= 18, &apos;Income&apos;, \n IF(%totalScore% &gt;= 19 AND %totalScore% &lt;= 39, &apos;Conservative Income&apos;, \n IF(%totalScore% &gt;= 40 AND %totalScore% &lt;= 64, &apos;Balanced&apos;, \n IF(%totalScore% &gt;= 65 AND %totalScore% &lt;= 88, &apos;Growth&apos;, &apos;Aggressive Growth&apos;))))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;investmentObjective&quot;,
+  &quot;responseJSONNode&quot; : &quot;investmentObjective&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues14&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>14.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetInvestmentPreferenceScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;investmentPreferenceScore&quot; : &quot;= IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentPreference% = &apos;I prefer to accept lower returns for lower risk.&apos;, 1, \n IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentPreference% = &apos;I prefer to diversify my portfolio with a focus on low-risk investments.&apos;, 3, \n IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentPreference% = &apos;I prefer to have a balanced portfolio.&apos;, 5, \n IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentPreference% = &apos;I prefer to diversify my accounts with a focus on higher-return assets and low-risk investments.&apos;, 7, 9))))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;investmentPreferenceScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;investmentPreferenceScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues10&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>9.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetInvestmentRiskScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;investmentRiskScore&quot; : &quot;= IF(%Step1:FamiliarityBlock:FSC_FF_v1_InvestmentRisk% = &apos;Sell all investments so that you protect downside risk.&apos;, 1, \n IF(%Step1:FamiliarityBlock:FSC_FF_v1_InvestmentRisk% = &apos;Sell a portion of investments to cut your losses and rebalance to move secure investment assets.&apos;, 3, \n IF(%Step1:FamiliarityBlock:FSC_FF_v1_InvestmentRisk% = &apos;Continue holding the investment.&apos;, 5, 7)))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;investmentRiskScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;investmentRiskScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues13&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>12.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetInvestmentSecurityScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;investmentSecurityScore&quot; : &quot;= IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentSecurity% = &apos;Not comfortable. My primary goal is to protect my current investment.&apos;, 1, \n IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentSecurity% = &apos;Somewhat comfortable. I can accept a reasonable level of volatility.&apos;, 3, \n IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentSecurity% = &apos;Comfortable with volatility.&apos;, 7, 9)))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;investmentSecurityScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;investmentSecurityScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues8&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>7.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetInvestmentSelectionScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;investmentSelectionScore&quot; : &quot;= IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentSelection% = &apos;Portfolio 1: 25% exposure to growth assets&apos;, 1, \n IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentSelection% = &apos;Portfolio 2: 42% exposure to growth assets&apos;, 3, \n IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentSelection% = &apos;Portfolio 3: 66% exposure to growth assets&apos;, 5, \n IF(%Step1:StrategyBlock:FSC_FF_v1_InvestmentSelection% = &apos;Portfolio 4: 79% exposure to growth assets&apos;, 7, 9))))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;investmentSelectionScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;investmentSelectionScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues9&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>8.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetLifeStageScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;lifeStageScore&quot; : &quot;= IF(%Step1:GoalsBlock:FSC_FF_v1_LifeStage% = &apos;I have minimal financial obligations to build wealth for short-term and long-term goals.&apos;, 9, \n IF(%Step1:GoalsBlock:FSC_FF_v1_LifeStage% = &apos;I’m planning for my future home and I expect to experience (or am already experiencing) a high rate of purchasing household and consumer goods.&apos;, 3,\n IF(%Step1:GoalsBlock:FSC_FF_v1_LifeStage% = &apos;I own my primary residence and can comfortably manage household and family expenses.&apos;, 1,  \n IF(%Step1:GoalsBlock:FSC_FF_v1_LifeStage% = &apos;I’m currently earning income and can effectively manage my mortgage.&apos;, 5, \n IF(%Step1:GoalsBlock:FSC_FF_v1_LifeStage% = &apos;I’m planning for retirement, I own my own home, and I have minimal financial obligations.&apos;, 3, 2)))))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;lifeStageScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;lifeStageScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues4&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetNetWorthScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;netWorthScore&quot; : &quot;= IF(%Step1:GoalsBlock:FSC_FF_v1_NetWorth% = &apos;Less than $250,000&apos;, 1, \n IF(%Step1:GoalsBlock:FSC_FF_v1_NetWorth% = &apos;Between $250,000 and $500,000&apos;, 3, \n IF(%Step1:GoalsBlock:FSC_FF_v1_NetWorth% = &apos;Between $500,000 and $750,000&apos;, 5,  \n IF(%Step1:GoalsBlock:FSC_FF_v1_NetWorth% = &apos;Between $750,000 and $1,500,000&apos;, 7, 9))))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;netWorthScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;netWorthScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues5&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetTotalScore</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;totalScore&quot; : &quot;=%lifeStageScore% + \n%netWorthScore% +\n%futureSecurityScore% + \n%investmentDependenceScore% + \n%investmentHorizonScore% + \n%investmentMotiveScore% + \n%investmentSecurityScore% + \n%investmentSelectionScore% + \n%investmentPreferenceScore% + \n%investmentFamiliarityScore% + \n%investmentConcernScore% + \n%investmentRiskScore%&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;totalScore&quot;,
+  &quot;responseJSONNode&quot; : &quot;totalScore&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues3&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>13.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessKey>FSCFactFinding_ScoreQuestionnaire</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;trackingCustomData&quot; : { },
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;description&quot; : &quot;&quot;,
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;rollbackOnError&quot; : false,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;ttlMinutes&quot; : 5,
+  &quot;mockResponseMap&quot; : { }
+}</propertySetConfig>
+    <subType>ScoreQuestionnaire</subType>
+    <type>FSCFactFinding</type>
+    <uniqueName>FSCFactFinding_ScoreQuestionnaire_Procedure_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>be676440-72f9-7d5d-9ff9-164dd9fe69c2</webComponentKey>
+</OmniIntegrationProcedure>

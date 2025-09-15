@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Preliminary PEP Status</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Preliminary PEP Status</questionText>
+        <responseValues>No PEPs
+Domestic Only PEPs - low risk
+Domestic Only PEPs - high risk
+Foreign PEPs - high risk</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Select</dataType>
+    <developerName>Preliminary_PEP_Status</developerName>
+    <name>Preliminary PEP Status</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionDeveloperNames>ChequeBook</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>AccountType</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>IDProof</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>PurposeofAccount</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>ProfileScreening</assessmentQuestionDeveloperNames>
+    <developerName>FinancialInformation</developerName>
+    <name>Financial Information (Sample)</name>
+</AssessmentQuestionSet>

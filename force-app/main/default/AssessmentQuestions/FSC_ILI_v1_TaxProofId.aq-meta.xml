@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>FSC_ILI_TaxProofId</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Tax Proof Id</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Text</dataType>
+    <developerName>FSC_ILI_v1_TaxProofId</developerName>
+    <name>FSC_ILI_TaxProofId</name>
+    <questionCategory>Financial</questionCategory>
+    <relatedQuestion>FSC_ILI_v1_TaxProof</relatedQuestion>
+</AssessmentQuestion>

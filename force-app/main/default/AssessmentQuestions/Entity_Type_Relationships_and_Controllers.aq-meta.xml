@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Entity Type Relationships and Controllers</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Entity Type</questionText>
+        <responseValues>Limited Liability Corporation
+S Corporation
+Partnership
+Sole Proprietorship
+Revocable Trust
+Irrevocable Trust</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Select</dataType>
+    <developerName>Entity_Type_Relationships_and_Controllers</developerName>
+    <name>Entity Type Relationships and Controllers</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

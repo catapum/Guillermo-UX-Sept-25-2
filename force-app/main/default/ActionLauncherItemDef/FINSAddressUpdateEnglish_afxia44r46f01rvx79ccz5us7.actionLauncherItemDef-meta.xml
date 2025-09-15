@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionLauncherItemDef xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identifier>_afxia44r46f01rvx79ccz5us7</identifier>
+    <itemActionType>Omniscript</itemActionType>
+    <itemCategory>dbBased</itemCategory>
+    <itemLanguage>English</itemLanguage>
+    <masterLabel>FINS/AddressUpdate/English</masterLabel>
+    <subType>AddressUpdate</subType>
+    <type>FINS</type>
+</ActionLauncherItemDef>

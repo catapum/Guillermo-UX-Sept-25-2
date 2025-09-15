@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Business Savings Account</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Business Savings Account</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Formula</dataType>
+    <developerName>Business_Savings_Account</developerName>
+    <formulaResponseDataType>Boolean</formulaResponseDataType>
+    <name>Business Savings Account</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

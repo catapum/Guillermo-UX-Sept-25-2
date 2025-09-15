@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionMatrixDefinitionVersion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <columnType>Input</columnType>
+        <dataType>NumberRange</dataType>
+        <displaySequence>1</displaySequence>
+        <isWildcardColumn>false</isWildcardColumn>
+        <name>RequestedTerm</name>
+        <rangeValue>0,2,5</rangeValue>
+    </columns>
+    <columns>
+        <columnType>Output</columnType>
+        <dataType>Text</dataType>
+        <displaySequence>2</displaySequence>
+        <isWildcardColumn>false</isWildcardColumn>
+        <name>RequestedTermCategory</name>
+    </columns>
+    <decisionMatrixDefinition>Requested_Term_Category</decisionMatrixDefinition>
+    <label>Requested Term Category V1</label>
+    <startDate>2024-04-15T08:25:54.000Z</startDate>
+    <status>Active</status>
+    <versionNumber>1</versionNumber>
+</DecisionMatrixDefinitionVersion>

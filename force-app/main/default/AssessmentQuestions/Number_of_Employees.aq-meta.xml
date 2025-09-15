@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Number of Employees</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Number of Employees</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Integer</dataType>
+    <developerName>Number_of_Employees</developerName>
+    <name>Number of Employees</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

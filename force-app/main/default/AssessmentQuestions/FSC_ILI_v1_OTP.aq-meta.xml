@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>FSC_ILI_OTP</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>One Time Password (OTP)</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Text</dataType>
+    <developerName>FSC_ILI_v1_OTP</developerName>
+    <name>OTP</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

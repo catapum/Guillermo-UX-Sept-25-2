@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>FSC_FF_InvestmentRisk</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Assume that you have an initial investment portfolio worth $10,000. If your portfolio drops to $7,000, what do you do?</questionText>
+        <responseValues>Sell all investments so that you protect downside risk.
+Sell a portion of investments to cut your losses and rebalance to move secure investment assets.
+Continue holding the investment.
+Invest more capital.</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Radio</dataType>
+    <developerName>FSC_FF_v1_InvestmentRisk</developerName>
+    <name>FSC_FF_InvestmentRisk</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

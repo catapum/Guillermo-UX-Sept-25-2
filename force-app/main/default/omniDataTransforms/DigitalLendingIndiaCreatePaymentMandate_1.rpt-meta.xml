@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;timeStamp&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZoneName&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;userCurrencyCode&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;omniProcessId&quot; : null,
+  &quot;localTimeZoneName&quot; : null,
+  &quot;ModeOfEMIPayment&quot; : {
+    &quot;FSC_ILI_v1_MandateStartDate&quot; : null,
+    &quot;FSC_ILI_v1_MandateEndDate&quot; : null,
+    &quot;FSC_ILI_v1_MandateAmount&quot; : null,
+    &quot;FSC_ILI_v1_MandateFrequency&quot; : null,
+    &quot;FSC_ILI_v1_ChequeStatement&quot; : null,
+    &quot;FSC_ILI_v1_EMIPaymentMode&quot; : null
+  },
+  &quot;BankDetails&quot; : {
+    &quot;FSC_ILI_v1_BankAccountType&quot; : null,
+    &quot;FSC_ILI_v1_BankAccountNumber&quot; : null,
+    &quot;FSC_ILI_v1_IFSCCode&quot; : null
+  },
+  &quot;EffectiveDate&quot; : null,
+  &quot;assessmentId&quot; : null
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaCreatePaymentMandate</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom9644</globalKey>
+        <inputFieldName>BankDetails:FSC_ILI_v1_IFSCCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BankRoutingNumber</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom8154</globalKey>
+        <inputFieldName>BankDetails:FSC_ILI_v1_BankAccountType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BankAccountType</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom2380</globalKey>
+        <inputFieldName>ModeOfEMIPayment:FSC_ILI_v1_MandateEndDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MandateEndDate</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom9607</globalKey>
+        <inputFieldName>ContextId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormId</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom2181</globalKey>
+        <inputFieldName>ModeOfEMIPayment:FSC_ILI_v1_MandateStartDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MandateEffectiveDate</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom4953</globalKey>
+        <inputFieldName>ModeOfEMIPayment:FSC_ILI_v1_MandateAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MandateAmount</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom5618</globalKey>
+        <inputFieldName>BankDetails:FSC_ILI_v1_BankAccountNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BankAccountNumber</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom7584</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Payment</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom9529</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AuthorizationType</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom4892</globalKey>
+        <inputFieldName>BankDetails:FSC_ILI_v1_BankName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BankName</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom2831</globalKey>
+        <inputFieldName>BankDetails:FSC_ILI_v1_BankBranchName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BankBranchName</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Created</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom873</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MandateStatus</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom5290</globalKey>
+        <inputFieldName>ModeOfEMIPayment:FSC_ILI_v1_EMIPaymentMode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MandateType</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreatePaymentMandateCustom1623</globalKey>
+        <inputFieldName>ModeOfEMIPayment:FSC_ILI_v1_MandateFrequency</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreatePaymentMandate</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MandateFrequency</outputFieldName>
+        <outputObjectName>PaymentMandate</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{ }</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DigitalLendingIndiaCreatePaymentMandate_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

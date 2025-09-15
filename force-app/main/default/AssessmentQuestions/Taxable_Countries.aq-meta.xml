@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Taxable Countries</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Taxable Countries</questionText>
+        <responseValues>United States
+EU
+United Kingdom
+Canada
+Singapore</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Multiselect</dataType>
+    <developerName>Taxable_Countries</developerName>
+    <name>Taxable Countries</name>
+    <questionCategory>Demographic</questionCategory>
+    <relatedQuestion>Do_you_have_tax_obligations_outside_of_the_country_you_are_applying_for_the_acco</relatedQuestion>
+</AssessmentQuestion>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionDeveloperNames>FName</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>Age</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>MailingAddress</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>MiddleName</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>DateofBirth</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>Gender</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>EmailAddress</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>MobileNumber</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>WorkExperience</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>Website</assessmentQuestionDeveloperNames>
+    <assessmentQuestionDeveloperNames>LastName</assessmentQuestionDeveloperNames>
+    <developerName>DemographicInformation</developerName>
+    <name>Demographic Information (Sample)</name>
+</AssessmentQuestionSet>

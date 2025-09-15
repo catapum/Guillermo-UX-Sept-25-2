@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionMatrixDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Disposable Income Category</label>
+    <processType>Bre</processType>
+    <type>Standard</type>
+    <versions>
+        <fullName>Disposable_Income_Category_V1</fullName>
+        <columns>
+            <columnType>Input</columnType>
+            <dataType>NumberRange</dataType>
+            <displaySequence>1</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>DisposableIncome</name>
+            <rangeValue>0,20000,50000,100000,500000,1000000,2000000,5000000</rangeValue>
+        </columns>
+        <columns>
+            <columnType>Output</columnType>
+            <dataType>Text</dataType>
+            <displaySequence>2</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>DisposableIncomeCategory</name>
+        </columns>
+        <decisionMatrixDefinition>Disposable_Income_Category</decisionMatrixDefinition>
+        <label>Disposable Income Category V1</label>
+        <startDate>2024-07-07T08:57:13.000Z</startDate>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </versions>
+</DecisionMatrixDefinition>

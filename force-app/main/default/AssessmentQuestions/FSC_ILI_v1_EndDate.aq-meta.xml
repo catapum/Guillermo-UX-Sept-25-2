@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <helpText>Please enter end date if you are  currently not working here.</helpText>
+        <isActive>true</isActive>
+        <name>End Date</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>End Date</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Date</dataType>
+    <developerName>FSC_ILI_v1_EndDate</developerName>
+    <name>End Date</name>
+    <questionCategory>Financial</questionCategory>
+    <relatedQuestion>FSC_ILI_v1_Employment</relatedQuestion>
+</AssessmentQuestion>

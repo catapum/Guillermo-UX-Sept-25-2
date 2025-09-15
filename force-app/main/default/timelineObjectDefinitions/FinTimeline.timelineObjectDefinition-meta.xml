@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TimelineObjectDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>FinancialAccount</baseObject>
+    <definition>{&quot;timeline&quot;:{&quot;anchorObject&quot;:{&quot;object&quot;:{&quot;entity&quot;:&quot;FinancialAccount&quot;,&quot;label&quot;:&quot;Financial Account&quot;,&quot;source&quot;:&quot;&quot;,&quot;icon&quot;:&quot;&quot;}},&quot;age&quot;:{},&quot;events&quot;:[]}}</definition>
+    <isActive>false</isActive>
+    <masterLabel>FinTimeline</masterLabel>
+</TimelineObjectDefinition>

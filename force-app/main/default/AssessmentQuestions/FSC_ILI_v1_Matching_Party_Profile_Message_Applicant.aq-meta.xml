@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Matching Party Profile Message Applicant</name>
+        <optionSourceResponseValue>true</optionSourceResponseValue>
+        <questionText>Select an existing party profile to associate it with the loan applicant.
+When not selected, we create a party profile for the loan applicant.</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextBlock</dataType>
+    <developerName>FSC_ILI_v1_Matching_Party_Profile_Message_Applicant</developerName>
+    <name>Matching Party Profile Message Applicant</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

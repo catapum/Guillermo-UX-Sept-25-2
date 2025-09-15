@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commercial</fullName>
+    <active>true</active>
+    <description>Commercial</description>
+    <label>Commercial</label>
+    <picklistValues>
+        <picklist>Family</picklist>
+        <values>
+            <fullName>Auto Loan Four Wheeler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Loan Two Wheeler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Loan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QuantityUnitOfMeasure</picklist>
+        <values>
+            <fullName>Each</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

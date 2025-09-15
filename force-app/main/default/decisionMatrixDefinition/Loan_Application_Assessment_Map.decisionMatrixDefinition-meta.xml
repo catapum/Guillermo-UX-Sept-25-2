@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionMatrixDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Loan Application Assessment Map</label>
+    <processType>Bre</processType>
+    <type>Standard</type>
+    <versions>
+        <fullName>LoanAssessmentTypeV1</fullName>
+        <columns>
+            <columnType>Input</columnType>
+            <dataType>Text</dataType>
+            <displaySequence>1</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>LoanType</name>
+        </columns>
+        <columns>
+            <columnType>Output</columnType>
+            <dataType>Text</dataType>
+            <displaySequence>2</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>AssessmentType</name>
+        </columns>
+        <decisionMatrixDefinition>Loan_Application_Assessment_Map</decisionMatrixDefinition>
+        <label>LoanAssessmentTypeV1</label>
+        <startDate>2023-12-28T07:26:41.000Z</startDate>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </versions>
+</DecisionMatrixDefinition>

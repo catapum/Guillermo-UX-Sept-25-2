@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <description>IFSC Code</description>
+        <isActive>true</isActive>
+        <name>IFSC Code</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>IFSC Code</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Text</dataType>
+    <developerName>FSC_ILI_v1_IFSCCode</developerName>
+    <name>IFSC Code</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

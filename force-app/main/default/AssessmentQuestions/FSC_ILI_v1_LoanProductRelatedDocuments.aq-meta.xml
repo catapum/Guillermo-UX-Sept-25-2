@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Loan Product Related Documents</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Loan Product Documents</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>EditBlock</dataType>
+    <developerName>FSC_ILI_v1_LoanProductRelatedDocuments</developerName>
+    <name>Loan Product Related Documents</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sfdomc__Additional_Steps__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Additional detailed steps</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Additional detailed steps</inlineHelpText>
+    <label>Additional Steps</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

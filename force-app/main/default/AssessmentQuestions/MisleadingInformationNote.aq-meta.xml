@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Misleading Information Note</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Note: It is an offence under the applicable regional law to give false or misleading information or documents.</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextBlock</dataType>
+    <developerName>MisleadingInformationNote</developerName>
+    <name>Misleading Information Note (Sample)</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

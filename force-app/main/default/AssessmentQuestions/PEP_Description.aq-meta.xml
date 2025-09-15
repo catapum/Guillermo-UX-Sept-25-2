@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>PEP Description</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Key individuals include shareholders with 10% or more ownership or 10% or more controlling rights or voting power, officers, board members, the management team, authorized signers or users for the account, or any other individuals with power of attorney over the company or account.
+
+A &apos;PEP&apos; or politically exposed person is defined as natural person that is exposed to the possibility of corruption or the abuse of their position, individuals with access to government resources or influence over policy.
+
+Some examples are:
+
+• Heads of state, heads of government and ministers
+• Senior judicial officials who sit on bodies whose decisions are not subject to further appeal
+• Heads and other high-ranking officers holding senior positions in the armed forces
+• Members of ruling royal families with governing responsibilities
+• Senior executives of state-owned enterprises, where the state owned enterprise has genuine
+economic or political importance</questionText>
+        <status>Active</status>
+        <versionNumber>2</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextBlock</dataType>
+    <developerName>PEP_Description</developerName>
+    <name>PEP Description</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

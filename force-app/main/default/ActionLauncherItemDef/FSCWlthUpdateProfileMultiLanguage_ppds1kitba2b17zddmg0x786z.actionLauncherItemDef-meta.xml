@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionLauncherItemDef xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identifier>_ppds1kitba2b17zddmg0x786z</identifier>
+    <itemActionType>Omniscript</itemActionType>
+    <itemCategory>fileBased</itemCategory>
+    <itemLanguage>Multi-Language</itemLanguage>
+    <masterLabel>FSCWlth/UpdateProfile/Multi-Language</masterLabel>
+    <subType>UpdateProfile</subType>
+    <type>FSCWlth</type>
+</ActionLauncherItemDef>

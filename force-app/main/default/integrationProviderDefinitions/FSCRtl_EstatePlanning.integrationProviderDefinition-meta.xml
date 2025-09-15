@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IntegrationProviderDef xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <developerName>FSCRtl_EstatePlanning</developerName>
+    <fileBasedApexClass>fscserviceprocess.FSCRtlEstatePlanningIntegrationProvider</fileBasedApexClass>
+    <integrationProviderAttributes>
+        <dataType>String</dataType>
+        <developerName>FSC_retail_customer_integrations_V1_0_0</developerName>
+        <label>Get Customer Named Credential</label>
+        <required>true</required>
+        <stringValue>FSC_retail_customer_integrations_V1_0_0</stringValue>
+        <trueOrFalseValue>false</trueOrFalseValue>
+    </integrationProviderAttributes>
+    <providerLabel>FSCRtl_EstatePlanning</providerLabel>
+    <type>Apex</type>
+</IntegrationProviderDef>

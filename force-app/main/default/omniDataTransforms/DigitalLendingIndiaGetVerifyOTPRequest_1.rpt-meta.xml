@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;InputRecordId&quot; : null,
+  &quot;OutputRecordId&quot; : null,
+  &quot;Payload&quot; : {
+    &quot;consent&quot; : null,
+    &quot;otp&quot; : null,
+    &quot;accessKey&quot; : null,
+    &quot;aadhaarNo&quot; : null
+  }
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;body&quot; : {
+    &quot;consent&quot; : null,
+    &quot;otp&quot; : null,
+    &quot;accessKey&quot; : null,
+    &quot;aadhaarNo&quot; : null
+  }
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaGetVerifyOTPRequest</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetVerifyOTPRequestCustom0jISM0000000IZd2AMItem0</globalKey>
+        <inputFieldName>Payload:consent</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetVerifyOTPRequest</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>body:consent</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetVerifyOTPRequestCustom0jISM0000000IZd2AMItem2</globalKey>
+        <inputFieldName>Payload:aadhaarNo</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetVerifyOTPRequest</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>body:aadhaarNo</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetVerifyOTPRequestCustom0jISM0000000IZd2AMItem1</globalKey>
+        <inputFieldName>Payload:otp</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetVerifyOTPRequest</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>body:otp</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetVerifyOTPRequestCustom0jISM0000000IZd2AMItem3</globalKey>
+        <inputFieldName>Payload:accessKey</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetVerifyOTPRequest</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>body:accessKey</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;InputRecordId&quot; : null,
+  &quot;OutputRecordId&quot; : null,
+  &quot;Payload&quot; : {
+    &quot;consent&quot; : null,
+    &quot;otp&quot; : null,
+    &quot;accessKey&quot; : null,
+    &quot;aadhaarNo&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>DigitalLendingIndiaGetVerifyOTPRequest_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;flexInputvalues&quot; : {
+    &quot;ApplicantId&quot; : null,
+    &quot;PartyProfileId&quot; : null
+  },
+  &quot;ContextId&quot; : null,
+  &quot;omniscriptId&quot; : null,
+  &quot;Disclosure and Consent&quot; : {
+    &quot;FSC_ILI_v1_DisclosureAndConsent&quot; : true
+  },
+  &quot;BasicInformation&quot; : {
+    &quot;FSC_ILI_v1_DateOfBirth&quot; : null,
+    &quot;FSC_ILI_v1_Gender&quot; : null,
+    &quot;FSC_ILI_v1_Nationality&quot; : null,
+    &quot;FSC_ILI_v1_Email&quot; : null,
+    &quot;FSC_ILI_v1_LastName&quot; : null,
+    &quot;FSC_ILI_v1_Mobile&quot; : null,
+    &quot;FSC_ILI_v1_MiddleName&quot; : null,
+    &quot;FSC_ILI_v1_FirstName&quot; : null,
+    &quot;FSC_ILI_v1_ResidentType&quot; : null,
+    &quot;FSC_ILI_v1_PAN&quot; : null,
+    &quot;FSC_ILI_v1_Address&quot; : {
+      &quot;FSC_ILI_v1_IsPermanentAddress&quot; : null,
+      &quot;FSC_ILI_v1_IsCurrentAddress&quot; : null,
+      &quot;FSC_ILI_v1_Street&quot; : null,
+      &quot;FSC_ILI_v1_PostalCode&quot; : null,
+      &quot;FSC_ILI_v1_State&quot; : null,
+      &quot;FSC_ILI_v1_City&quot; : null,
+      &quot;FSC_ILI_v1_Country&quot; : null
+    }
+  },
+  &quot;IncomeInformation&quot; : {
+    &quot;FSC_ILI_v1_OtherIncome&quot; : {
+      &quot;FSC_ILI_v1_IncomeType&quot; : null,
+      &quot;FSC_ILI_v1_MonthlyAmount&quot; : null,
+      &quot;FSC_ILI_v1_IncomeAsOfDate&quot; : null
+    },
+    &quot;FSC_ILI_v1_Employment&quot; : {
+      &quot;FSC_ILI_v1_IsWorkAddress&quot; : null,
+      &quot;FSC_ILI_v1_EmploymentType&quot; : null,
+      &quot;FSC_ILI_v1_EmploymentIndustry&quot; : null,
+      &quot;FSC_ILI_v1_EmployerName&quot; : null,
+      &quot;FSC_ILI_v1_AnnualIncome&quot; : null,
+      &quot;FSC_ILI_v1_StartDate&quot; : null,
+      &quot;FSC_ILI_v1_EndDate&quot; : null
+    },
+    &quot;FSC_ILI_IsOtherIncome&quot; : null
+  },
+  &quot;UploadDocuments&quot; : {
+    &quot;FSC_ILI_v1_IDProof&quot; : [ {
+      &quot;data&quot; : null
+    } ],
+    &quot;FSC_ILI_v1_AddressProof&quot; : [ {
+      &quot;data&quot; : null
+    } ],
+    &quot;FSC_ILI_v1_BankStatement&quot; : [ {
+      &quot;data&quot; : null
+    } ],
+    &quot;FSC_ILI_v1_PhotoProof&quot; : [ {
+      &quot;data&quot; : null
+    } ]
+  },
+  &quot;ApplicationFormId&quot; : null,
+  &quot;AssessmentStatus&quot; : null,
+  &quot;ApplicantId&quot; : null,
+  &quot;ApplicantType&quot; : null,
+  &quot;PartyProfileId&quot; : null,
+  &quot;PartyProfileName&quot; : null
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaUpdatePartyProfile</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem36</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_DateOfBirth</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>BirthDate</outputFieldName>
+        <outputObjectName>Applicant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem37</globalKey>
+        <inputFieldName>ApplicationFormId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormId</outputFieldName>
+        <outputObjectName>Applicant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem13</globalKey>
+        <inputFieldName>VerifyAadhaar:FSC_ILI_v1_Aadhar</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PrimaryIdentifier</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem34</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_MiddleName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>MiddleName</outputFieldName>
+        <outputObjectName>Applicant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem12</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_Email</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PrimaryEmail</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:IncomeInformation:FSC_ILI_v1_Employment LIST &apos;FSC_ILI_v1_IsWorkAddress/\/\/==/\/\/&quot;true&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(IncomeInformation:FSC_ILI_v1_Employment), &apos;FSC_ILI_v1_IsWorkAddress == &quot;true&quot;&apos;)</formulaExpression>
+        <formulaResultPath>CurrentEmployment</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom3468</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem35</globalKey>
+        <inputFieldName>ApplicantId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Applicant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem40</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>PartyProfileId</outputFieldName>
+        <outputObjectName>Applicant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem41</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Applicant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Taxpayer Identification Number</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom3285</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TaxpayerIdentificationType</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom737</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_DateOfBirth</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>DateOfBirth</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom474</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_DateOfBirth</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>DateOfBirth</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom8854</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_FirstName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FirstName</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:BasicInformation:FSC_ILI_v1_MiddleName ISBLANK var:FullNameWithoutMiddleName var:FullNameWithMiddleName IF</formulaConverted>
+        <formulaExpression>IF(ISBLANK(%BasicInformation:FSC_ILI_v1_MiddleName%),%FullNameWithoutMiddleName%,%FullNameWithMiddleName%)</formulaExpression>
+        <formulaResultPath>FullName</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom2770</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem4</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_PAN</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TaxpayerIdentificationNumber</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BasicInformation:FSC_ILI_v1_FirstName &apos;/\/\/&apos; var:BasicInformation:FSC_ILI_v1_LastName CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(%BasicInformation:FSC_ILI_v1_FirstName%,&apos; &apos;,%BasicInformation:FSC_ILI_v1_LastName%)</formulaExpression>
+        <formulaResultPath>FullNameWithoutMiddleName</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom1614</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BasicInformation:FSC_ILI_v1_FirstName &apos;/\/\/&apos; var:BasicInformation:FSC_ILI_v1_MiddleName &apos;/\/\/&apos; var:BasicInformation:FSC_ILI_v1_LastName CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(%BasicInformation:FSC_ILI_v1_FirstName%,&apos; &apos;,%BasicInformation:FSC_ILI_v1_MiddleName%,&apos; &apos;,%BasicInformation:FSC_ILI_v1_LastName%)</formulaExpression>
+        <formulaResultPath>FullNameWithMiddleName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem32</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_Email</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Email</outputFieldName>
+        <outputObjectName>Applicant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>abc</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem7</globalKey>
+        <inputFieldName>FullName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem9</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_Gender</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Gender</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom4719</globalKey>
+        <inputFieldName>EmploymentType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>EmploymentType</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem8</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_Nationality</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Nationality</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem39</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_FirstName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>FirstName</outputFieldName>
+        <outputObjectName>Applicant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem3</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_ResidentType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>ResidentType</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem38</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_LastName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>LastName</outputFieldName>
+        <outputObjectName>Applicant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem5</globalKey>
+        <inputFieldName>PartyProfileId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom6417</globalKey>
+        <inputFieldName>IncomeInformation:FSC_ILI_v1_EmploymentIndustry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>EmploymentIndustry</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem11</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_Mobile</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PrimaryPhone</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem33</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_Mobile</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Phone</outputFieldName>
+        <outputObjectName>Applicant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom4065</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_LastName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LastName</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom862</globalKey>
+        <inputFieldName>BasicInformation:FSC_ILI_v1_MiddleName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MiddleName</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem6</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Aadhar</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileCustom0jISB0000000gyX2AQItem14</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfile</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PrimaryIdentificationName</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;PartyProfileId&quot; : &quot;&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DigitalLendingIndiaUpdatePartyProfile_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

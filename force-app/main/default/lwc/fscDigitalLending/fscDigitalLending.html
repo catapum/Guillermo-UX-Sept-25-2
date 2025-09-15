@@ -1,0 +1,63 @@
+<template>
+    <lightning-card footer="" title="">
+        <h1 class="slds-text-heading_medium">{app_welcome_text}</h1>
+        <div class="c-footer" >
+            <a href="/lightning/app/c__Learning_Home/page/home">Return to Learning Home</a>
+        </div>
+        <div class="c-container">
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <p class="c-description">{app_description}</p>
+
+                    <c-feature-child
+                        heading="Product" 
+                        image="standard:product" 
+                        app-text="To view or create New Products based on the type of user. sample_product_auto_loan created as a reference. " 
+                        link-in-new-tab={pass_true}
+                        app="standard__DigitalLending"
+                        object-name="Product2"
+                        filter-name="AllProducts"
+                        link-reference="standard__objectPage"></c-feature-child>
+                    
+                    <c-feature-child
+                        heading="Catalog" 
+                        image="standard:catalog" 
+                        app-text="To view or create New Catalogs based on the type of user. sample_catalog created as a reference." 
+                        link-in-new-tab={pass_true}
+                        app="standard__DigitalLending"
+                        object-name="ProductCatalog"
+                        filter-name="__Recent"
+                        link-reference="standard__objectPage"></c-feature-child>
+                    
+                    <template if:false={no_record_product_loan_aa}>
+                        <c-feature-child
+                            heading="Loan Application - Agent" 
+                            image="standard:product" 
+                            app-text='Initiate Loan Applications for your customers. View the required Product and Click on "Start Application".' 
+                            link-in-new-tab={pass_true}
+                            app="standard__DigitalLending"
+                            object-name="Product2"
+                            object-id={productLoanAaId}
+                            link-reference="standard__recordPage"></c-feature-child>
+                    </template>
+                    <template if:true={no_record_household_account}>
+                        <c-feature-child
+                            heading="Loan Application - Agent" 
+                            image="standard:product" 
+                            app-text='Initiate Loan Applications for your customers. View the required Product and Click on "Start Application".' 
+                            no-record={no_record_product_loan_aa}></c-feature-child>
+                    </template>
+
+                    <c-feature-child
+                        heading="Loan Application - Customer" 
+                        image="standard:customers" 
+                        app-text='From App Launcher Open Digital Experiences. Open "DigitalLendingLearning" site. Create a new user. On Login Click on "Sample Category" -> Learn More -> Apply. Login as a user and track the Application Form Status.' 
+                        url="/lightning/cms/experiences"
+                        link-in-new-tab={pass_true}
+                        link-reference="standard__webPage"></c-feature-child>
+
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

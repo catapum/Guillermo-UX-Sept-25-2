@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Sanctioned Countries</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Have you previously worked in following countries / areas: Iran, Syria, North Korea, Sudan, Cuba, Crimea?</questionText>
+        <responseValues>Yes
+No</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Radio</dataType>
+    <developerName>SanctionedCountries</developerName>
+    <name>Sanctioned Countries (Sample)</name>
+    <questionCategory>Financial</questionCategory>
+    <relatedQuestion>ProfileScreening</relatedQuestion>
+</AssessmentQuestion>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Intake</fullName>
+        <default>true</default>
+        <label>Intake</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Submitted</fullName>
+        <default>false</default>
+        <label>Submitted</label>
+    </standardValue>
+    <standardValue>
+        <fullName>DDE</fullName>
+        <default>false</default>
+        <label>DDE</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Underwriting</fullName>
+        <default>false</default>
+        <label>Underwriting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Negotiation</fullName>
+        <default>false</default>
+        <label>Negotiation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Approved</fullName>
+        <default>false</default>
+        <label>Approved</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Operations</fullName>
+        <default>false</default>
+        <label>Operations</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Book to Core</fullName>
+        <default>false</default>
+        <label>Book to Core</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Rejected</fullName>
+        <default>false</default>
+        <label>Rejected</label>
+    </standardValue>
+</StandardValueSet>

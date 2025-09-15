@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedOutputJson>{
+  &quot;LeadRecord&quot; : [ {
+    &quot;Email&quot; : &quot;&quot;,
+    &quot;FirstName&quot; : &quot;&quot;,
+    &quot;Id&quot; : &quot;&quot;,
+    &quot;LastName&quot; : &quot;&quot;,
+    &quot;MiddleName&quot; : &quot;&quot;,
+    &quot;MobilePhone&quot; : &quot;&quot;,
+    &quot;Name&quot; : &quot;&quot;,
+    &quot;Phone&quot; : &quot;&quot;
+  } ],
+  &quot;ApplicationFormRecord&quot; : [ {
+    &quot;Id&quot; : &quot;&quot;,
+    &quot;LeadId&quot; : &quot;&quot;,
+    &quot;Name&quot; : &quot;&quot;,
+    &quot;OpportunityId&quot; : &quot;&quot;,
+    &quot;OwnerId&quot; : &quot;&quot;,
+    &quot;RecordTypeId&quot; : &quot;&quot;,
+    &quot;Stage&quot; : &quot;&quot;,
+    &quot;UsageType&quot; : &quot;&quot;
+  } ]
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaGetApplicationFormId</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetApplicationFormIdCustom0jITC0000000ECf2AMItem16</globalKey>
+        <inputFieldName>ApplicationFormRecord:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetApplicationFormId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormRecord:Name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetApplicationFormIdCustom0jITC0000000ECf2AMItem13</globalKey>
+        <inputFieldName>ApplicationFormRecord:OwnerId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetApplicationFormId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormRecord:OwnerId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetApplicationFormIdCustom0jITC0000000ECf2AMItem6</globalKey>
+        <inputFieldName>ApplicationFormRecord:Stage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetApplicationFormId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormRecord:Stage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetApplicationFormIdCustom0jITC0000000ECf2AMItem11</globalKey>
+        <inputFieldName>ApplicationFormRecord:OpportunityId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetApplicationFormId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormRecord:OpportunityId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetApplicationFormIdCustom0jITC0000000ECf2AMItem17</globalKey>
+        <inputFieldName>ApplicationFormRecord:UsageType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetApplicationFormId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormRecord:UsageType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetApplicationFormIdCustom0jITC0000000ECf2AMItem7</globalKey>
+        <inputFieldName>ApplicationFormRecord:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetApplicationFormId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormRecord:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>ContextId</filterValue>
+        <globalKey>DigitalLendingIndiaGetApplicationFormIdCustom0jITC0000000ECf2AMItem1</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>ApplicationForm</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetApplicationFormId</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormRecord</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetApplicationFormIdCustom0jITC0000000ECf2AMItem18</globalKey>
+        <inputFieldName>ApplicationFormRecord:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetApplicationFormId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormRecord:Id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetApplicationFormIdCustom0jITC0000000ECf2AMItem9</globalKey>
+        <inputFieldName>ApplicationFormRecord:LeadId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetApplicationFormId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormRecord:LeadId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaGetApplicationFormIdCustom0jITC0000000ECf2AMItem4</globalKey>
+        <inputFieldName>ApplicationFormRecord:RecordTypeId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaGetApplicationFormId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormRecord:RecordTypeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : &quot;&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>DigitalLendingIndiaGetApplicationFormId_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

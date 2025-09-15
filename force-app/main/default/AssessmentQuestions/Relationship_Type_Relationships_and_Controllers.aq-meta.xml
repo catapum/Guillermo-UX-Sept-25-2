@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Relationship Type Relationships and Controllers</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Relationship Type</questionText>
+        <responseValues>Immediate Owner
+Intermediate Owner
+Ultimate Beneficial Owner
+Authorized Signer
+Custodian
+Trustee
+Executive
+CEO
+CFO
+COO
+CIO
+CTO</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Multiselect</dataType>
+    <developerName>Relationship_Type_Relationships_and_Controllers</developerName>
+    <name>Relationship Type Relationships and Controllers</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

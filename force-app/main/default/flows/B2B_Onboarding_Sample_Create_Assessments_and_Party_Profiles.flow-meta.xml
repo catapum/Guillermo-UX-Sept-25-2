@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>When an error occurs during the flow execution, sets the isFlowFailed variable to True and stores the error message in the errorMessage variable.</description>
+        <name>SetIsFlowFailedToTrue</name>
+        <label>Set isFlowFailed to True</label>
+        <locationX>440</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>isFlowFailed</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>errorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <interviewLabel>Create Assessments and Party Profiles {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>B2B Onboarding Sample: Create Assessments and Party Profiles</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Creates Assessment records for each record in the AssessmentsCollection variable.</description>
+        <name>CreateAssessments</name>
+        <label>Create Assessments</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <faultConnector>
+            <targetReference>SetIsFlowFailedToTrue</targetReference>
+        </faultConnector>
+        <inputReference>assessmentsCollection</inputReference>
+    </recordCreates>
+    <sourceTemplate>fsc_onboarding__CreateAssessments</sourceTemplate>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>CreateAssessments</targetReference>
+        </connector>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>InvalidDraft</status>
+    <variables>
+        <description>Stores a collection of applicant records.</description>
+        <name>applicantsCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Applicant</objectType>
+    </variables>
+    <variables>
+        <description>Stores the ID of the Application Form record that was passed into the flow.</description>
+        <name>applicationFormId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the name of the product to retrieve the assessment type.</description>
+        <name>applicationFormProductName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the assessment record details.</description>
+        <name>AssessmentRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Assessment</objectType>
+    </variables>
+    <variables>
+        <description>Stores a collection of assessment records.</description>
+        <name>assessmentsCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Assessment</objectType>
+    </variables>
+    <variables>
+        <description>Stores the error message if an exception occurs during flow execution.</description>
+        <name>errorMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Stores a boolean value that indicates whether the flow execution failed.</description>
+        <name>isFlowFailed</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

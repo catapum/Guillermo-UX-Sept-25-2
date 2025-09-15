@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Customer Attestation (B2B Sample)</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Customer Attestation (B2B Sample)</questionText>
+        <status>Active</status>
+        <versionNumber>2</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Disclosure</dataType>
+    <developerName>Customer_Attestation_B2B_Sample</developerName>
+    <name>Customer Attestation (B2B Sample)</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>FSC_FF_PortfolioTable</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>&lt;table style=&quot;border-collapse:collapse;width:100%;&quot; border=&quot;1&quot;&gt;&lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;th&gt;Portfolio 1&lt;/th&gt;&lt;th&gt;Portfolio 2&lt;/th&gt;&lt;th&gt;Portfolio 3&lt;/th&gt;&lt;th&gt;Portfolio 4&lt;/th&gt;&lt;th&gt;Portfolio 5&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Growth allocation&lt;/td&gt;&lt;td&gt;0.25&lt;/td&gt;&lt;td&gt;0.42&lt;/td&gt;&lt;td&gt;0.66&lt;/td&gt;&lt;td&gt;0.79&lt;/td&gt;&lt;td&gt;0.98&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Potential loss in 1 year&lt;/td&gt;&lt;td&gt;-7.9&lt;/td&gt;&lt;td&gt;-12.7&lt;/td&gt;&lt;td&gt;-17.3&lt;/td&gt;&lt;td&gt;-20.9&lt;/td&gt;&lt;td&gt;-25.9&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Potential gain in 1 year&lt;/td&gt;&lt;td&gt;14.9&lt;/td&gt;&lt;td&gt;21.5&lt;/td&gt;&lt;td&gt;28.3&lt;/td&gt;&lt;td&gt;33.1&lt;/td&gt;&lt;td&gt;40.1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Average return&lt;/td&gt;&lt;td&gt;3.5&lt;/td&gt;&lt;td&gt;4.4&lt;/td&gt;&lt;td&gt;5.5&lt;/td&gt;&lt;td&gt;6.1&lt;/td&gt;&lt;td&gt;7.1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextBlock</dataType>
+    <developerName>FSC_FF_v1_PortfolioTable</developerName>
+    <name>FSC_FF_PortfolioTable</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

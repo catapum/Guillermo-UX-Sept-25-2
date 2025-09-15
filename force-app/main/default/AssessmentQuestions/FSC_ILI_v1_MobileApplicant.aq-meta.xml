@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Mobile</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Mobile</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Telephone</dataType>
+    <developerName>FSC_ILI_v1_MobileApplicant</developerName>
+    <name>Mobile</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

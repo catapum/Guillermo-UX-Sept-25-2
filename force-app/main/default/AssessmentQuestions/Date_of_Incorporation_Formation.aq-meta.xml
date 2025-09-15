@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Date of Incorporation/Formation</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Date of Incorporation/Formation</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Date</dataType>
+    <developerName>Date_of_Incorporation_Formation</developerName>
+    <name>Date of Incorporation/Formation</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

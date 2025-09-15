@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Preliminary Screening Results</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Preliminary Screening Results</questionText>
+        <responseValues>No Hits
+False Positives Only
+True Hit(s)</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Select</dataType>
+    <developerName>Preliminary_Screening_Results</developerName>
+    <name>Preliminary Screening Results</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

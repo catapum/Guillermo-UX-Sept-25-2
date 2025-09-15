@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <additionalInformation>By proceeding, you authorise the bank to access your information for identity verification, screenings, and credit pull.</additionalInformation>
+        <description>I consent to the above disclosure statement</description>
+        <isActive>true</isActive>
+        <name>Disclosure</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Disclosure and Consent</questionText>
+        <responseValues>I consent to the above disclosure statement</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Disclosure</dataType>
+    <developerName>FSC_ILI_v1_Disclosure</developerName>
+    <name>Disclosure</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

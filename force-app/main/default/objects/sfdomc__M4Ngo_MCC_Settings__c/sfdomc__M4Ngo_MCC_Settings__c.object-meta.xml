@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Settings generated as part of the MC connector setup process in the Marketing for Nonprofits app.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>M4Ngo MC Connector Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

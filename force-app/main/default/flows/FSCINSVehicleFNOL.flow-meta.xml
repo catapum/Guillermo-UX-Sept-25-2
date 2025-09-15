@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Notifies the account when a first notice of loss request is made. If the associated email can be determined, an email is sent to the person linked to the account.</description>
+    <environments>Default</environments>
+    <interviewLabel>Process FSC INS Initiate Vehicle First Notice of Loss {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Process FSC INS Initiate Vehicle First Notice of Loss</label>
+    <orchestratedStages>
+        <description>Notifies the account associated with the triggering service catalog request that a first notice of loss request has been made for the account. If your process requires that you notify other stakeholders, add more steps to notify them in this stage.</description>
+        <name>NotifyStakeholdersOfRequest</name>
+        <label>Notify Stakeholders of Request</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Emails the person associated with the account of the triggering service catalog request record when a first notice of loss request has been made for the account and when the associated email can be determined.</description>
+            <name>NotifyAccountOfFirstNoticeOfLossRequest</name>
+            <actionName>serviceprocess__InitiateVehicleFNOL</actionName>
+            <actionType>stepBackground</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>inputRecordId</name>
+                <value>
+                    <elementReference>$Record.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>Notify Account of First Notice Of Loss Request</label>
+            <requiresAsyncProcessing>false</requiresAsyncProcessing>
+            <runAsUser>true</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>BackgroundStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Orchestrator</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <sourceTemplate>serviceprocess__FSCINSVehicleFNOL</sourceTemplate>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>NotifyStakeholdersOfRequest</targetReference>
+        </connector>
+        <filterFormula>{!$Record.SvcCatalogItemDefinition.DeveloperName}=&apos;FirstNoticeOfLoss&apos;</filterFormula>
+        <object>SvcCatalogRequest</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

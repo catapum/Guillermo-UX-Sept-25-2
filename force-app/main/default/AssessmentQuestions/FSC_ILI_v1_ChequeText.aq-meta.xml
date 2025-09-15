@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>FSC_ILI_ChequeText</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Upload a file with up to five post-dated cheques. The total file size must be less than or equal to 5MB.</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextBlock</dataType>
+    <developerName>FSC_ILI_v1_ChequeText</developerName>
+    <name>FSC_ILI_ChequeText</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

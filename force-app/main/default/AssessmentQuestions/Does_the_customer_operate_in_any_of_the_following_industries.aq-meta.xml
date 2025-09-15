@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Does the customer operate in any of the following industries?</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Does the customer operate in any of the following industries?</questionText>
+        <responseValues>Money Service Business
+Gambling/Casinos
+Cannabis
+Charity
+Not-for-profit
+Religious Organizations</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Select</dataType>
+    <developerName>Does_the_customer_operate_in_any_of_the_following_industries</developerName>
+    <name>Does the customer operate in any of the following industries?</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

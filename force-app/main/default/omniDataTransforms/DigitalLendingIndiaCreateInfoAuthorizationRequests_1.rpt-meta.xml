@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CreateInfoAuthorizationRequests&quot; : null,
+    &quot;SetApplicationFormProductId&quot; : null,
+    &quot;FetchApplicationFormProductDetails&quot; : null,
+    &quot;GetDataUsePurposeforApplicationFormProduct&quot; : null,
+    &quot;SetDecisionMatrixInputs&quot; : null,
+    &quot;FetchAuthorizationFormText&quot; : null,
+    &quot;CreateAuthorizationConsents&quot; : null,
+    &quot;DisclosuresandConsents&quot; : null
+  },
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;userTimeZone&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;ContextId&quot; : null,
+  &quot;DisclosuresandConsents&quot; : {
+    &quot;DisplayDisclosureandConsent&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaCreateInfoAuthorizationRequests</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateInfoAuthorizationRequestsCustom9100</globalKey>
+        <inputFieldName>userId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateInfoAuthorizationRequests</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RequesterId</outputFieldName>
+        <outputObjectName>InfoAuthorizationRequest</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:requestedApplicantName &quot;-&quot; var:requestedApplicationFormName CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(requestedApplicantName,&quot;-&quot;,%requestedApplicationFormName%)</formulaExpression>
+        <formulaResultPath>InfoAuthRequestName</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaCreateInfoAuthorizationRequestsCustom0jISB0000000jy12AAItem7</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateInfoAuthorizationRequests</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>&quot;Web&quot;</formulaConverted>
+        <formulaExpression>&quot;Web&quot;</formulaExpression>
+        <formulaResultPath>CommunicationType</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaCreateInfoAuthorizationRequestsCustom0jISB0000000jy12AAItem4</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateInfoAuthorizationRequests</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaCreateInfoAuthorizationRequestsCustom0jISB0000000jy12AAItem6</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaCreateInfoAuthorizationRequests</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>InfoAuthorizationRequest</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateInfoAuthorizationRequestsCustom0jISB0000000jy12AAItem3</globalKey>
+        <inputFieldName>requestedDataUsePurposeId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateInfoAuthorizationRequests</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>DataUsePurposeId</outputFieldName>
+        <outputObjectName>InfoAuthorizationRequest</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateInfoAuthorizationRequestsCustom0jISB0000000jy12AAItem2</globalKey>
+        <inputFieldName>InfoAuthRequestName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateInfoAuthorizationRequests</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>InfoAuthorizationRequest</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateInfoAuthorizationRequestsCustom0jISB0000000jy12AAItem1</globalKey>
+        <inputFieldName>PartyProfileAccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateInfoAuthorizationRequests</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>ConsenterId</outputFieldName>
+        <outputObjectName>InfoAuthorizationRequest</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateInfoAuthorizationRequestsCustom0jISB0000000jy12AAItem0</globalKey>
+        <inputFieldName>CommunicationType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateInfoAuthorizationRequests</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>CommunicationType</outputFieldName>
+        <outputObjectName>InfoAuthorizationRequest</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>$Vlocity.UserId</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaCreateInfoAuthorizationRequestsCustom0jISB0000000jy12AAItem5</globalKey>
+        <inputFieldName>PartyProfileAccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaCreateInfoAuthorizationRequests</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PertainsToId</outputFieldName>
+        <outputObjectName>InfoAuthorizationRequest</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CreateInfoAuthorizationRequests&quot; : null,
+    &quot;SetApplicationFormProductId&quot; : null,
+    &quot;FetchApplicationFormProductDetails&quot; : null,
+    &quot;GetDataUsePurposeforApplicationFormProduct&quot; : null,
+    &quot;SetDecisionMatrixInputs&quot; : null,
+    &quot;FetchAuthorizationFormText&quot; : null,
+    &quot;CreateAuthorizationConsents&quot; : null,
+    &quot;DisclosuresandConsents&quot; : null
+  },
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;userTimeZone&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userId&quot; : &quot;&quot;,
+  &quot;timeStamp&quot; : null,
+  &quot;ContextId&quot; : null,
+  &quot;DisclosuresandConsents&quot; : {
+    &quot;DisplayDisclosureandConsent&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>true</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DigitalLendingIndiaCreateInfoAuthorizationRequests_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

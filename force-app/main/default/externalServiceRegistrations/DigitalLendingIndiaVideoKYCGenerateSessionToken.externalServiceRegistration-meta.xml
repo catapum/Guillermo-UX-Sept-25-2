@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalServiceRegistration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>DigitalLendingIndiaVideoKYCGenerateSessionToken</label>
+    <namedCredentialReference>VKYC1</namedCredentialReference>
+    <operations>
+        <active>true</active>
+        <name>postv3getx2djwt</name>
+    </operations>
+    <registrationProviderType>Custom</registrationProviderType>
+    <schema>{
+  &quot;openapi&quot;: &quot;3.0.0&quot;,
+  &quot;info&quot;: {
+    &quot;title&quot;: &quot;Karza API&quot;,
+    &quot;description&quot;: &quot;APIs provided by Karza for various services&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;
+  },
+  &quot;servers&quot;: [{
+    &quot;url&quot;: &quot;https://testapi.karza.in&quot;,
+    &quot;description&quot;: &quot;Test API server&quot;
+  }],
+  &quot;paths&quot;: {
+    &quot;/v3/get-jwt&quot;: {
+      &quot;post&quot;: {
+        &quot;tags&quot;: [
+          &quot;Token Management&quot;
+        ],
+        &quot;summary&quot;: &quot;Generate Session Token&quot;,
+        &quot;requestBody&quot;: {
+          &quot;content&quot;: {
+            &quot;application/json&quot;: {
+              &quot;schema&quot;: {
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;properties&quot;: {
+                  &quot;productId&quot;: {
+                    &quot;type&quot;: &quot;array&quot;,
+                    &quot;items&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    }
+                  }
+                },
+                &quot;example&quot;: {
+                  &quot;productId&quot;: [
+                    &quot;video_kyc&quot;
+                  ]
+                }
+              }
+            }
+          }
+        },
+        &quot;responses&quot;: {
+          &quot;200&quot;: {
+            &quot;description&quot;: &quot;Successful response with session token&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;schema&quot;: {
+                  &quot;type&quot;: &quot;object&quot;,
+                  &quot;properties&quot;: {
+                    &quot;requestId&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;result&quot;: {
+                      &quot;type&quot;: &quot;object&quot;,
+                      &quot;properties&quot;: {
+                        &quot;data&quot;: {
+                          &quot;type&quot;: &quot;object&quot;,
+                          &quot;properties&quot;: {
+                            &quot;karzatoken&quot;: {
+                              &quot;type&quot;: &quot;string&quot;
+                            }
+                          }
+                        },
+                        &quot;success&quot;: {
+                          &quot;type&quot;: &quot;boolean&quot;
+                        },
+                        &quot;reason&quot;: {
+                          &quot;type&quot;: &quot;string&quot;,
+                          &quot;nullable&quot;: true
+                        }
+                      },
+                      &quot;required&quot;: [
+                        &quot;data&quot;,
+                        &quot;success&quot;
+                      ]
+                    },
+                    &quot;statusCode&quot;: {
+                      &quot;type&quot;: &quot;integer&quot;
+                    }
+                  },
+                  &quot;required&quot;: [
+                    &quot;requestId&quot;,
+                    &quot;result&quot;,
+                    &quot;statusCode&quot;
+                  ],
+                  &quot;example&quot;: {
+                    &quot;requestId&quot;: &quot;f5cb5dfe-4d1c-473b-a6eb-dc1371e77060&quot;,
+                    &quot;result&quot;: {
+                      &quot;data&quot;: {
+                        &quot;karzatoken&quot;: &quot;&quot;
+                      },
+                      &quot;success&quot;: true,
+                      &quot;reason&quot;: null
+                    },
+                    &quot;statusCode&quot;: 101
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}</schema>
+    <schemaType>OpenApi3</schemaType>
+    <serviceBinding>{&quot;host&quot;:&quot;testapi.karza.in&quot;,&quot;basePath&quot;:&quot;&quot;,&quot;allowedSchemes&quot;:[&quot;HTTPS&quot;],&quot;requestMediaTypes&quot;:[],&quot;responseMediaTypes&quot;:[],&quot;compatibleMediaTypes&quot;:{},&quot;extensions&quot;:{}}</serviceBinding>
+    <status>Complete</status>
+    <systemVersion>5</systemVersion>
+</ExternalServiceRegistration>

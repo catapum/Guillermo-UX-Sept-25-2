@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Address Name</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Address Name</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Text</dataType>
+    <developerName>FSC_ILI_v1_AddressNameApplicant</developerName>
+    <name>Address Name</name>
+    <questionCategory>Demographic</questionCategory>
+    <relatedQuestion>FSC_ILI_v1_AddressApplicant</relatedQuestion>
+</AssessmentQuestion>

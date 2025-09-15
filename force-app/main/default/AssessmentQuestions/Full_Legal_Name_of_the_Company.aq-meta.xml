@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <helpText>The full legal name of the company being onboarded, as displayed on their certificate of incorporation/formation</helpText>
+        <isActive>true</isActive>
+        <name>Full Legal Name of the Company</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Full Legal Name of the Company</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Text</dataType>
+    <developerName>Full_Legal_Name_of_the_Company</developerName>
+    <name>Full Legal Name of the Company</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

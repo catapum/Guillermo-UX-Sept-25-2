@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <processLabel>Lock or Unlock Card</processLabel>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>card_number</developerName>
+        <groupApiName>section_2</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>Card Number</label>
+        <sortOrder>1</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>card_name</developerName>
+        <groupApiName>section_2</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>Card Name</label>
+        <sortOrder>2</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>card_type</developerName>
+        <groupApiName>section_2</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>Card Type</label>
+        <sortOrder>3</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>account_type</developerName>
+        <groupApiName>section_2</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>Account Type</label>
+        <sortOrder>4</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>card_lock_status</developerName>
+        <groupApiName>section_2</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>Card Lock Status</label>
+        <sortOrder>5</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessDependencies>
+        <dependencyReference>FSCRtl_LockUnlockCard_multiLanguage_2</dependencyReference>
+        <processStepName>RequestForm</processStepName>
+        <type>OmniScriptConfig</type>
+    </serviceProcessDependencies>
+    <serviceProcessDependencies>
+        <dependencyReference>ProcessLckUnlckCard</dependencyReference>
+        <processStepName>FulfillmentFlow</processStepName>
+        <type>FlowDefinition</type>
+    </serviceProcessDependencies>
+    <serviceProcessDependencies>
+        <dependencyReference>FSCRtl_LockUnlockCard</dependencyReference>
+        <processStepName>IntegrationDefinition</processStepName>
+        <type>IntegrationProviderDef</type>
+    </serviceProcessDependencies>
+    <serviceProcessItemGroups>
+        <apiName>section_2</apiName>
+        <groupName>Card Details</groupName>
+        <sortOrder>2</sortOrder>
+    </serviceProcessItemGroups>
+    <usageType>Industry</usageType>
+</ServiceProcess>

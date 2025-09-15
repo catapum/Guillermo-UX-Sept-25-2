@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>I confirm all individuals were added</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>I confirm all individuals were added</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Checkbox</dataType>
+    <developerName>I_confirm_all_individuals_were_added</developerName>
+    <name>I confirm all individuals were added</name>
+    <questionCategory>Demographic</questionCategory>
+    <relatedQuestion>Requesting_Beneficial_Owner_Exemption</relatedQuestion>
+</AssessmentQuestion>

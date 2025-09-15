@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <processLabel>Change Billing Cycle</processLabel>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>card_number</developerName>
+        <groupApiName>section_2</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>Card Number</label>
+        <sortOrder>1</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>current_billing_day</developerName>
+        <groupApiName>section_5</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>Current Billing Day</label>
+        <sortOrder>1</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>card_name</developerName>
+        <groupApiName>section_2</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>Card Name</label>
+        <sortOrder>2</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>current_billing_start_date</developerName>
+        <groupApiName>section_5</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>Current Billing Start Date</label>
+        <sortOrder>2</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>current_billing_end_date</developerName>
+        <groupApiName>section_5</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>Current Billing End Date</label>
+        <sortOrder>3</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>new_billing_day</developerName>
+        <groupApiName>section_5</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>New Billing Day</label>
+        <sortOrder>4</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>new_billing_start_date</developerName>
+        <groupApiName>section_5</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>New Billing Start Date</label>
+        <sortOrder>5</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessAttributes>
+        <attributeType>Extended</attributeType>
+        <dataType>Text</dataType>
+        <developerName>new_billing_end_date</developerName>
+        <groupApiName>section_5</groupApiName>
+        <isAttrValueDerivAtRuntime>false</isAttrValueDerivAtRuntime>
+        <isRequired>false</isRequired>
+        <label>New Billing End Date</label>
+        <sortOrder>6</sortOrder>
+    </serviceProcessAttributes>
+    <serviceProcessDependencies>
+        <dependencyReference>ProcessChgBillCycle</dependencyReference>
+        <processStepName>FulfillmentFlow</processStepName>
+        <type>FlowDefinition</type>
+    </serviceProcessDependencies>
+    <serviceProcessDependencies>
+        <dependencyReference>FSCRtl_ChgBillCycl</dependencyReference>
+        <processStepName>IntegrationDefinition</processStepName>
+        <type>IntegrationProviderDef</type>
+    </serviceProcessDependencies>
+    <serviceProcessDependencies>
+        <dependencyReference>FSCRtl_ChgBillCyclFetchCardBillingDetails</dependencyReference>
+        <processStepName>IntegrationDefinition</processStepName>
+        <type>IntegrationProviderDef</type>
+    </serviceProcessDependencies>
+    <serviceProcessDependencies>
+        <dependencyReference>FSCRtl_ChangeBillingCycle_multiLanguage_2</dependencyReference>
+        <processStepName>RequestForm</processStepName>
+        <type>OmniScriptConfig</type>
+    </serviceProcessDependencies>
+    <serviceProcessItemGroups>
+        <apiName>section_2</apiName>
+        <groupName>Card Details</groupName>
+        <sortOrder>2</sortOrder>
+    </serviceProcessItemGroups>
+    <serviceProcessItemGroups>
+        <apiName>section_5</apiName>
+        <groupName>Billing Cycle Details</groupName>
+        <sortOrder>5</sortOrder>
+    </serviceProcessItemGroups>
+    <usageType>Industry</usageType>
+</ServiceProcess>

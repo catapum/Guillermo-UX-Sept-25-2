@@ -1,0 +1,101 @@
+{
+  "type" : "sfdc_cms__themeLayout",
+  "title" : "Commerce Layout",
+  "contentBody" : {
+    "component" : {
+      "attributes" : { },
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "hidePromoBanner" : false,
+            "hideWishlistShortcut" : true
+          },
+          "children" : [ {
+            "id" : "585e0147-bc29-4aa8-9a10-a387830c7a41",
+            "name" : "promoBanner",
+            "title" : "Rich Text Editor (Promo Banner)",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "alignment" : "left",
+                "imageInfo" : "",
+                "imageInfoMobile" : "",
+                "logoWidth" : 250
+              },
+              "definition" : "dxp_content_layout:siteLogo",
+              "id" : "e52a312c-a6fd-4ee8-a753-6e5783488575",
+              "type" : "component"
+            } ],
+            "id" : "1b6d9d63-90fd-46f7-a3c0-d25c7e09284e",
+            "name" : "storeLogo",
+            "title" : "Site Logo",
+            "type" : "region"
+          }, {
+            "id" : "f462687f-2cbc-468e-9b42-b8b554afd817",
+            "name" : "navigation",
+            "title" : "Multilevel Navigation Menu",
+            "type" : "region"
+          }, {
+            "id" : "a8dc5b23-c9fd-46f3-abae-1d38aa2c6c49",
+            "name" : "searchInput",
+            "title" : "Search Bar",
+            "type" : "region"
+          }, {
+            "id" : "f6cbf3b9-4d96-4b78-a29d-90e08835e5cd",
+            "name" : "shopperCopilot",
+            "title" : "Shopper Copilot",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "iconStyle" : "userIcon",
+                "includeCompanyName" : false,
+                "logOutLabel" : "Log Out",
+                "loginLinkText" : "Log In",
+                "loginLinkTextDecoration" : "{\"underline\":true}",
+                "loginLinkTextOrientation" : "leftOfIcon",
+                "menuStyle" : "icon",
+                "userNameTextOrientation" : "leftOfIcon",
+                "userProfileMenuNavigationMenuEditor" : "Default_User_Profile_Menu"
+              },
+              "definition" : "commerce_builder:userProfileMenu",
+              "id" : "3116ee2d-57e5-40f4-8904-26964cf1857a",
+              "type" : "component"
+            } ],
+            "id" : "ad6fd6c4-90be-4839-9998-1a759bd35868",
+            "name" : "myAccount",
+            "title" : "Profile Menu",
+            "type" : "region"
+          }, {
+            "id" : "d2bc3482-408d-45e3-a34f-67af9bbd093c",
+            "name" : "wishlist",
+            "title" : "List Badge",
+            "type" : "region"
+          }, {
+            "id" : "380f541b-b1f4-4a5a-85eb-87246e116e64",
+            "name" : "cart",
+            "title" : "Cart Badge",
+            "type" : "region"
+          } ],
+          "definition" : "commerce_builder:layoutHeader",
+          "id" : "46ee6586-5834-49de-9a93-47a3181a2fdb",
+          "type" : "component"
+        } ],
+        "id" : "05a507b4-1e65-4a5f-937b-a5f6e213b030",
+        "name" : "header",
+        "title" : "Header",
+        "type" : "region"
+      }, {
+        "id" : "343b93cb-1013-4738-b9fc-10c2b27175a5",
+        "name" : "footer",
+        "title" : "Footer",
+        "type" : "region"
+      } ],
+      "definition" : "commerce:layoutSite",
+      "id" : "992d42a2-f143-48ac-b3a6-38364e4aa8e1",
+      "type" : "component"
+    }
+  },
+  "urlName" : "commerce-layout"
+}

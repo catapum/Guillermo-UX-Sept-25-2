@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Principal Business Function</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Principal Business Function</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Text</dataType>
+    <developerName>Principal_Business_Function</developerName>
+    <name>Principal Business Function</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

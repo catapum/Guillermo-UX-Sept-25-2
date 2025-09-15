@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionMatrixDefinitionVersion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisionMatrixDefinition>GetAllFeeTypes</decisionMatrixDefinition>
+    <label>GetAllFeeTypes V1</label>
+    <rank>1</rank>
+    <startDate>2024-09-24T06:20:36.000Z</startDate>
+    <status>Draft</status>
+    <versionNumber>1</versionNumber>
+</DecisionMatrixDefinitionVersion>

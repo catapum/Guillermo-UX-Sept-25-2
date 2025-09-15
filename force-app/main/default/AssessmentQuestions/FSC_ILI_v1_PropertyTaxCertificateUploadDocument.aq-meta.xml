@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Property Tax Certificate Upload Document</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Property Tax Certificate</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>File</dataType>
+    <developerName>FSC_ILI_v1_PropertyTaxCertificateUploadDocument</developerName>
+    <name>Property Tax Certificate Upload Document</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Treasury Management Products/Services</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Treasury Management Products/Services</questionText>
+        <responseValues>ACH
+Wire Transfers
+Integrated Payables
+Check Positive Pay
+Reverse Positive Pay
+ACH Positive Pay
+Cash Vault
+Wire Transfers
+Lockbox
+Online Payments
+Merchant Services
+Virtual Account Manager
+Remote Deposit Capture
+File Transmission
+Cash Sweep</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Multiselect</dataType>
+    <developerName>Treasury_Management_Products_Services</developerName>
+    <name>Treasury Management Products/Services</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

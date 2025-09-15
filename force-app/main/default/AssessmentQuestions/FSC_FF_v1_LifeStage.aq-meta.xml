@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>FSC_FF_LifeStage</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Which of the following best describes your current financial stage of life?</questionText>
+        <responseValues>I have minimal financial obligations to build wealth for short-term and long-term goals.
+I’m planning for my future home and I expect to experience (or am already experiencing) a high rate of purchasing household and consumer goods.
+I own my primary residence and can comfortably manage household and family expenses.
+I’m currently earning income and can effectively manage my mortgage.
+I’m planning for retirement, I own my own home, and I have minimal financial obligations.
+I’m  retired and maintain my lifestyle with planned funds and investments.</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Radio</dataType>
+    <developerName>FSC_FF_v1_LifeStage</developerName>
+    <name>FSC_FF_LifeStage</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

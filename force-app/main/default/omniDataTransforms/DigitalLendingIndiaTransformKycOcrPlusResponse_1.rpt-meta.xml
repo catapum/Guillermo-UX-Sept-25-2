@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{ }</expectedInputJson>
+    <expectedOutputJson>{ }</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaTransformKycOcrPlusResponse</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformKycOcrPlusResponseCustom3480</globalKey>
+        <inputFieldName>200:result:documents:ocrData:dob:value</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformKycOcrPlusResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:result:documents:ocrData:dob:value</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformKycOcrPlusResponseCustom5995</globalKey>
+        <inputFieldName>200:result:documents:ocrData:name:value</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformKycOcrPlusResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:result:documents:ocrData:name:value</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformKycOcrPlusResponseCustom772</globalKey>
+        <inputFieldName>200:result:documents:ocrData:pan:value</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformKycOcrPlusResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:result:documents:ocrData:pan:value</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformKycOcrPlusResponseCustom7175</globalKey>
+        <inputFieldName>200:result:documents:additionalDetails</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformKycOcrPlusResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:result:documents:additionalDetails</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformKycOcrPlusResponseCustom5552</globalKey>
+        <inputFieldName>200:result:documents:pageNo</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformKycOcrPlusResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:result:documents:pageNo</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformKycOcrPlusResponseCustom8768</globalKey>
+        <inputFieldName>200:clientData:caseId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformKycOcrPlusResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:clientData:caseId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformKycOcrPlusResponseCustom8368</globalKey>
+        <inputFieldName>200:result:documents:subType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformKycOcrPlusResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:result:documents:subType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformKycOcrPlusResponseCustom8590</globalKey>
+        <inputFieldName>200:result:documents:ocrData:father:value</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformKycOcrPlusResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:result:documents:ocrData:father:value</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformKycOcrPlusResponseCustom4439</globalKey>
+        <inputFieldName>200:result:documents:documentType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformKycOcrPlusResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:result:documents:documentType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformKycOcrPlusResponseCustom9338</globalKey>
+        <inputFieldName>200:requestId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformKycOcrPlusResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:requestId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaTransformKycOcrPlusResponseCustom4399</globalKey>
+        <inputFieldName>200:statusCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaTransformKycOcrPlusResponse</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>200:statusCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;200&quot; : {
+    &quot;statusCode&quot; : &quot;&quot;,
+    &quot;clientData&quot; : {
+      &quot;caseId&quot; : &quot;&quot;
+    },
+    &quot;requestId&quot; : &quot;&quot;,
+    &quot;result&quot; : {
+      &quot;documents&quot; : [ {
+        &quot;additionalDetails&quot; : { },
+        &quot;subType&quot; : &quot;&quot;,
+        &quot;pageNo&quot; : 1,
+        &quot;documentType&quot; : &quot;&quot;,
+        &quot;ocrData&quot; : {
+          &quot;pan&quot; : {
+            &quot;value&quot; : &quot;&quot;
+          },
+          &quot;name&quot; : {
+            &quot;value&quot; : &quot;&quot;
+          },
+          &quot;father&quot; : {
+            &quot;value&quot; : &quot;&quot;
+          },
+          &quot;dob&quot; : {
+            &quot;value&quot; : &quot;&quot;
+          }
+        }
+      } ]
+    }
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>DigitalLendingIndiaTransformKycOcrPlusResponse_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

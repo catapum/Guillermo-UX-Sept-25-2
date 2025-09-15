@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionMatrixDefinitionVersion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <columnType>Input</columnType>
+        <dataType>Number</dataType>
+        <displaySequence>1</displaySequence>
+        <isWildcardColumn>false</isWildcardColumn>
+        <name>DriverYearExperience</name>
+    </columns>
+    <columns>
+        <columnType>Output</columnType>
+        <dataType>Number</dataType>
+        <displaySequence>2</displaySequence>
+        <isWildcardColumn>false</isWildcardColumn>
+        <name>DriverYearsFactorAuto</name>
+    </columns>
+    <decisionMatrixDefinition>DriverYearsExpFactorVehicle</decisionMatrixDefinition>
+    <label>DriverYearsExpFactorVehicle V1</label>
+    <rank>1</rank>
+    <startDate>2024-03-06T10:26:22.000Z</startDate>
+    <status>Active</status>
+    <versionNumber>1</versionNumber>
+</DecisionMatrixDefinitionVersion>

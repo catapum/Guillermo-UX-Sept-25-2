@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordActionDeployment xmlns="http://soap.sforce.com/2006/04/metadata">
+    <componentName>ActionLauncher</componentName>
+    <deploymentContexts>
+        <entityName>Account</entityName>
+    </deploymentContexts>
+    <hasComponents>false</hasComponents>
+    <hasGuidedActions>false</hasGuidedActions>
+    <hasOmniscripts>true</hasOmniscripts>
+    <hasRecommendations>false</hasRecommendations>
+    <masterLabel>Platform(OOTB) - Wealth Management Processes</masterLabel>
+    <selectableItems>
+        <action>FSCFeeReversalEnglish_eezko3b1bs9h1o543mtymp15o</action>
+        <frequentActionSequenceNbr>2</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>Omniscript</type>
+    </selectableItems>
+    <selectableItems>
+        <action>FSCAddressUpdateCreateRequestEnglish_135xlnz7p0sst1tz3tz653ukts</action>
+        <frequentActionSequenceNbr>1</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>Omniscript</type>
+    </selectableItems>
+    <selectableItems>
+        <action>FSCComplaintIntakeMultiLanguage_1wer9pd6jmb5012ycybeuouwaw</action>
+        <frequentActionSequenceNbr>0</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>Omniscript</type>
+    </selectableItems>
+    <selectableItems>
+        <action>FSCTransactionDisputeManagementEnglish_zl6bfqjprbp819vjwh65whimk</action>
+        <frequentActionSequenceNbr>3</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>Omniscript</type>
+    </selectableItems>
+</RecordActionDeployment>

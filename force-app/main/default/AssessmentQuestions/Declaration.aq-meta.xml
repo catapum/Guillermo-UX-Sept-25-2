@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Declaration</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>The customer declares and certifies that the information in this account opening form is true and correct. Any pre-filled sections of this form must be reviewed prior to signing and submitting, to ensure the information accurately conveys the new account details.</questionText>
+        <responseValues>I hereby declare that the information furnished above is true and correct to the best of my knowledge.</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Disclosure</dataType>
+    <developerName>Declaration</developerName>
+    <name>Declaration (Sample)</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

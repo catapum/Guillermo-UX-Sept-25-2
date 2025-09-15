@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionLauncherItemDef xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identifier>_d6laz42o627f1rd1feq1giate</identifier>
+    <itemActionType>Omniscript</itemActionType>
+    <itemCategory>fileBased</itemCategory>
+    <itemLanguage>Multi-Language</itemLanguage>
+    <masterLabel>FSCRtl/ManageCreditLimit/Multi-Language</masterLabel>
+    <subType>ManageCreditLimit</subType>
+    <type>FSCRtl</type>
+</ActionLauncherItemDef>

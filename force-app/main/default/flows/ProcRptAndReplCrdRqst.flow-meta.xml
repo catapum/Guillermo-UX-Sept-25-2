@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Determines whether isProcessServiceCatalogRequestFailed from the ProcessReportAndReplaceCardsRequestAndNotifyAccount step of the ProcessReportAndReplaceCardsRequestAndNotifyStakeholders stage is set to True</description>
+        <name>HasReportAndReplaceCardRequestFailed</name>
+        <label>Has Report and Replace Card Request Failed?</label>
+        <locationX>182</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>IsFailed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>ProcessReportAndReplaceCardsRequestAndNotifyAccount.Outputs.debitAsyncCalloutFailed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ProcessReportAndReplaceCardsRequestAndNotifyAccount.Outputs.creditAsyncCalloutFailed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>NotifyCaseOwnerOfFailure</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Notifies the account that a report and replace cards request was made and attempts to process the request. If the attempt is successful, closes the associated case and notifies the account. If the attempt fails, notifies the case owner.</description>
+    <environments>Default</environments>
+    <interviewLabel>Process Report and Replace Cards Request {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Process Report and Replace Cards Request</label>
+    <orchestratedStages>
+        <description>Notifies the case owner that the report and replace cards request failed.</description>
+        <name>NotifyCaseOwnerOfFailure</name>
+        <label>Notify Case Owner of Failure</label>
+        <locationX>50</locationX>
+        <locationY>611</locationY>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Assigns a work item to the service catalog request record owner that displays a screen, notifying them that the report and replace request failed. To customize the failure information displayed to the record owner, update the Display Service Request Status Screen element in the Service Process: Show Asynchronous Apex Action Callout Status flow.</description>
+            <name>NotifyCaseOwnerOfFailedRequest</name>
+            <actionName>serviceprocess__AsyncApexCalloutSts</actionName>
+            <actionType>stepInteractive</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>status</name>
+                <value>
+                    <elementReference>ProcessReportAndReplaceCardsRequestAndNotifyAccount.Outputs.status</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>ActionInput__RecordId</name>
+                <value>
+                    <elementReference>$Record.CaseId</elementReference>
+                </value>
+            </inputParameters>
+            <label>Notify Case Owner of Failed Request</label>
+            <requiresAsyncProcessing>false</requiresAsyncProcessing>
+            <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>InteractiveStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <orchestratedStages>
+        <description>Notifies the account associated with the triggering service catalog request that a report and replace cards request has been made for the account. If your process requires that you notify other stakeholders, add more steps to notify them in this stage.</description>
+        <name>NotifyStakeholdersOfRequest</name>
+        <label>Notify Stakeholders of Request</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <connector>
+            <targetReference>ProcessReportAndReplaceCardsRequestAndNotifyStakeholders</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Emails the person associated with the account of the triggering service catalog request record when a report and replace cards request has been made for the account and when the associated email can be determined.</description>
+            <name>NotifyAccountOfReportAndReplaceCardsRequest</name>
+            <actionName>serviceprocess__RvwReportandReplCard</actionName>
+            <actionType>stepBackground</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>inputRecordId</name>
+                <value>
+                    <elementReference>$Record.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>Notify Account of Report and Replace Cards Request</label>
+            <requiresAsyncProcessing>true</requiresAsyncProcessing>
+            <runAsUser>true</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>BackgroundStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <orchestratedStages>
+        <description>Attempts to process the report and replace cards request, close the case, and notify the account associated with the triggering service catalog request. If your process requires that you notify other stakeholders about the success or case change in status, add more steps to notify them in this stage.</description>
+        <name>ProcessReportAndReplaceCardsRequestAndNotifyStakeholders</name>
+        <label>Process Report and Replace Cards Request and Notify Stakeholders</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <connector>
+            <targetReference>HasReportAndReplaceCardRequestFailed</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Processes a report and replace cards request and, if the request succeeds, closes the associated case. If an email is available and the case is closed, emails the customer to notify them that their request was processed, including the details of the processed request, and that the case is closed. If the report and replace cards request fails, returns True for isProcessServiceCatalogRequestFailed and an error message for failureMessage.</description>
+            <name>ProcessReportAndReplaceCardsRequestAndNotifyAccount</name>
+            <actionName>serviceprocess__UpdtReportandReplCard</actionName>
+            <actionType>stepBackground</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>accountEmail</name>
+                <value>
+                    <elementReference>NotifyAccountOfReportAndReplaceCardsRequest.Outputs.accountEmail</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>caseId</name>
+                <value>
+                    <elementReference>$Record.CaseId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>creditIntegrationDefinition</name>
+                <value>
+                    <stringValue>FSC_ReportandReplaceCreditCard</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>debitIntegrationDefinition</name>
+                <value>
+                    <stringValue>FSC_ReportandReplaceDebitCard</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>$Record.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>Process Report and Replace Cards Request and Notify Account</label>
+            <requiresAsyncProcessing>true</requiresAsyncProcessing>
+            <runAsUser>true</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>BackgroundStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Orchestrator</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <sourceTemplate>serviceprocess__ProcRptAndReplCrdRqst</sourceTemplate>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>NotifyStakeholdersOfRequest</targetReference>
+        </connector>
+        <filterFormula>{!$Record.SvcCatalogItemDefinition.DeveloperName}=&apos;FINS_Report_and_Replace_Cards&apos;</filterFormula>
+        <object>SvcCatalogRequest</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

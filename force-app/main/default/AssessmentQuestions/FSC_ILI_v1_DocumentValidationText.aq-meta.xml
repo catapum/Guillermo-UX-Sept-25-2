@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>FSC_ILI_DocumentValidationText</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>&lt;p&gt;&lt;b&gt;Validate the uploaded documents&lt;/b&gt;&lt;/p&gt;</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextBlock</dataType>
+    <developerName>FSC_ILI_v1_DocumentValidationText</developerName>
+    <name>FSC_ILI_DocumentValidationText</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

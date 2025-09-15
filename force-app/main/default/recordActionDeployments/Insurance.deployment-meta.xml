@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordActionDeployment xmlns="http://soap.sforce.com/2006/04/metadata">
+    <componentName>ActionLauncher</componentName>
+    <deploymentContexts>
+        <entityName>InsurancePolicy</entityName>
+    </deploymentContexts>
+    <hasComponents>false</hasComponents>
+    <hasGuidedActions>false</hasGuidedActions>
+    <hasOmniscripts>true</hasOmniscripts>
+    <hasRecommendations>false</hasRecommendations>
+    <masterLabel>Insurance</masterLabel>
+    <selectableItems>
+        <action>FSCINSFirstNoticeOfLossMultiLanguage_7tserkb5fkc01poj0oq69lq49</action>
+        <frequentActionSequenceNbr>0</frequentActionSequenceNbr>
+        <isFrequentAction>false</isFrequentAction>
+        <type>Omniscript</type>
+    </selectableItems>
+    <selectableItems>
+        <action>FSCInsRequestInsuranceProofMultiLanguage_fwq2uwrzryes1js1su58jfnts</action>
+        <frequentActionSequenceNbr>1</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>Omniscript</type>
+    </selectableItems>
+    <selectableItems>
+        <action>FSCINSFirstNoticeOfLossMultiLanguage_rgg17fvvqzth1nhanfk65qdt0</action>
+        <frequentActionSequenceNbr>0</frequentActionSequenceNbr>
+        <isFrequentAction>true</isFrequentAction>
+        <type>Omniscript</type>
+    </selectableItems>
+</RecordActionDeployment>

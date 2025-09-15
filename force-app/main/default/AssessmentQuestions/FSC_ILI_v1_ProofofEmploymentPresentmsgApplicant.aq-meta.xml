@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Proof of Employment Present Msg</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>&lt;strong&gt;Proof Of Employment (One of more documents are already available)&lt;/strong&gt;</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextBlock</dataType>
+    <developerName>FSC_ILI_v1_ProofofEmploymentPresentmsgApplicant</developerName>
+    <name>Proof of Employment Present Msg</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

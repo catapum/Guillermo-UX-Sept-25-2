@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Determines whether isProcessServiceCatalogRequestFailed from the ProcessManageStandingInstructionsRequestAndNotifyAccount step of the ProcessManageStandingInstructionsRequestAndNotifyStakeholders stage is set to True</description>
+        <name>HasManageStandingInstructionsRequestFailed</name>
+        <label>Has Manage Standing Instructions Request Failed?</label>
+        <locationX>182</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>Other (Default Outcome)</defaultConnectorLabel>
+        <rules>
+            <name>IsFailed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ProcessManageStandingInstructionsRequestAndNotifyAccount.Outputs.isProcessServiceCatalogRequestFailed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>NotifyCaseOwnerOfFailure</targetReference>
+            </connector>
+            <label>Is Failed</label>
+        </rules>
+    </decisions>
+    <description>Allows a case owner to review the standing instructions update request, submits the change, and either updates the case record or notifies the case owner that the update failed.</description>
+    <environments>Default</environments>
+    <interviewLabel>Process Manage Standing Instructions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Process Manage Standing Instructions</label>
+    <orchestratedStages>
+        <description>Notifies the case owner that the manage standing instructions request failed.</description>
+        <name>NotifyCaseOwnerOfFailure</name>
+        <label>Notify Case Owner of Failure</label>
+        <locationX>50</locationX>
+        <locationY>611</locationY>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Assigns a work item to the service catalog request record owner that displays a screen, notifying them that the manage standing instructions request failed. To customize the failure information displayed to the record owner, update the Display Service Request Status Screen element in the Service Process: Show Asynchronous Apex Action Callout Status flow.</description>
+            <name>NotifyCaseOwnerOfFailedRequest</name>
+            <actionName>serviceprocess__AsyncApexCalloutSts</actionName>
+            <actionType>stepInteractive</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>status</name>
+                <value>
+                    <elementReference>ProcessManageStandingInstructionsRequestAndNotifyAccount.Outputs.failureMessage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>ActionInput__RecordId</name>
+                <value>
+                    <elementReference>$Record.CaseId</elementReference>
+                </value>
+            </inputParameters>
+            <label>Notify Case Owner of Failed Request</label>
+            <requiresAsyncProcessing>false</requiresAsyncProcessing>
+            <runAsUser>false</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>InteractiveStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <orchestratedStages>
+        <description>Notifies the account associated with the triggering service catalog request that a manage standing instructions request has been made for the account. If your process requires that you notify other stakeholders, add more steps to notify them in this stage.</description>
+        <name>NotifyStakeholdersOfRequest</name>
+        <label>Notify Stakeholders of Request</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <connector>
+            <targetReference>ProcessManageStandingInstructionsRequestAndNotifyStakeholders</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Emails the person associated with the account of the triggering service catalog request record when a manage standing instructions request has been made for the account and when the associated email can be determined.</description>
+            <name>NotifyAccountOfManageStandingInstructionsRequest</name>
+            <actionName>serviceprocess__ManageStndInstr</actionName>
+            <actionType>stepBackground</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>inputRecordId</name>
+                <value>
+                    <elementReference>$Record.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>Notify Account of Manage Standing Instructions Request</label>
+            <requiresAsyncProcessing>true</requiresAsyncProcessing>
+            <runAsUser>true</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>BackgroundStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <orchestratedStages>
+        <description>Attempts to process the manage standing instructions request, close the case, and notify the account associated with the triggering service catalog request. If your process requires that you notify other stakeholders about the success or case change in status, add more steps to notify them in this stage.</description>
+        <name>ProcessManageStandingInstructionsRequestAndNotifyStakeholders</name>
+        <label>Process Manage Standing Instructions Request and Notify Stakeholders</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <connector>
+            <targetReference>HasManageStandingInstructionsRequestFailed</targetReference>
+        </connector>
+        <exitConditionLogic>and</exitConditionLogic>
+        <stageSteps>
+            <description>Processes a manage standing instructions request and, if the request succeeds, closes the associated case. If an email is available and the case is closed, emails the customer to notify them that their request was processed and the case is closed. If the manage standing instructions request fails, returns True for isProcessServiceCatalogRequestFailed and an error message for failureMessage.</description>
+            <name>ProcessManageStandingInstructionsRequestAndNotifyAccount</name>
+            <actionName>serviceprocess__UpdateCase</actionName>
+            <actionType>stepBackground</actionType>
+            <assignees>
+                <assignee>
+                    <elementReference>$Record.Case.Owner:User.Username</elementReference>
+                </assignee>
+                <assigneeType>User</assigneeType>
+            </assignees>
+            <canAssigneeEdit>false</canAssigneeEdit>
+            <debugSimulateStep>false</debugSimulateStep>
+            <entryConditionLogic>and</entryConditionLogic>
+            <exitConditionLogic>and</exitConditionLogic>
+            <inputParameters>
+                <name>accountEmail</name>
+                <value>
+                    <elementReference>NotifyAccountOfManageStandingInstructionsRequest.Outputs.accountEmail</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>caseId</name>
+                <value>
+                    <elementReference>$Record.CaseId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>emailSubjectCaseClosed</name>
+                <value>
+                    <stringValue>Your service request to Manage Standing Instructions was closed</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>integrationDefinitionDevName</name>
+                <value>
+                    <stringValue>FSC_ManageStandingInstructions</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>$Record.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>Process Manage Standing Instructions Request and Notify Account</label>
+            <requiresAsyncProcessing>true</requiresAsyncProcessing>
+            <runAsUser>true</runAsUser>
+            <shouldLock>false</shouldLock>
+            <stepSubtype>BackgroundStep</stepSubtype>
+        </stageSteps>
+    </orchestratedStages>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Orchestrator</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <sourceTemplate>serviceprocess__ProcMngStndInstrRqst</sourceTemplate>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>NotifyStakeholdersOfRequest</targetReference>
+        </connector>
+        <filterFormula>{!$Record.SvcCatalogItemDefinition.DeveloperName}=&apos;FINS_Manage_Standing_Instructions&apos;</filterFormula>
+        <object>SvcCatalogRequest</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;200&quot; : {
+    &quot;statusCode&quot; : null,
+    &quot;requestId&quot; : null,
+    &quot;result&quot; : {
+      &quot;dataFromAadhaar&quot; : {
+        &quot;mobileHash&quot; : null,
+        &quot;maskedAadhaarNumber&quot; : null,
+        &quot;generatedDateTime&quot; : null,
+        &quot;name&quot; : null,
+        &quot;emailHash&quot; : null,
+        &quot;dob&quot; : null,
+        &quot;gender&quot; : null,
+        &quot;address&quot; : {
+          &quot;combinedAddress&quot; : null,
+          &quot;splitAddress&quot; : {
+            &quot;postOffice&quot; : null,
+            &quot;landmark&quot; : null,
+            &quot;state&quot; : null,
+            &quot;location&quot; : null,
+            &quot;vtcName&quot; : null,
+            &quot;houseNumber&quot; : null,
+            &quot;district&quot; : null,
+            &quot;street&quot; : null,
+            &quot;subdistrict&quot; : null,
+            &quot;country&quot; : null,
+            &quot;pincode&quot; : null
+          }
+        },
+        &quot;fatherName&quot; : null,
+        &quot;image&quot; : null
+      },
+      &quot;message&quot; : null,
+      &quot;shareCode&quot; : null
+    }
+  },
+  &quot;OutputRecordId&quot; : null,
+  &quot;accountId&quot; : null
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <defaultValue>JPEG</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities38504851410401497</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>FileExtension</outputFieldName>
+        <outputObjectName>ContentVersion</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities15669575995995166</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>PartyProfileId</outputFieldName>
+        <outputObjectName>IdentityDocument</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>image.JPEG</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities10823890577683959</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>PathOnClient</outputFieldName>
+        <outputObjectName>ContentVersion</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities9514676059055978</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>IdentityDocument</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities9241469205639632</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>6.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>ContentDocumentLink</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities4477335935083968</globalKey>
+        <inputFieldName>200:result:dataFromAadhaar:image</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>VersionData</outputFieldName>
+        <outputObjectName>ContentVersion</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities037001341043988445</globalKey>
+        <inputFieldName>200:result:dataFromAadhaar:address:splitAddress:pincode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>PostalCode</outputFieldName>
+        <outputObjectName>PartyProfileAddress</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities6560287944381729</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>7.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>ContentDocumentLink</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities12022391502998153</globalKey>
+        <inputFieldName>accountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>RelatedLegalEntityId</outputFieldName>
+        <outputObjectName>IdentityDocument</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities3759548091922438</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities3513051752986469</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>ContentDocumentId</linkedFieldName>
+        <linkedObjectSequence>5.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>7.0</outputCreationSequence>
+        <outputFieldName>ContentDocumentId</outputFieldName>
+        <outputObjectName>ContentDocumentLink</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities42068030675265655</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>3.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>6.0</outputCreationSequence>
+        <outputFieldName>LinkedEntityId</outputFieldName>
+        <outputObjectName>ContentDocumentLink</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities8661729769673299</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>PartyProfileId</outputFieldName>
+        <outputObjectName>PartyProfileAddress</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities1993018457309801</globalKey>
+        <inputFieldName>Street</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Street</outputFieldName>
+        <outputObjectName>PartyProfileAddress</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Identity Document</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities47220515514442885</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>IdentityDocument</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Downloaded Aadhaar Image</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities605464466786501</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>DocumentChecklistItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:200:result:dataFromAadhaar:address:splitAddress:houseNumber &quot;/\/\/&quot; var:200:result:dataFromAadhaar:address:splitAddress:street CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(%200:result:dataFromAadhaar:address:splitAddress:houseNumber%, &quot; &quot;,%200:result:dataFromAadhaar:address:splitAddress:street%)</formulaExpression>
+        <formulaResultPath>Street</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities716634095457255</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities7962243760618488</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>6.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>ContentDocumentLink</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities39073001530176543</globalKey>
+        <inputFieldName>200:result:dataFromAadhaar:gender</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Gender</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities21254071490459303</globalKey>
+        <inputFieldName>OutputRecordId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities18462466575057368</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>PartyProfileAddress</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities8310773499386162</globalKey>
+        <inputFieldName>200:result:dataFromAadhaar:maskedAadhaarNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PrimaryIdentifier</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities10647332904971596</globalKey>
+        <inputFieldName>200:result:dataFromAadhaar:address:splitAddress:country</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Country</outputFieldName>
+        <outputObjectName>PartyProfileAddress</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities5181479032032832</globalKey>
+        <inputFieldName>200:result:dataFromAadhaar:address:splitAddress:state</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>State</outputFieldName>
+        <outputObjectName>PartyProfileAddress</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities5994855562306625</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>4.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>7.0</outputCreationSequence>
+        <outputFieldName>LinkedEntityId</outputFieldName>
+        <outputObjectName>ContentDocumentLink</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>true</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities07421613290584661</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>IsCurrentAddress</outputFieldName>
+        <outputObjectName>PartyProfileAddress</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities09051735463776756</globalKey>
+        <inputFieldName>200:result:dataFromAadhaar:address:splitAddress:district</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>City</outputFieldName>
+        <outputObjectName>PartyProfileAddress</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities6417543753197723</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>ParentRecordId</outputFieldName>
+        <outputObjectName>DocumentChecklistItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities04581471158693784</globalKey>
+        <inputFieldName>200:result:dataFromAadhaar:dob</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>DateOfBirth</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:PartyProfileAddressName &apos;/\/\/&apos; var:Todaydate CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(%PartyProfileAddressName%,&apos; &apos;,%Todaydate%)</formulaExpression>
+        <formulaResultPath>AddressName</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntitiesCustom5737</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities22645737694476087</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>ContentVersion</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Address from Aadhaar</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntitiesCustom0jITC0000000Io92AEItem20</globalKey>
+        <inputFieldName>AddressName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>PartyProfileAddress</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Government ID</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities5042814455865032</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PrimaryIdentifierType</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &apos;XXXXXXXX&apos; | var:200:result:dataFromAadhaar:maskedAadhaarNumber 10 14 SUBSTRING CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(&apos;XXXXXXXX&apos;,SUBSTRING(%200:result:dataFromAadhaar:maskedAadhaarNumber%, 10, 14))</formulaExpression>
+        <formulaResultPath>maskedAadharNumber</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities4707515260702373</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Verified</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities9203711671962156</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>IsVerified</outputFieldName>
+        <outputObjectName>PartyProfile</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities6598514987520923</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>ContentDocumentId</linkedFieldName>
+        <linkedObjectSequence>5.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>6.0</outputCreationSequence>
+        <outputFieldName>ContentDocumentId</outputFieldName>
+        <outputObjectName>ContentDocumentLink</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>image</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities40239462488518707</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>FileType</outputFieldName>
+        <outputObjectName>ContentVersion</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities1778049558361423</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>DocumentChecklistItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities5290089370719153</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>ContentDocumentId</outputFieldName>
+        <outputObjectName>ContentVersion</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>User Image</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingIndiaUpdatePartyProfileEntities14291077851969902</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingIndiaUpdatePartyProfileEntities</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>Title</outputFieldName>
+        <outputObjectName>ContentVersion</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;200&quot; : {
+    &quot;statusCode&quot; : null,
+    &quot;requestId&quot; : null,
+    &quot;result&quot; : {
+      &quot;dataFromAadhaar&quot; : {
+        &quot;mobileHash&quot; : null,
+        &quot;maskedAadhaarNumber&quot; : null,
+        &quot;generatedDateTime&quot; : null,
+        &quot;name&quot; : null,
+        &quot;emailHash&quot; : null,
+        &quot;dob&quot; : null,
+        &quot;gender&quot; : null,
+        &quot;address&quot; : {
+          &quot;combinedAddress&quot; : null,
+          &quot;splitAddress&quot; : {
+            &quot;postOffice&quot; : null,
+            &quot;landmark&quot; : null,
+            &quot;state&quot; : null,
+            &quot;location&quot; : null,
+            &quot;vtcName&quot; : null,
+            &quot;houseNumber&quot; : null,
+            &quot;district&quot; : null,
+            &quot;street&quot; : null,
+            &quot;subdistrict&quot; : null,
+            &quot;country&quot; : null,
+            &quot;pincode&quot; : null
+          }
+        },
+        &quot;fatherName&quot; : null,
+        &quot;image&quot; : null
+      },
+      &quot;message&quot; : null,
+      &quot;shareCode&quot; : null
+    }
+  },
+  &quot;OutputRecordId&quot; : null,
+  &quot;accountId&quot; : null
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DigitalLendingIndiaUpdatePartyProfileEntities_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

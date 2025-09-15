@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalServiceRegistration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>DigitalLendingIndiaKuberaVault</label>
+    <namedCredentialReference>DigitalLendingIndiaKuberaVNamed</namedCredentialReference>
+    <operations>
+        <active>true</active>
+        <name>postkuberavaultapiv3organisationstransactionsbyvendor</name>
+    </operations>
+    <operations>
+        <active>true</active>
+        <name>postkuberavaultapiv3organisationstransactionsfilesbyvendorandperfiostransa_e8ea3</name>
+    </operations>
+    <registrationProviderType>Custom</registrationProviderType>
+    <schema>{
+  &quot;openapi&quot;: &quot;3.0.0&quot;,
+  &quot;info&quot;: {
+    &quot;title&quot;: &quot;Perfios API&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;description&quot;: &quot;OpenAPI Specification for Perfios API&quot;
+  },
+  &quot;paths&quot;: {
+    &quot;/KuberaVault/api/v3/organisations/{vendor}/transactions&quot;: {
+      &quot;post&quot;: {
+        &quot;tags&quot;: [
+          &quot;Initiate Perfios Transaction&quot;
+        ],
+        &quot;summary&quot;: &quot;Initiate Transaction&quot;,
+        &quot;description&quot;: &quot;Endpoint to initiate a transaction&quot;,
+        &quot;parameters&quot;: [{
+            &quot;name&quot;: &quot;vendor&quot;,
+            &quot;in&quot;: &quot;path&quot;,
+            &quot;required&quot;: true,
+            &quot;description&quot;: &quot;Vendor ID&quot;,
+            &quot;schema&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+            }
+          },
+          {
+            &quot;name&quot;: &quot;X-Perfios-Content-Sha256&quot;,
+            &quot;in&quot;: &quot;header&quot;,
+            &quot;required&quot;: true,
+            &quot;description&quot;: &quot;Content SHA256&quot;,
+            &quot;schema&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+            }
+          },
+          {
+            &quot;name&quot;: &quot;X-Perfios-Signature&quot;,
+            &quot;in&quot;: &quot;header&quot;,
+            &quot;required&quot;: true,
+            &quot;description&quot;: &quot;Signature&quot;,
+            &quot;schema&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+            }
+          },
+          {
+            &quot;name&quot;: &quot;X-Perfios-Date&quot;,
+            &quot;in&quot;: &quot;header&quot;,
+            &quot;required&quot;: true,
+            &quot;description&quot;: &quot;Date&quot;,
+            &quot;schema&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+            }
+          }
+        ],
+        &quot;requestBody&quot;: {
+          &quot;content&quot;: {
+            &quot;application/json&quot;: {
+              &quot;schema&quot;: {
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;properties&quot;: {
+                  &quot;payload&quot;: {
+                    &quot;type&quot;: &quot;object&quot;,
+                    &quot;properties&quot;: {
+                      &quot;txnId&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;loanAmount&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;loanDuration&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;loanType&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;processingType&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;transactionCompleteCallbackUrl&quot;: {
+                        &quot;type&quot;: &quot;string&quot;,
+                        &quot;format&quot;: &quot;uri&quot;
+                      },
+                      &quot;uploadingScannedStatements&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;acceptancePolicy&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      },
+                      &quot;yearMonthFrom&quot;: {
+                        &quot;type&quot;: &quot;string&quot;,
+                        &quot;pattern&quot;: &quot;^\\d{4}-\\d{2}$&quot;
+                      },
+                      &quot;yearMonthTo&quot;: {
+                        &quot;type&quot;: &quot;string&quot;,
+                        &quot;pattern&quot;: &quot;^\\d{4}-\\d{2}$&quot;
+                      }
+                    }
+                  }
+                },
+                &quot;required&quot;: [
+                  &quot;payload&quot;
+                ]
+              }
+            }
+          }
+        },
+        &quot;responses&quot;: {
+        &quot;200&quot;: {
+          &quot;description&quot;: &quot;Successful response&quot;,
+          &quot;content&quot;: {
+            &quot;application/json&quot;: {
+              &quot;schema&quot;: {
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;properties&quot;: {
+                  &quot;transaction&quot;: {
+                    &quot;type&quot;: &quot;object&quot;,
+                    &quot;properties&quot;: {
+                      &quot;perfiosTransactionId&quot;: {
+                        &quot;type&quot;: &quot;string&quot;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        &quot;400&quot;: {
+            &quot;description&quot;: &quot;Bad Request&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;schema&quot;: {
+                  &quot;type&quot;: &quot;object&quot;,
+                  &quot;properties&quot;: {
+                    &quot;error&quot;: {
+                      &quot;type&quot;: &quot;object&quot;,
+                      &quot;properties&quot;: {
+                        &quot;code&quot;: {
+                          &quot;type&quot;: &quot;string&quot;,
+                          &quot;example&quot;: &quot;Sha256SumMismatch&quot;
+                        },
+                        &quot;message&quot;: {
+                          &quot;type&quot;: &quot;string&quot;,
+                          &quot;example&quot;: &quot;Calculated SHA256 checksum of the payload does not match header value&quot;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+         
+      }
+      }
+      
+    },
+    &quot;/KuberaVault/api/v3/organisations/{vendor}/transactions/{perfiosTransactionId}/files&quot;: {
+      &quot;post&quot;: {
+        &quot;tags&quot;: [
+          &quot;Upload Bank Statement&quot;
+        ],
+        &quot;summary&quot;: &quot;Upload Statement&quot;,
+        &quot;description&quot;: &quot;Endpoint to upload a bank statement&quot;,
+        &quot;parameters&quot;: [{
+            &quot;name&quot;: &quot;vendor&quot;,
+            &quot;in&quot;: &quot;path&quot;,
+            &quot;required&quot;: true,
+            &quot;description&quot;: &quot;Vendor ID&quot;,
+            &quot;schema&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+            }
+          },
+          {
+            &quot;name&quot;: &quot;perfiosTransactionId&quot;,
+            &quot;in&quot;: &quot;path&quot;,
+            &quot;required&quot;: true,
+            &quot;description&quot;: &quot;Perfios Transaction ID&quot;,
+            &quot;schema&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+            }
+          }
+        ],
+        &quot;requestBody&quot;: {
+          &quot;content&quot;: {
+            &quot;multipart/form-data&quot;: {
+              &quot;schema&quot;: {
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;properties&quot;: {
+                  &quot;file&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;format&quot;: &quot;binary&quot;
+                  }
+                }
+              }
+            }
+          }
+        },
+        &quot;responses&quot;: {
+          &quot;200&quot;: {
+            &quot;description&quot;: &quot;Successful statement upload&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;example&quot;: {
+                  &quot;fileId&quot;: &quot;ABC123XYZ&quot;
+                }
+              }
+            }
+          },
+          &quot;400&quot;: {
+            &quot;description&quot;: &quot;Bad Request&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;example&quot;: {
+                  &quot;error&quot;: &quot;Bad Request&quot;
+                }
+              }
+            }
+          },
+          &quot;401&quot;: {
+            &quot;description&quot;: &quot;Unauthorized&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;example&quot;: {
+                  &quot;error&quot;: &quot;Unauthorized&quot;
+                }
+              }
+            }
+          },
+          &quot;500&quot;: {
+            &quot;description&quot;: &quot;Internal Server Error&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;example&quot;: {
+                  &quot;error&quot;: &quot;Internal Server Error&quot;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+</schema>
+    <schemaType>OpenApi3</schemaType>
+    <serviceBinding>{&quot;host&quot;:&quot;&quot;,&quot;basePath&quot;:&quot;/&quot;,&quot;allowedSchemes&quot;:[],&quot;requestMediaTypes&quot;:[],&quot;responseMediaTypes&quot;:[],&quot;compatibleMediaTypes&quot;:{&quot;multipart/form-data&quot;:&quot;application/json&quot;},&quot;extensions&quot;:{}}</serviceBinding>
+    <status>Complete</status>
+    <systemVersion>5</systemVersion>
+</ExternalServiceRegistration>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionLauncherItemDef xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identifier>_o9e9k4pa3v4619o00d5omtuw5</identifier>
+    <itemActionType>Omniscript</itemActionType>
+    <itemCategory>dbBased</itemCategory>
+    <itemLanguage>Multi-Language</itemLanguage>
+    <masterLabel>FINS/RequestStatementCopies/Multi-Language</masterLabel>
+    <subType>RequestStatementCopies</subType>
+    <type>FINS</type>
+</ActionLauncherItemDef>

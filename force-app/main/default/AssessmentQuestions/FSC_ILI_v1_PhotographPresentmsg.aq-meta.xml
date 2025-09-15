@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Photograph Present Msg</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>&lt;strong&gt;A photograph was already uploaded.
+&lt;/strong&gt;</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextBlock</dataType>
+    <developerName>FSC_ILI_v1_PhotographPresentmsg</developerName>
+    <name>Photograph Present Msg</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

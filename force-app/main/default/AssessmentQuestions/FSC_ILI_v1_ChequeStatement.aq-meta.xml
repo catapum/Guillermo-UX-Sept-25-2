@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <description>Post-dated Cheques</description>
+        <isActive>true</isActive>
+        <name>Post-dated Cheques</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Post-dated Cheques</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>File</dataType>
+    <developerName>FSC_ILI_v1_ChequeStatement</developerName>
+    <name>Post-dated Cheques</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

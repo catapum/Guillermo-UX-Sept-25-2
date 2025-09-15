@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelationshipGraphDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isActive>true</isActive>
+    <isTemplate>false</isTemplate>
+    <masterLabel>B2B Account to Account Relationship</masterLabel>
+    <relationshipGraphDefVersions>
+        <graphDefinition>{
+  &quot;graph&quot; : {
+    &quot;rootNode&quot; : {
+      &quot;id&quot; : &quot;820b86ba-aeb1-4ae9-8bea-b18fa968dc71&quot;,
+      &quot;object&quot; : {
+        &quot;entity&quot; : &quot;Account&quot;
+      },
+      &quot;configurationType&quot; : &quot;Primary&quot;,
+      &quot;nodeUiConfig&quot; : {
+        &quot;label&quot; : &quot;Account&quot;,
+        &quot;fieldsToDisplay&quot; : [ ],
+        &quot;showFieldLabels&quot; : true,
+        &quot;actions&quot; : { }
+      },
+      &quot;childRelationships&quot; : [ {
+        &quot;ManyToMany&quot; : {
+          &quot;targetObjectNode&quot; : {
+            &quot;sortFields&quot; : [ {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              },
+              &quot;order&quot; : &quot;DESC&quot;
+            } ],
+            &quot;id&quot; : &quot;28820667-5f76-4d4f-b48d-9c1c296b0f03&quot;,
+            &quot;object&quot; : {
+              &quot;entity&quot; : &quot;Account&quot;
+            },
+            &quot;configurationType&quot; : &quot;Instance&quot;,
+            &quot;nodeUiConfig&quot; : {
+              &quot;label&quot; : &quot;Subsidiaries&quot;,
+              &quot;recordActionsLabel&quot; : &quot;&quot;,
+              &quot;fieldsToDisplay&quot; : [ {
+                &quot;field&quot; : &quot;PartyRoleRelation.RelatedRoleName&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              }, {
+                &quot;field&quot; : &quot;TotalSharePercent&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              }, {
+                &quot;field&quot; : &quot;ShareholderHierarchyRole&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              }, {
+                &quot;field&quot; : &quot;ShareholderHierarchyLevel&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              } ],
+              &quot;showFieldLabels&quot; : true,
+              &quot;actions&quot; : {
+                &quot;containerActions&quot; : [ ],
+                &quot;recordActions&quot; : [ ],
+                &quot;junctionRecordActions&quot; : [ ]
+              },
+              &quot;junctionActionsLabel&quot; : &quot;&quot;
+            },
+            &quot;childRelationships&quot; : [ ]
+          },
+          &quot;relationshipUiConfig&quot; : { },
+          &quot;filter&quot; : {
+            &quot;filterCriteria&quot; : [ ],
+            &quot;booleanFilter&quot; : &quot;&quot;
+          },
+          &quot;junctionObject&quot; : {
+            &quot;entity&quot; : &quot;AccountAccountRelation&quot;
+          },
+          &quot;sourceField&quot; : {
+            &quot;field&quot; : &quot;AccountId&quot;
+          },
+          &quot;targetField&quot; : {
+            &quot;field&quot; : &quot;RelatedAccountId&quot;
+          }
+        }
+      }, {
+        &quot;ManyToMany&quot; : {
+          &quot;targetObjectNode&quot; : {
+            &quot;sortFields&quot; : [ {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              },
+              &quot;order&quot; : &quot;DESC&quot;
+            } ],
+            &quot;id&quot; : &quot;c308f15c-306c-40d8-b8a8-8d95439197e7&quot;,
+            &quot;object&quot; : {
+              &quot;entity&quot; : &quot;Account&quot;
+            },
+            &quot;configurationType&quot; : &quot;Instance&quot;,
+            &quot;nodeUiConfig&quot; : {
+              &quot;label&quot; : &quot;Owners&quot;,
+              &quot;recordActionsLabel&quot; : &quot;&quot;,
+              &quot;fieldsToDisplay&quot; : [ {
+                &quot;field&quot; : &quot;PartyRoleRelation.RoleName&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              }, {
+                &quot;field&quot; : &quot;TotalSharePercent&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              }, {
+                &quot;field&quot; : &quot;ShareholderHierarchyRole&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              }, {
+                &quot;field&quot; : &quot;ShareholderHierarchyLevel&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              } ],
+              &quot;showFieldLabels&quot; : true,
+              &quot;actions&quot; : {
+                &quot;containerActions&quot; : [ ],
+                &quot;recordActions&quot; : [ ],
+                &quot;junctionRecordActions&quot; : [ ]
+              },
+              &quot;junctionActionsLabel&quot; : &quot;&quot;
+            },
+            &quot;childRelationships&quot; : [ ]
+          },
+          &quot;relationshipUiConfig&quot; : { },
+          &quot;filter&quot; : {
+            &quot;filterCriteria&quot; : [ ],
+            &quot;booleanFilter&quot; : &quot;&quot;
+          },
+          &quot;junctionObject&quot; : {
+            &quot;entity&quot; : &quot;AccountAccountRelation&quot;
+          },
+          &quot;sourceField&quot; : {
+            &quot;field&quot; : &quot;RelatedAccountId&quot;
+          },
+          &quot;targetField&quot; : {
+            &quot;field&quot; : &quot;AccountId&quot;
+          }
+        }
+      }, {
+        &quot;ManyToMany&quot; : {
+          &quot;targetObjectNode&quot; : {
+            &quot;sortFields&quot; : [ {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              },
+              &quot;order&quot; : &quot;DESC&quot;
+            } ],
+            &quot;id&quot; : &quot;79d13880-e82f-4fec-a2f6-802979ba827a&quot;,
+            &quot;object&quot; : {
+              &quot;entity&quot; : &quot;Contact&quot;
+            },
+            &quot;configurationType&quot; : &quot;Primary&quot;,
+            &quot;nodeUiConfig&quot; : {
+              &quot;label&quot; : &quot;Controlling Parties&quot;,
+              &quot;recordActionsLabel&quot; : &quot;&quot;,
+              &quot;fieldsToDisplay&quot; : [ {
+                &quot;field&quot; : &quot;Roles&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              }, {
+                &quot;field&quot; : &quot;TotalSharePercent&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              }, {
+                &quot;field&quot; : &quot;ShareholderType&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              }, {
+                &quot;field&quot; : &quot;DecisionMakingAuthorityType&quot;,
+                &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+              } ],
+              &quot;showFieldLabels&quot; : true,
+              &quot;actions&quot; : {
+                &quot;containerActions&quot; : [ ],
+                &quot;recordActions&quot; : [ ],
+                &quot;junctionRecordActions&quot; : [ ]
+              },
+              &quot;junctionActionsLabel&quot; : &quot;&quot;
+            },
+            &quot;childRelationships&quot; : [ {
+              &quot;ManyToMany&quot; : {
+                &quot;targetObjectNode&quot; : {
+                  &quot;sortFields&quot; : [ {
+                    &quot;field&quot; : {
+                      &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                      &quot;whichEntity&quot; : &quot;TARGET&quot;
+                    },
+                    &quot;order&quot; : &quot;DESC&quot;
+                  } ],
+                  &quot;id&quot; : &quot;09afa0e5-96f7-4267-a5ff-27998f5181b6&quot;,
+                  &quot;object&quot; : {
+                    &quot;entity&quot; : &quot;Account&quot;
+                  },
+                  &quot;configurationType&quot; : &quot;Instance&quot;,
+                  &quot;nodeUiConfig&quot; : {
+                    &quot;label&quot; : &quot;Accounts&quot;,
+                    &quot;recordActionsLabel&quot; : &quot;&quot;,
+                    &quot;fieldsToDisplay&quot; : [ {
+                      &quot;field&quot; : &quot;Roles&quot;,
+                      &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+                    }, {
+                      &quot;field&quot; : &quot;TotalSharePercent&quot;,
+                      &quot;whichEntity&quot; : &quot;JUNCTION&quot;
+                    } ],
+                    &quot;showFieldLabels&quot; : true,
+                    &quot;actions&quot; : {
+                      &quot;containerActions&quot; : [ ],
+                      &quot;recordActions&quot; : [ ],
+                      &quot;junctionRecordActions&quot; : [ ]
+                    },
+                    &quot;junctionActionsLabel&quot; : &quot;&quot;
+                  },
+                  &quot;childRelationships&quot; : [ ]
+                },
+                &quot;relationshipUiConfig&quot; : { },
+                &quot;filter&quot; : {
+                  &quot;filterCriteria&quot; : [ ],
+                  &quot;booleanFilter&quot; : &quot;&quot;
+                },
+                &quot;junctionObject&quot; : {
+                  &quot;entity&quot; : &quot;AccountContactRelation&quot;
+                },
+                &quot;sourceField&quot; : {
+                  &quot;field&quot; : &quot;ContactId&quot;
+                },
+                &quot;targetField&quot; : {
+                  &quot;field&quot; : &quot;AccountId&quot;
+                }
+              }
+            } ]
+          },
+          &quot;relationshipUiConfig&quot; : { },
+          &quot;filter&quot; : {
+            &quot;filterCriteria&quot; : [ ],
+            &quot;booleanFilter&quot; : &quot;&quot;
+          },
+          &quot;junctionObject&quot; : {
+            &quot;entity&quot; : &quot;AccountContactRelation&quot;
+          },
+          &quot;sourceField&quot; : {
+            &quot;field&quot; : &quot;AccountId&quot;
+          },
+          &quot;targetField&quot; : {
+            &quot;field&quot; : &quot;ContactId&quot;
+          }
+        }
+      } ]
+    },
+    &quot;globalUiConfig&quot; : {
+      &quot;allowRuntimeCustomizations&quot; : false
+    }
+  }
+}</graphDefinition>
+        <graphType>VerticalHierarchy</graphType>
+    </relationshipGraphDefVersions>
+</RelationshipGraphDefinition>

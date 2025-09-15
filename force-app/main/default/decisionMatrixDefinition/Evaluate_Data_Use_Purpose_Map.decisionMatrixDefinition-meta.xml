@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionMatrixDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Evaluate Data Use Purpose Map</label>
+    <processType>Bre</processType>
+    <type>Standard</type>
+    <versions>
+        <fullName>Evaluate_Data_Use_Purpose_Map_V1</fullName>
+        <columns>
+            <columnType>Input</columnType>
+            <dataType>Text</dataType>
+            <displaySequence>1</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>productType</name>
+        </columns>
+        <columns>
+            <columnType>Input</columnType>
+            <dataType>Text</dataType>
+            <displaySequence>2</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>applicantType</name>
+        </columns>
+        <columns>
+            <columnType>Input</columnType>
+            <dataType>Text</dataType>
+            <displaySequence>3</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>level</name>
+        </columns>
+        <columns>
+            <columnType>Output</columnType>
+            <dataType>Text</dataType>
+            <displaySequence>4</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>dataUsePurposeName</name>
+        </columns>
+        <decisionMatrixDefinition>Evaluate_Data_Use_Purpose_Map</decisionMatrixDefinition>
+        <label>Evaluate Data Use Purpose Map V1</label>
+        <startDate>2024-05-06T07:37:50.000Z</startDate>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </versions>
+</DecisionMatrixDefinition>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>FinCEN CDD Final Rule Exemption</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>FinCEN CDD Final Rule Exemption</questionText>
+        <responseValues>FI regulated by a Federal regulator
+Bank regulated by a state regulator
+A department or agency of the US, of any State, or of any political subdivision of a State
+Any entity established under the laws of the US, or any State, or of any political subdivision of any State, or under an interstate compact
+Any entity (other than a bank) whose common stock or analogous ​​equity interests are listed on the New York, American, or NASDAQ stock exchange
+Any entity organized under the laws of the US or of any State at least 51% of whose common stock or analogous equity interests are held by a listed entity
+Issuers of securities registered under section 12 of the Securities Exchange Act of 1934 (SEA) or that is required to file reports under 15(d) of that Act
+An investment company, as defined in section 3 of the Investment Company Act of 1940, registered with the U.S. Securities and Exchange Commission (SEC)
+An SEC-registered investment adviser, as defined in section 202(a)(11) of the Investment Advisers Act of 1940
+An exchange or clearing agency, as defined in section 3 of the SEA, registered under section 6 or 17A of that Act
+Any other entity registered with the SEC under the SEA
+A registered entity, commodity pool operator, commodity trading advisor, retail foreign exchange dealer, swap dealer, or major swap participant, defined in section 1a of the Commodity Exchange Act, registered with the Commodity Futures Trading Commission
+A public accounting firm registered under section 102 of the Sarbanes-Oxley Act
+A bank holding company, as defined in section 2 of the Bank Holding Company
+Act of 1956 (12 USC 1841) or savings and loan holding company, as defined in section 10(n) of the Home Owners’ Loan Act (12 USC 1467a(n))
+A pooled investment vehicle operated or advised by a financial institution excluded from the definition of legal entity customer under the final CDD rule
+An insurance company regulated by a State
+A financial market utility designated by the Financial Stability Oversight Council under Title VIII of the Dodd-Frank Wall Street Reform and Customer Protection Act of 2010
+A foreign financial institution established in a jurisdiction where the regulator of such institution maintains beneficial ownership information regarding such institution
+A non-U.S. governmental department, agency or political subdivision that engages only in governmental rather than commercial activities
+Any legal entity only to the extent that it opens a private banking account subject to 31 CFR 1010.620</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Select</dataType>
+    <developerName>FinCEN_CDD_Final_Rule_Exemption</developerName>
+    <name>FinCEN CDD Final Rule Exemption</name>
+    <questionCategory>Demographic</questionCategory>
+    <relatedQuestion>Requesting_Beneficial_Owner_Exemption</relatedQuestion>
+</AssessmentQuestion>

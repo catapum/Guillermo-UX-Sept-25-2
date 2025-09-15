@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Annual Amount</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Annual Income</questionText>
+        <status>Active</status>
+        <versionNumber>2</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Currency</dataType>
+    <developerName>FSC_ILI_v1_MonthlyAmountApplicant</developerName>
+    <name>Annual Amount</name>
+    <questionCategory>Financial</questionCategory>
+    <relatedQuestion>FSC_ILI_v1_OtherIncomeApplicant</relatedQuestion>
+</AssessmentQuestion>

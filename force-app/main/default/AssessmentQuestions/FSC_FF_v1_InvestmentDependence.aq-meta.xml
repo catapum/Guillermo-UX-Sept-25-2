@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>FSC_FF_InvestmentDependence</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>How dependent are you on the income produced by the portfolio to satisfy your investment needs?</questionText>
+        <responseValues>Not dependent. I have other income sources.
+Minimally dependent.  I have other income sources but income generated from the portfolio is helpful.
+Moderately dependent. I rely somewhat on the income generated from the portfolio.
+Considerably dependent. I rely heavily on the income generated from the portfolio.</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Radio</dataType>
+    <developerName>FSC_FF_v1_InvestmentDependence</developerName>
+    <name>FSC_FF_InvestmentDependence</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

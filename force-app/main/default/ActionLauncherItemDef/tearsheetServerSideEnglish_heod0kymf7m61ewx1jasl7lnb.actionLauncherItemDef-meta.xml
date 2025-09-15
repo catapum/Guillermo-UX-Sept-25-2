@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionLauncherItemDef xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identifier>_heod0kymf7m61ewx1jasl7lnb</identifier>
+    <itemActionType>Omniscript</itemActionType>
+    <itemCategory>fileBased</itemCategory>
+    <itemLanguage>English</itemLanguage>
+    <masterLabel>tearsheet/ServerSide/English</masterLabel>
+    <subType>ServerSide</subType>
+    <type>tearsheet</type>
+</ActionLauncherItemDef>

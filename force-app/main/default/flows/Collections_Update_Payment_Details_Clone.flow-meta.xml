@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Sets the task owner to the Owner ID associated with the Account ID linked to the Collection Plan ID.</description>
+        <name>SetTaskOwnerForCollectionPlan</name>
+        <label>Set Task Owner</label>
+        <locationX>754</locationX>
+        <locationY>1208</locationY>
+        <assignmentItems>
+            <assignToReference>TaskOwnerForPaymentUpdateError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.PaymentLink.Account.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CreateTask</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Sets the task owner to the Owner ID associated with the Account ID linked to the Payment Link ID.</description>
+        <name>SetTaskOwnerForPaymentScheduleItem</name>
+        <label>Set Task Owner</label>
+        <locationX>314</locationX>
+        <locationY>710</locationY>
+        <assignmentItems>
+            <assignToReference>TaskOwnerForPaymentUpdateError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.PaymentLink.Account.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>CreateTask</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Determines whether the payment is linked to a payment schedule item record by checking if the Payment Schedule Item ID of Payment Schedule Item from GetPaymentScheduleItem isn’t null.</description>
+        <name>IsPaymentLinkedToPaymentScheduleItem</name>
+        <label>Is Payment Linked to Payment Schedule Item?</label>
+        <locationX>314</locationX>
+        <locationY>494</locationY>
+        <defaultConnector>
+            <targetReference>GetCollectionPlan</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>IsLinkedToPaymentScheduleItem</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetPaymentScheduleItem.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdatePaymentScheduleItem</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines whether the payment was successful by checking if the application of the payment intent event record is set to Collections and the change type of the payment intent event record is set to Capture.</description>
+        <name>IsPaymentSuccessfulForCollections</name>
+        <label>Is Payment Successful for Collections?</label>
+        <locationX>666</locationX>
+        <locationY>170</locationY>
+        <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
+        <rules>
+            <name>IsSuccessful</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ChangeType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Capture</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PaymentInitiationSourceApplication</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Collections</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetPaymentLink</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>This is a clone of Collections: Update Payment Details</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Calculates the total payments received for the payment schedule item record by adding Payments from the GetPaymentScheduleItem record variable with the Amount from the GetPaymentLink record variable.</description>
+        <name>PaymentsReceivedFormula</name>
+        <dataType>Currency</dataType>
+        <expression>IF(ISBLANK({!GetPaymentScheduleItem.PaymentsReceived}), 0, {!GetPaymentScheduleItem.PaymentsReceived}) + {!GetPaymentLink.Amount}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>Calculates the total payments received for the collection plan record by adding TotalPaymentsReceived from the GetCollectionPlan record variable with the Amount from the GetPaymentLink record variable.</description>
+        <name>TotalPaymentsReceivedFormula</name>
+        <dataType>Currency</dataType>
+        <expression>IF(ISBLANK({!GetCollectionPlan.TotalPaymentsReceived}), 0, {!GetCollectionPlan.TotalPaymentsReceived}) + {!GetPaymentLink.Amount}</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Collections: Update Payment Details Clone {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Collections: Update Payment Details Clone</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Creates a task record. Sets Subject to TaskSubjectForPaymentUpdateError, AssignedToID to TaskOwnerForPaymentUpdateError, and Description to a text value that specifies the error details. Stores the ID of the new task record in TaskId from Create Task.</description>
+        <name>CreateTask</name>
+        <label>Create Task</label>
+        <locationX>754</locationX>
+        <locationY>1316</locationY>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>TaskOwnerForPaymentUpdateError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Other</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>Gets the collection plan record with an ID that matches the Collection Plan ID of the payment link record in Payment Link from GetPaymentLink. Stores the result in the Collection Plan from GetCollectionPlan record variable.</description>
+        <name>GetCollectionPlan</name>
+        <label>Get Collection Plan</label>
+        <locationX>314</locationX>
+        <locationY>992</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>UpdateCollectionPlan</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>GetPaymentLink.CollectionPlanId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CollectionPlan</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the payment link record with an ID that matches the Payment Link ID of the record that was passed into the flow. Stores the result in the Payment Link from GetPaymentLink record variable.</description>
+        <name>GetPaymentLink</name>
+        <label>Get Payment Link</label>
+        <locationX>314</locationX>
+        <locationY>278</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetPaymentScheduleItem</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.PaymentLinkId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>PaymentLink</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the payment schedule item record with an ID that matches the Payment Schedule Item ID of the payment link record in Payment Link from GetPaymentLink. Stores the result in the Payment Schedule Item from GetPaymentScheduleItem record variable.</description>
+        <name>GetPaymentScheduleItem</name>
+        <label>Get Payment Schedule Item</label>
+        <locationX>314</locationX>
+        <locationY>386</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>IsPaymentLinkedToPaymentScheduleItem</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>GetPaymentLink.PaymentScheduleItemId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>PaymentScheduleItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Updates the collection plan record with an ID that matches the Collection Plan ID of the record in Collection Plan from GetCollectionPlan. Sets TotalPaymentsReceived to TotalPaymentsReceivedFormula.</description>
+        <name>UpdateCollectionPlan</name>
+        <label>Update Collection Plan</label>
+        <locationX>314</locationX>
+        <locationY>1100</locationY>
+        <faultConnector>
+            <targetReference>SetTaskOwnerForCollectionPlan</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>GetCollectionPlan.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>TotalPaymentsReceived</field>
+            <value>
+                <elementReference>TotalPaymentsReceivedFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CollectionPlan</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Updates the payment schedule item record with an ID that matches the Payment Schedule Item ID of the record in Payment Schedule Item from GetPaymentScheduleItem. Sets Payments Received to PaymentsReceivedFormula.</description>
+        <name>UpdatePaymentScheduleItem</name>
+        <label>Update Payment Schedule Item</label>
+        <locationX>50</locationX>
+        <locationY>602</locationY>
+        <connector>
+            <targetReference>GetCollectionPlan</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>SetTaskOwnerForPaymentScheduleItem</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>GetPaymentScheduleItem.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>PaymentsReceived</field>
+            <value>
+                <elementReference>PaymentsReceivedFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PaymentScheduleItem</object>
+    </recordUpdates>
+    <sourceTemplate>collection__UpdatePaymentDetails</sourceTemplate>
+    <start>
+        <locationX>540</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>IsPaymentSuccessfulForCollections</targetReference>
+        </connector>
+        <flowRunAsUser>TriggeringUser</flowRunAsUser>
+        <object>PaymentIntentEvent</object>
+        <triggerType>PlatformEvent</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Stores the owner of the task record that is created when payment details couldn’t be updated in the corresponding payment schedule item or collection plan record.</description>
+        <name>TaskOwnerForPaymentUpdateError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

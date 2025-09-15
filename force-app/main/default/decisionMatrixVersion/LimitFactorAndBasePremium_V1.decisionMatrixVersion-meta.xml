@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionMatrixDefinitionVersion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <columnType>Input</columnType>
+        <dataType>Currency</dataType>
+        <displaySequence>1</displaySequence>
+        <isWildcardColumn>false</isWildcardColumn>
+        <name>Limit</name>
+    </columns>
+    <columns>
+        <columnType>Output</columnType>
+        <dataType>Number</dataType>
+        <displaySequence>2</displaySequence>
+        <isWildcardColumn>false</isWildcardColumn>
+        <name>LimitFactor</name>
+    </columns>
+    <columns>
+        <columnType>Output</columnType>
+        <dataType>Currency</dataType>
+        <displaySequence>3</displaySequence>
+        <isWildcardColumn>false</isWildcardColumn>
+        <name>CoverageBasePremium</name>
+    </columns>
+    <decisionMatrixDefinition>LimitFactorAndBasePremium</decisionMatrixDefinition>
+    <label>LimitFactorAndBasePremium V1</label>
+    <startDate>2025-01-15T10:24:08.000Z</startDate>
+    <status>Active</status>
+    <versionNumber>1</versionNumber>
+</DecisionMatrixDefinitionVersion>

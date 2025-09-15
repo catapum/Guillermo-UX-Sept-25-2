@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Target Completion Date</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Target Completion Date</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Date</dataType>
+    <developerName>Target_Completion_Date</developerName>
+    <name>Target Completion Date</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

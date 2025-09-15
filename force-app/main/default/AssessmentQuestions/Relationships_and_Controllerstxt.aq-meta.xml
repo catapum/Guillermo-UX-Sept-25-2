@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Relationships and Controllers</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Please list all immediate, intermediate, or ultimate owners with 25% or more ownership. All individuals with 25% or more controlling/voting power regardless of ownership. All authorized signers and power of attorney.</questionText>
+        <status>Active</status>
+        <versionNumber>2</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextBlock</dataType>
+    <developerName>Relationships_and_Controllerstxt</developerName>
+    <name>Relationships and Controllers</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

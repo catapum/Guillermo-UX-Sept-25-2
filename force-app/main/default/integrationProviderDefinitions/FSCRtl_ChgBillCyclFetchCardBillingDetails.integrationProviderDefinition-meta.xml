@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IntegrationProviderDef xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <developerName>FSCRtl_ChgBillCyclFetchCardBillingDetails</developerName>
+    <fileBasedApexClass>fscserviceprocess.FSCRtlChgBillCyclFetchCardBillingDetails</fileBasedApexClass>
+    <integrationProviderAttributes>
+        <dataType>String</dataType>
+        <developerName>FSC_retail_credit_integrations_V1_0_0</developerName>
+        <label>Get Credit Card Named Credential</label>
+        <required>true</required>
+        <stringValue>FSC_retail_credit_integrations_V1_0_0</stringValue>
+        <trueOrFalseValue>false</trueOrFalseValue>
+    </integrationProviderAttributes>
+    <providerLabel>FSCRtl_ChgBillCyclFetchCardBillingDetails</providerLabel>
+    <type>Apex</type>
+</IntegrationProviderDef>

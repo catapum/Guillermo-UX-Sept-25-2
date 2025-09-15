@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Treasury and Cash Management Services</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Treasury and Cash Management Services</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Formula</dataType>
+    <developerName>Treasury_and_Cash_Management_Services</developerName>
+    <formulaResponseDataType>Boolean</formulaResponseDataType>
+    <name>Treasury and Cash Management Services</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

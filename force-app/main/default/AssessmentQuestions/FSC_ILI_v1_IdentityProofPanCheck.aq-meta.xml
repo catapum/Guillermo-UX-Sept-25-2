@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>FSC_ILI_IdentityProofPanCheck</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Pan Check</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Formula</dataType>
+    <developerName>FSC_ILI_v1_IdentityProofPanCheck</developerName>
+    <formulaResponseDataType>Boolean</formulaResponseDataType>
+    <name>FSC_ILI_IdentityProofPanCheck</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

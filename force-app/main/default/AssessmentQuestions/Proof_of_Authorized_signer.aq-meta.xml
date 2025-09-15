@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Proof of Authorized signer</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Proof of Authorized signer</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>File</dataType>
+    <developerName>Proof_of_Authorized_signer</developerName>
+    <name>Proof of Authorized signer</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>
